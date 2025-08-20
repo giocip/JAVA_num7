@@ -48,7 +48,7 @@ Fairly portable to Python one (and vice-versa) also a jvm system can work with a
           /* SQUARE ROOT        */ Num.sqrt("2.0").Print(" (SQUARE ROOT OF 2)\n"); 	   		                //1.414213562         
           /* ROUND 2 DIGITS     */ Num.round(Num.sqrt("2.0")).Print(" = SQUARE ROOT OF 2 (ROUND 2 DIGITS)\n");            //1.41  
           /* ROUND 4 DIGITS     */ Num.round("3.14159265", 7).Print(" =~ 3.14159265 (ROUND 7 DIGITS)\n"); 	             //3.1415927
-          /* ROUND BANKING      */ Num.round_bank("3.14159265", 7).Print(" =~ 3.14159265 (ROUND BANKING 7 DIGITS)\n");   /3.1415926
+          /* ROUND BANKING      */ Num.round_bank("3.14159265", 7).Print(" =~ 3.14159265 (ROUND BANKING 7 DIGITS)\n");   //3.1415926
           /* ABS                */ Num.abs("-5.25").Print(" (ABSOLUTE VALUE OF -5.25)\n"); 		            //5.25 
           /* SCIENTIFIC         */ Num.print(new Num("314.0e-2").toEXP()); Num.print(" (SCI) = 3.14\r\n"); //3.14e0 (SCI) = 3.14
           /* pi                 */ Num.print(Num.pi(), " (pi)\n"); 						  //3.1415926535897932384626433832795
