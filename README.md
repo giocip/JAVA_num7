@@ -70,7 +70,8 @@ Fairly portable to Python one (and vice-versa) also a jvm system can work with a
 	  /* MEAN  */ Num.print(Num.mean(cart).Round(), " => MEAN\r\n"); //5.35 => MEAN
 	  /* MIN   */ Num.print(Num.min(cart), " => MIN\r\n");         //-15.13 => MIN
 	  /* MAX   */ Num.print(Num.max(cart), " => MAX\r\n");          //19.32 => MAX
-	  /*MIN MAX*/ Num.print(Num.minmax(cart), " => MIN-MAX\r\n");//[-15.13, 19.32] => MIN-MAX
+	  /*MIN MAX*/ Num.print(Num.minmax(cart), " => MIN-MAX\r\n"); //[-15.13, 19.32] => MIN-MAX
+   	  /*SUM MEAN MIN MAX*/ Num.print(Num.suminmax(cart), " => SUM-MEAN-MIN-MAX\r\n"); //[26.75999, 5.351998, -15.13, 19.32] => SUM-MEAN-MIN-MAX
 	  Num.print("----------------------\n"); //---------------------- 
 	  /* FORMAT  */ Num.printf("3005.141592654", 9, true, "\r\n");   //3.005,141592654
 	  /* FORMAT  */ Num.printf("3005.141592654", 6, false, "\r\n"); //3,005.141593
