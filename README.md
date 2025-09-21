@@ -63,6 +63,7 @@ Fairly portable to Python one (and vice-versa) also a jvm system can work with a
 	  /* PERTHOUSAND        */ Num.pth("2.00", "20_000.00").Round(2).Print(" = 2PTH OF 20000 (PERTHOUSAND)\n");    //40.0 = 2PTH OF 20000 (PERTHOUSAND)
 	  /* SPIN-OFF           */ Num.f_price_spinoff("1_299.00", "22.00").Round(2).Print(" = (-22%) 1299 (SPIN-OFF)\n"); 	//1064.75 = (-22%) 1299 (SPIN-OFF)
 	  /* SPIN-ON            */ Num.f_price_over("1_064.75", "22.00").Round(2).Print(" = +22% OF 1064.75 (SPIN-ON)\n"); //1299.0 = +22% OF 1064.75 (SPIN-ON)
+      /* HYPOT              */ Num.hypot("3.0","5.0", 40).Print("\r\n"); //5.8309518948453004708741528775455830765213
 	  Num.print("----------------------\n"); //---------------------- 
 	  Num[] cart = { new Num("19.31999"), new Num("19.32"), new Num("18.37"), new Num("-15.13"), new Num("-15.12") }; 
 	  for (Num element : cart) Num.print(element, " "); Num.print("=> ELEMENTS\r\n"); //19.31999 19.32 18.37 -15.13 -15.12 => ELEMENTS
