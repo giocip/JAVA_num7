@@ -3087,7 +3087,7 @@ public class Num implements Comparable<Num> {
     /**  CODE: Num a = new Num("31415923141592.0"); Num.print(a.toLong() - 1, "\r\n"); //31415923141591 */
     public long toLong() {
         if (!this.n1.equals("0"))
-            throw new ArithmeticException("Num.toInt => TypeError number must be integer: " + this.n);
+            throw new ArithmeticException("Num.toLong => TypeError number must be long integer: " + this.n);
         return Long.parseLong(this.n2 + this.n0);
     }
 
@@ -3845,7 +3845,7 @@ public class Num implements Comparable<Num> {
   /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(new Num(6)), "\r\n"); //2.0 */
   public Num FloorDiv(Num sob) {
       if (sob.n.equals("0.0"))
-          throw new ArithmeticException("Num.Mod => DIVISION BY ZERO: " + sob.toString());
+          throw new ArithmeticException("Num.FloorDiv => DIVISION BY ZERO: " + sob.toString());
       if (this.n.equals("0.0"))
           return new Num("0.0"); //ZERO DIVIDEND MEANS ZERO MODULUS RESULT
       BigInteger x1;
