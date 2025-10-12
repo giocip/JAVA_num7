@@ -1,0 +1,2 @@
+javac -cp   num7.jar App.java
+java  -cp .:num7.jar App
