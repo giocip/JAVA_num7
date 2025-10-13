@@ -78,6 +78,47 @@ Fairly portable to Python one (and vice-versa) also a jvm system can work with a
 	  /* FORMAT  */ Num.printf("3005.141592654", 6, false, "\r\n"); //3,005.141593
 	  /* FORMAT  */ Num.printf("3005.941592654", 0, true, "\r\n"); //3.006
 	  Num.print("----------------------\n"); 
-	  Num.print("*** num7.Num CHEATING TABLE FUNCTIONS LIBRARY ***");  
+	  Num.print("*** num7.Num CHEATING TABLE FUNCTIONS LIBRARY ***\r\n");  
 	 }
     }
+	
+## CODING:  
+ 
+(=) assignment:  
+
+	Num a = new Num("3.0"); Num b = new Num("5.0"); Num c = new Num("0.0"); 
+	Num.print("a = ", a.toString(), "  b = ");
+	Num.print(b.toString(), "  c = ", c.toString()); //a = 3.0 b = 5.0 c = 0.0 
+
+(+) adding:  
+
+	Num R = a.Add(b).Add(c); Num.print("\r\n", R.toString()); //8.0  
+	a = new Num("0.1"); b = new Num("0.2"); c = new Num("0.0"); Num.print("\r\n", a.Add(b).Add(c).toString()); //0.3  
+
+(-) subtracting:  
+
+	a = new Num("0.1"); b = new Num("0.2"); c = new Num("0.3");  
+	Num.print("\r\n", a.Add(b).Sub(c).toString()); //0.0  
+	R = new Num("-3.99").Sub(new Num("-5.20")).Sub(new Num("+3.01")); Num.print("\r\n", R.toString()); //-1.8  
+ 
+(*) multiplying:  
+
+	Num.print("\r\n", new Num("-3.99").Mul(new Num("-5.20")).Mul(new Num("+3.01")).toString()); //-3.99 * (-5.20) * (+3.01 ) = new Num("62.45148")
+
+(/) dividing (80 decimal digits default gets only for division operation):  
+
+	Num.print("\r\n", new Num("3.0").Div(new Num("5.7")).toString()); //3 : 5.7 = new Num("0.52631578947368421052631578947368421052631578947368421052631578947368421052631578")  
+
+Division precision (ex. 128 decs) may be specified as parameter after numeric string as: 
+ 	    
+	Num.print("\r\n", new Num("3.0", 128).Div(new Num("5.7", 128)).toString()); //3 : 5.7 = new Num("0.52631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052")  
+
+(// % operators by divmod function) integer division and remainder:  
+
+	a = new Num("14.0"); b = new Num("4.0"); //  
+	Num QR[] = Num.divmod(a, b); Num.print("\r\nQuotient = ", QR[0].toString()); Num.print( "\r\nRemainder = ", QR[1].toString());   //Quotient = 3.0 Remainder = 2.0  
+
+(divmod function) floating division and remainder:  
+
+	a = new Num("10.123456789"); b = new Num("2.0"); // 
+	QR = Num.divmod(a, b); Num.print("\r\nQuotient = ", QR[0].toString()); Num.print("\r\nRemainder = ", QR[1].toString());   //Quotient = 5.0 Remainder = 0.123456789  
