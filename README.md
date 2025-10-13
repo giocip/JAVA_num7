@@ -122,3 +122,27 @@ Division precision (ex. 128 decs) may be specified as parameter after numeric st
 
 	a = new Num("10.123456789"); b = new Num("2.0"); // 
 	QR = Num.divmod(a, b); Num.print("\r\nQuotient = ", QR[0].toString()); Num.print("\r\nRemainder = ", QR[1].toString());   //Quotient = 5.0 Remainder = 0.123456789  
+
+(sqrt) square root function: 
+
+	a = new Num("123_456_789.1234567890123456789"); Num root = a.Sqrt(); // new Num("11111.1110661111")  
+	Num.print("\r\nresult digits number Array => "); Num.print(root.Len()[0], " "); Num.print(root.Len()[1]); //result digits number Array => 5 10  
+
+(**) power pow function:  
+
+	Num.print("\r\n");
+	a = new Num("2.22123").Pow(64); Num.print(a.toString()); // 15204983311631674774944.65147209888660757554174463321311015807893679105748958794491681177995203669698667160837739445605536688871012507194541849848681968140805876570485027380472936734094801420552285940765338219588362327695177798251793912104057999943308320501195784173135380826413054938730768027747418766018606636039075568645106645889100039914241  
+	Num.print("\r\n");
+	Num.print(a.Len()[0], " "); Num.print(a.Len()[1]);     //(23, 320) digits len Array  
+	Num.print("\r\n");
+	Num.print(new Num(Num.PI).toString(), "\r\n");              //3.1415926535897932384626433832795
+	Num.print(Num.pow(new Num(Num.PI), 8).toString(), "\r\n"); //9488.53101607057400712857550390669610772775299223490285321770379105987141030240149336078150385043158469349154685725483405285555113328286167973377675298803815055897927366999722001973502924844693920864092029684743210236562107994363509552636547934500390625
+
+logic in, not in, is, is not, LT, LE, GT, GE, EQ, NE and relational operators (and, or, not).  
+
+(in):  
+
+	Num L[] = { new Num("0.1"), new Num("1.0"), new Num("5.5"), new Num("-3.0"), new Num("-2.9"), new Num("-3.0001"), new Num("2.2") };  
+	Num.print(Num.in(L, new Num("-3.0001")), " ");      //true
+	Num.print(Num.in(L, new Num("-3.00001")), " ");    //false
+	Num.print(Num.in(L, new Num("-3.0001")), "\r\n"); //true
