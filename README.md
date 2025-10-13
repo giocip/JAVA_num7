@@ -143,6 +143,26 @@ logic in, not in, is, is not, LT, LE, GT, GE, EQ, NE and relational operators (a
 (in):  
 
 	Num L[] = { new Num("0.1"), new Num("1.0"), new Num("5.5"), new Num("-3.0"), new Num("-2.9"), new Num("-3.0001"), new Num("2.2") };  
-	Num.print(Num.in(L, new Num("-3.0001")), " ");      //true
-	Num.print(Num.in(L, new Num("-3.00001")), " ");    //false
+	Num.print("--------------------------\r\n");
+	Num.print(Num.in(L, new Num("-3.0001")), "\r\n");   //true
+	Num.print(Num.in(L, new Num("-3.00001")), "\r\n"); //false
 	Num.print(Num.in(L, new Num("-3.0001")), "\r\n"); //true
+
+(not_in):
+
+	Num.print("--------------------------\r\n");
+	Num.print(Num.not_in(L, new Num("-3.0001")), "\r\n");   //false
+	Num.print(Num.not_in(L, new Num("-3.00001")), "\r\n"); //true
+	Num.print(Num.not_in(L, new Num("-3.0001")), "\r\n"); //false
+
+(is, is_not):
+
+	Num.print("--------------------------\r\n");
+	Num M = new Num("0.0"); 
+	Num.print(Num.is(new Num("0.0"), M), "\r\n");     //true
+	M = new Num("0.0"); 
+	Num.print(Num.is_not(M.Inc("0.1"), M), "\r\n"); //false
+	Num N = M; N.Dec("0.1"); 
+	Num.print(Num.is(N, M), "\r\n");  	  //true
+	Num.print(Num.is_not(N, M), "\r\n"); //false
+
