@@ -307,3 +307,56 @@ OUTPUT FORMATTING AND LOCALIZATION >
 	    }
 	}
 
+ROUNDING TYPES >
+
+	import num7.Num;
+
+	public class App {
+		public static void main(String[] args) {
+			//""" Num floor rounding """  
+			Num.print("--------------------------\r\n" + " Num floor rounding\r\n"); 
+			Num n = new Num(Num.PI);                        // 3.1415926535897932384626433832795
+			Num.print(n, "\r\n"); Num.print(n.Round_floor(2).toString(), "\r\n"); // 3.14  
+			n = new Num(Num.PI).Invsign();                  //-3.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round_floor(2).toString(), "\r\n"); //-3.15
+			n = new Num(Num.PI).Sub(3);                     // 0.1415926535897932384626433832795  
+			Num.print(n, "\r\n"); Num.print(n.Round_floor(2).toString(), "\r\n"); // 0.14  
+			n = new Num(Num.PI).Invsign().Add(3);           //-0.1415926535897932384626433832795  
+			Num.print(n, "\r\n"); Num.print(n.Round_floor(2).toString(), "\r\n"); //-0.15  
+			
+			//""" Num ceil rounding """  
+			Num.print("--------------------------\r\n" +  " Num ceil rounding\r\n");  
+			n = new Num(Num.PI);                            // 3.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round_ceil(2).toString(), "\r\n"); //3.15 
+			n = new Num(Num.PI).Invsign();                  //-3.1415926535897932384626433832795  
+			Num.print(n, "\r\n"); Num.print(n.Round_ceil(2).toString(), "\r\n"); //-3.14
+			n = new Num(Num.PI).Sub(3);                     // 0.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round_ceil(2).toString(), "\r\n"); //0.15 
+			n = new Num(Num.PI).Invsign().Add(3);           //-0.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round_ceil(2).toString(), "\r\n"); //-0.14 
+			
+			//""" Num standard rounding """  
+			Num.print("--------------------------\r\n" +  " Num standard rounding\r\n");
+			n = new Num(Num.PI);                            // 3.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round(4).toString(), "\r\n"); //3.1416
+			n = new Num(Num.PI).Invsign();                  //-3.1415926535897932384626433832795  
+			Num.print(n, "\r\n"); Num.print(n.Round(4).toString(), "\r\n"); //-3.1416
+			n = new Num(Num.PI).Sub(3);                     // 0.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round(4).toString(), "\r\n"); //0.1416
+			n = new Num(Num.PI).Invsign().Add(3);           //-0.1415926535897932384626433832795 
+			Num.print(n, "\r\n"); Num.print(n.Round(4).toString(), "\r\n"); //-0.1416 
+			
+			//""" Num half even rounding """  
+			Num.print("--------------------------\r\n" +   " Num half to even rounding (statistic, zero symmetric)\r\n");  
+			n = new Num(Num.PI).Round_floor(4) ;             						// 3.1415  
+			Num.print(n, "\r\n"); Num.print(n.Round_bank(3).toString(), "\r\n") ;   // 3.142  
+			n = new Num(Num.PI).Round_floor(4).Invsign(); 							//-3.1415  
+			Num.print(n, "\r\n"); Num.print(n.Round_bank(3).toString(), "\r\n");    //-3.142  
+			n = new Num(Num.PI).Sub(3).Round_floor(8);              				// 0.14159265  
+			Num.print(n, "\r\n"); Num.print(n.Round_bank(7).toString(), "\r\n");    // 0.1415926  
+			n = new Num(Num.PI).Round_floor(8).Invsign().Add(3); 					//-0.14159265  
+			Num.print(n, "\r\n");Num.print(n.Round_bank(7).toString(), "\r\n");     //-0.1415926  
+		}
+	}
+
+	
