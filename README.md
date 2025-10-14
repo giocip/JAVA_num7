@@ -237,3 +237,70 @@ logic in, not in, is, is not, LT, LE, GT, GE, EQ, NE and relational operators (a
 	Num.print("0000"); Num.print(op1.toBin(), " => 10.0\r\n"); //00001010 10.0 
 	op2 = op1.Notb(); 										   //(~) NOT 
 	Num.print("00000"); Num.print(op2.toBin(), " => 5.0\r\n"); //00000101 5.0  
+
+ On a given variable the following arithmetic methods are available:
+	
+	Num a = new Num("10.25");  
+	Num.print(a.toString(), "\r\n");           //10.25  
+	a.Inc();        						  //increment (default) by one  
+	Num.print(a.toString(), "\r\n");         //11.25   
+	a.Dec(2);       						//decrement (optional) 2 units  
+	Num.print(a.toString(), "\r\n");       //9.25  
+	a.IncMul();     					  //multiply (default) 10 times  
+	Num.print(a.toString(), "\r\n");     //92.5  
+	a.DecDiv(100);  					//x100 (optional) division  
+	Num.print(a.toString(), "\r\n");   //0.925  
+	a.Clear();     					  //a variable set to zero   
+	Num.print(a.toString(), "\r\n"); //0.0 
+
+EVEN ODD numbering methods:
+	
+	Num a = new Num(6); Num b = new Num(3); Num c = new Num("3.14");
+	Num.print(a, "  INTEGER => "); Num.print(a.Is_numint(), " "); Num.print("EVEN => ") ; Num.print(a.Is_numeven(), "\r\n");  //6.0 INTEGER => true EVEN => true  
+	Num.print(b, "  INTEGER => "); Num.print(b.Is_numint(), " "); Num.print("ODD  => "); Num.print(b.Is_numodd(), "\r\n");   //3.0  INTEGER => true ODD  => true 
+	Num.print(c, " FLOAT  => "); Num.print(c.Is_numfloat(), "\r\n");               										    //3.14  FLOAT   => true     
+
+# Advanced logic programming snippet
+
+LOOP EXAMPLE >
+
+	Num i = new Num(0);
+	while (i.LT(new Num("1.0"))) {
+		i.Inc("0.1");                   //i += Num("0.1")
+		if (i.LE(new Num("0.5"))) continue;
+		Num.print(i.toString(), " "); //0.6 0.7 0.8 0.9 1.0  
+	} 
+	while (i.Is_true()) {
+		i.Dec("0.1");                   //i -= Num("0.1") 
+		if (i.GE(new Num("0.5"))) continue;
+		Num.print(i.toString(), " "); //0.4 0.3 0.2 0.1 0.0  
+	} 
+
+ROUNDING AND ACCOUNTING >
+
+	Num p = new Num("11.19");                         //PRICE -Toslink cable for soundbar  
+	Num pd = Num.round(p.F_price_over(-7));          //PRICE DISCOUNTED 7%
+	Num d = Num.round(p.Sub(pd));                   //DISCOUNT
+	Num p_noTAX = Num.round(p.F_price_spinoff(22));//ITEM COST WITHOUT TAX 22%  
+	Num TAX = Num.round(p.Sub(p_noTAX));          //TAX 22% 
+	Num.print("price=" + pd.toString() + " discount=" + d.toString() + " COST=" + p_noTAX.toString() + " TAX=" + TAX.toString()); //price=10.41 discount=0.78 COST=9.17 TAX=2.02
+
+OUTPUT FORMATTING AND LOCALIZATION >
+
+	import num7.Num;
+	import java.text.NumberFormat;
+	import java.util.Locale;
+
+	public class App {
+		public static void main(String[] args) {
+			NumberFormat US = NumberFormat.getCurrencyInstance(Locale.US);
+			NumberFormat IT = NumberFormat.getCurrencyInstance(Locale.ITALY);
+			double amount = 1234567.89;
+			Num.print(US.format(amount), "\r\n");  // $1,234,567.89
+			Num.print(IT.format(amount), "\r\n"); //   1.234.567,89 €
+			Num asset = new Num("100_000.0"); Num rate = new Num("6.5"); Num years = new Num("20.0");
+			Num monthly_payment = Num.f_fund_fr(asset, rate, years.toInt()).Round(); 
+			Num.print(US.format(asset.toDouble()), "\r\n"); // $100,000.00
+			Num.print(IT.format(asset.toDouble()), "\r\n"); //  100.000,00 €
+		}
+	}
