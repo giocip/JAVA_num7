@@ -290,17 +290,20 @@ OUTPUT FORMATTING AND LOCALIZATION >
 	import num7.Num;
 	import java.text.NumberFormat;
 	import java.util.Locale;
-
+	
 	public class App {
-		public static void main(String[] args) {
+	    public static void main(String[] args) {
 			NumberFormat US = NumberFormat.getCurrencyInstance(Locale.US);
 			NumberFormat IT = NumberFormat.getCurrencyInstance(Locale.ITALY);
 			double amount = 1234567.89;
-			Num.print(US.format(amount), "\r\n");  // $1,234,567.89
-			Num.print(IT.format(amount), "\r\n"); //   1.234.567,89 €
+			Num.print(US.format(amount), "\r\n");  							 //$1,234,567.89
+			Num.print(IT.format(amount), "\r\n"); 							//1.234.567,89 €
 			Num asset = new Num("100_000.0"); Num rate = new Num("6.5"); Num years = new Num("20.0");
 			Num monthly_payment = Num.f_fund_fr(asset, rate, years.toInt()).Round(); 
-			Num.print(US.format(asset.toDouble()), "\r\n"); // $100,000.00
-			Num.print(IT.format(asset.toDouble()), "\r\n"); //  100.000,00 €
-		}
+			Num.print(US.format(asset.toDouble()), "\r\n");              //$100,000.00
+			Num.print(US.format(monthly_payment.toDouble()), "\r\n");   //$756.30
+			Num.print(IT.format(asset.toDouble()), "\r\n"); 		   //100.000,00 €
+			Num.print(IT.format(monthly_payment.toDouble()), "\r\n"); //756,30 €
+	    }
 	}
+
