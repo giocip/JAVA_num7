@@ -166,3 +166,74 @@ logic in, not in, is, is not, LT, LE, GT, GE, EQ, NE and relational operators (a
 	Num.print(Num.is(N, M), "\r\n");  	  //true
 	Num.print(Num.is_not(N, M), "\r\n"); //false
 
+ LT, LE, GT, GE, EQ, NE (< <= > >= == !=)
+
+	Num.print("--------------------------\r\n");
+	a = new Num("0.0"); b = new Num("0.1"); c = new Num("-0.2");
+	Num.print(a.LT(b), " "); Num.print(a.LT(c), " "); Num.print(b.LT(c), "\r\n");    //true false false 
+	Num.print(a.LE(b), " "); Num.print(a.LE(c), " "); Num.print(b.LE(c), "\r\n");   //true false false 
+	Num.print(a.GT(b), " "); Num.print(a.GT(c), " "); Num.print(b.GT(c), "\r\n");  //false true true 
+	Num.print(a.GE(a), " "); Num.print(a.GE(c), " "); Num.print(b.GE(c), "\r\n"); //true true true 
+	Num.print(c.EQ(new Num("-2.0").Mul(b)), " "); Num.print(a.EQ(c.Add(b.Mul("2.0"))), " "); Num.print(a.NE(a.Add(b).Add(c)), "\r\n"); //true true true 
+	Num.print(a.And(b), " "); Num.print(a.Or(b), " "); Num.print(a.Not(), "\r\n"); //false true true 
+	Num.print(a.And(b) ? true : false, "\r\n");  //false
+	Num.print(a.Or(b)  ? true : false, "\r\n"); //true
+
+  (+ - unary operators)
+
+	Num.print("--------------------------\r\n");
+	a = new Num("2.5521"); //Num { type: "Num", n2: "", n0: "2", n1: "5521", L_n0: 1, L_n1: 4, n: "2.5521", d: 80 }
+	Num.print(a.toString(), "\r\n");               //2.5521
+	Num.print(a.Minus().toString(), "\r\n");      //-2.5521
+	Num.print(a.Plus().toString(), "\r\n");      //2.5521
+	Num.print(a.Invsign().toString(), "\r\n");  //-2.5521
+	Num.print(a.Invsign().toString(), "\r\n"); //2.5521
+
+  bitwise operators code:
+
+	Num.print("--- (&) AND ---\r\n");
+	Num op1 = new Num("3.0");
+	Num op2 = new Num("5.0");
+	Num.print("000000"); Num.print(op1.toBin(), " => 3.0\r\n"); //00000011 => 3.0
+	op1 = op1.Andb(op2); 										//AND
+	Num.print( "00000"); Num.print(op2.toBin(), " => 5.0\r\n"); //00000101 => 5.0
+	Num.print("0000000");Num.print(op1.toBin(), " => 1.0\r\n"); //00000001 => 1.0
+
+	Num.print("--- (|) OR  ---\r\n");
+	Num op1 = new Num("3.0");
+	Num op2 = new Num("5.0");
+	Num.print("000000"); Num.print(op1.toBin(), " => 3.0\r\n"); //00000011 => 3.0
+	op1 = op1.Orb(op2); 										//OR
+	Num.print( "00000"); Num.print(op2.toBin(), " => 5.0\r\n"); //00000101 => 5.0
+	Num.print( "00000"); Num.print(op1.toBin(), " => 7.0\r\n"); //00000111 => 7.0
+
+	Num.print("--- (^) XOR ---\r\n");
+	Num op1 = new Num("3.0");
+	Num op2 = new Num("5.0");
+	Num.print("000000"); Num.print(op1.toBin(), " => 3.0\r\n"); //00000011 => 3.0
+	op1 = op1.Xorb(op2); 										//XOR
+	Num.print( "00000"); Num.print(op2.toBin(), " => 5.0\r\n"); //00000101 => 5.0
+	Num.print( "00000"); Num.print(op1.toBin(), " => 6.0\r\n"); //00000110 => 6.0
+
+	Num.print("--- (<<) LEFT SHIFT -X10 MULTIPLIER ---\r\n");
+	Num op1 = new Num("1.0");
+	Num op2 = new Num("2.0");
+	Num.print("0000000"); Num.print(op1.toBin(), " => 1.0\r\n");  //00000001 => 1.0
+	op1 = op1.Shift(op2); 										  //LEFT SHIFT -X10 MULTIPLIER
+	Num.print( "000000"); Num.print(op2.toBin(), " => 2.0\r\n");  //00000010 => 2.0
+	Num.print(      "0"); Num.print(op1.toBin(), " => 100.0\r\n");//01100100 => 100.0
+
+	Num.print("--- (>>) RIGHT SHIFT -X10 DIVIDER ---\r\n");
+	Num op1 = new Num("250.0");
+	Num op2 = new Num("-1.0");
+	Num.print(""); Num.print(op1.toBin(), " => 250.0\r\n");                //11111010 250.0 
+	op1 = op1.Shift(op2); 										           //RIGHT SHIFT -X10 DIVIDER
+	Num.print( "      "); Num.print(op2.toBin(), " => -1 (decimal)\r\n");  //-1 (decimal)
+	Num.print(      "000"); Num.print(op1.toBin(), " => 25.0\r\n");        //00011001 25.0
+
+	Num.print("--- (~) NOT ---\r\n");
+	Num op1 = new Num("10.0");
+	Num op2 = new Num("0.0");
+	Num.print("0000"); Num.print(op1.toBin(), " => 10.0\r\n"); //00001010 10.0 
+	op2 = op1.Notb(); 										   //(~) NOT 
+	Num.print("00000"); Num.print(op2.toBin(), " => 5.0\r\n"); //00000101 5.0  
