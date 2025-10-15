@@ -359,4 +359,96 @@ ROUNDING TYPES >
 		}
 	}
 
-	
+PERFORMANCE EVALUATION AND SQUARENESS >
+
+	import num7.Num;
+
+	public class App {
+		public static void main(String[] args) {
+
+					long tic = System.nanoTime();             //Start Time 
+					Num a = new Num("-1.123456789"+"e-100"); //Calculating division 10**100 assignment time by exponential notation... 
+					long toc = System.nanoTime();           //Stop Time
+					Num T1 = new Num(((toc - tic) / 1000000.0) + ""); 
+					Num.print("a finished ms "); Num.print(T1.Round(3), "\r\n"); //a finished ms 43.476
+								
+					tic = System.nanoTime();                      //Start Time
+					Num b = new Num("-1.123456789").Shift(-100); //Calculating division 10**100 assignment time by shift method...
+					toc = System.nanoTime();                    //Stop Time           
+					Num T2 = new Num(((toc - tic) / 1000000.0) + "");
+					Num.print("b finished ms "); Num.print(T2.Round(3), "\r\n"); //b finished ms 4.124
+					
+					
+					Num[] R = Num.f_perf_time(T1, T2);
+					
+					Num.print("PCT => ", Num.round(R[0]).toString(), "  ");  
+					Num.print("SCALE => ", Num.round(R[1]).toString(), "  "); Num.print( "SQUARENESS => ");
+					Num.print(a.EQ(b), "\r\n"); //PCT => 974.46  SCALE => 9.74  SQUARENESS => true
+					
+					
+					//stock exchange assets performance 
+					Num previous = new Num("26.96"); Num now = new Num("27.27"); 
+					Num var_pct = new Num(Num.f_perf(previous, now)).Round();
+					Num.print((var_pct.GT(0) ? "+" : ""));
+					Num.print(var_pct.Round(2), "\r\n"); //+1.15
+		}
+	} 
+
+ SCIENTIFIC NOTATION AND HIGH PRECISION RESULTS >
+
+	import num7.Num;
+
+	public class App {
+		public static void main(String[] args) {
+
+					Num a = new Num("1_000_000_000_000_000_000_000.0"); //standard notation  
+					Num b = new Num("1.0e21");                         //scientific notation  
+					Num SUM = a.Add(b);                               //SUM  
+					double ieee754 = a.toFloat() + b.toFloat();      //double
+					Num.print("SUM == ieee754 "); Num.print(SUM.EQ(new Num(ieee754 + "")), "   "); 
+					Num.print( "SUM => ", SUM.Num2exp());          //SUM == ieee754 true   SUM => 2.0e21
+
+					a = new Num("1_000_000_000_000_000_000_000.0"); //standard notation  
+					b = new Num("1.0e21");                         //scientific notation  
+					Num MUL = a.Mul(b);                           //MUL  
+					ieee754 = a.toFloat() * b.toFloat();         //double
+					Num.print("\r\nMUL == ieee754 ");
+					Num.print(MUL.EQ(new Num(ieee754 + "")), "   MUL => "); 
+					Num.print(MUL.Num2exp()); //MUL == ieee754 true   MUL => 1.0e42
+									
+					String as = "1.23456789";  
+					String bs = "9.87654321" ; 
+					MUL = new Num(as).Mul(new Num(bs)); //MUL                        
+					ieee754 = Double.parseDouble(as) * Double.parseDouble(bs);
+					Num.print("\r\nMUL == ieee754 ");
+					Num.print(MUL.EQ(new Num(ieee754 + "")), "  MUL => " + MUL.toString() + "\r\n                             "); 
+					Num.print(Double.parseDouble(as)*Double.parseDouble(bs), " => IEEE754 PRECISION FAILURE!"); //MUL == ieee754 False MUL => 12.1932631112635269 12.193263111263525 => IEEE754 PRECISION FAILURE!  
+									
+					as = "1.23456789e320";  //scientific notation  
+					bs = "9.87654321e320";   
+					MUL = new Num(as).Mul(new Num(bs)); //MUL                      
+					ieee754 = Double.parseDouble(as) * Double.parseDouble(bs);
+					Num.print("\r\nMUL != ieee754 ");				
+					Num.print("MUL => ", MUL.Num2exp() + " ");
+					Num.print(Double.parseDouble(as)*Double.parseDouble(bs), " => IEEE754 Infinity FAILURE!"); //MUL != ieee754 MUL => 1.21932631112635269e641 Infinity => IEEE754 Infinity FAILURE!
+
+					as = "2.0e320";  //scientific notation  
+					bs = "3.0e-320";   
+					MUL = new Num(as).Mul(new Num(bs)); //MUL                      
+					ieee754 = Double.parseDouble(as) * Double.parseDouble(bs);
+					Num.print("\r\nMUL != ieee754 ");				
+					Num.print("MUL => ", MUL + " ");
+					Num.print(Double.parseDouble(as)*Double.parseDouble(bs), " => IEEE754 Infinity FAILURE!"); //MUL != ieee754 MUL => 6.0 Infinity => IEEE754 Infinity FAILURE!
+					
+					as = "1.0e200"; //scientific notation  
+					bs = "5.0e1200";  
+					Num T1 = new Num(as); 
+					Num T2 = new Num(bs); 
+					Num DIV = T1.Div(T2); //DIV
+					ieee754 = Double.parseDouble(as) / Double.parseDouble(bs); //DIVISION
+					Num.print("\r\nDIV != ieee754 ");				
+					Num.print("DIV => ", DIV.toEXP() + " ");
+					Num.print(Double.parseDouble(as)/Double.parseDouble(bs), " => IEEE754 Infinity FAILURE!"); //DIV != ieee754 DIV => 2.0e-1001 0.0 => IEEE754 Infinity FAILURE!
+
+		}
+	}
