@@ -455,7 +455,7 @@ PERFORMANCE EVALUATION AND SQUARENESS >
 					ieee754 = Double.parseDouble(as) / Double.parseDouble(bs); //DIVISION
 					Num.print("\r\nDIV != ieee754 ");				
 					Num.print("DIV => ", DIV.toEXP() + " ");
-					Num.print(Double.parseDouble(as)/Double.parseDouble(bs), " => IEEE754 Infinity FAILURE!"); //DIV != ieee754 DIV => 2.0e-1001 0.0 => IEEE754 Infinity FAILURE!
-
+					Num.print(Double.parseDouble(as)/Double.parseDouble(bs), " => IEEE754 Infinity small FAILURE!"); //DIV != ieee754 DIV => 2.0e-1001 0.0 => IEEE754 Infinity small FAILURE!
+					
 		}
 	}
