@@ -23,6 +23,13 @@ Fairly portable to Python one (and vice-versa) also a jvm system can work with a
 
 ---
 
+
+## Installation num7 package by MAVEN REPOSITORY:
+
+	https://mvnrepository.com/artifact/io.github.giocip/num7
+
+---
+
 ## HOW TO USE (integer numeric strings (ex. "2.0") MUST BE SUFFIXED WITH .0): 
 --- CALCULATOR MODE ---   
 
