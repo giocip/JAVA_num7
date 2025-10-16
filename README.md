@@ -553,6 +553,7 @@ SAVE NUMERIC LIST TO DISK FILE >
 			double[] D = { -110.0, +0.14, -20.456120, 1200.0654, 0.0, 3.141592654, 2.7182818281234567899 }; 
 			ArrayList<Num> A = Num.float2num_list(D); 
 			for(Num a : A) Num.print(a, "\r\n"); //-110.0 0.14 -20.45612 1200.0654 0.0 3.141592654 2.7182818281234566
+			Num.f_filewrite(A, "myFile.txt");   //SAVED TO myFile.txt FILE
 					
 		}
 	}
