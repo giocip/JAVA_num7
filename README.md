@@ -525,3 +525,9 @@ PERFORMANCE EVALUATION AND SQUARENESS >
 	10	$30,878.02	$2,238.66	$34,116.68	
 	---------------------------------------------------
 		   $194,712.67     $14,116.68      $218,829.35  => SQUARENESS=SUCCESS	*/
+
+FLOAT TO NUM CONVERSION LIST ARRAY >
+
+	Num L[] = {new Num(1011), new Num("0.0"), new Num("9.998412"), new Num("7.0"), new Num("0.123"), new Num("-2.0123"), new Num(10), new Num(6)};
+	ArrayList<Num> LN = new ArrayList<>(Arrays.asList(L));
+	for(Num i : LN) Num.print(i.n, " "); //["1011.0", "0.0", "9.998412", "7.0", "0.123", "-2.0123", "10.0", "6.0"]
