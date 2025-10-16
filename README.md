@@ -583,3 +583,16 @@ How instead can it gets exactly 0.3?
 A. Using Num class >  
 
 		Num.print(new Num("0.1").Add(new Num("0.2")).toString());  //0.3
+
+Q. I'll get an error when i usually type:  
+	
+	new Num(0.1);    
+ 
+The constructor Num(double) is undefined
+
+What is wrong?  
+A. You must use double quotes or string conversion:
+
+		new Num("0.1");    		   	   //Num("0.1")  
+		new Num(0.1 + "").toString(); //"0.1" 		
+
