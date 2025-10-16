@@ -570,3 +570,16 @@ READ NUMERIC LIST ARRAY FROM DISK FILE (nums.txt default filename) >
 		}
 	}
 
+### FAQ 
+
+Q. I usually try to add 0.1 to 0.2 in node with this code:  
+
+		Num.print(0.1 + 0.2, "\r\n");
+and the result is:  
+
+> 0.30000000000000004  
+
+How instead can it gets exactly 0.3?  
+A. Using Num class >  
+
+		Num.print(new Num("0.1").Add(new Num("0.2")).toString());  //0.3
