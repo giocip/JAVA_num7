@@ -558,3 +558,15 @@ SAVE NUMERIC LIST TO DISK FILE >
 		}
 	}
 
+READ NUMERIC LIST ARRAY FROM DISK FILE (nums.txt default filename) >
+
+	import num7.Num;
+
+	public class App {
+		public static void main(String[] args) {
+
+			Num.print(Num.f_fileread("myFile.txt"), "\r\n"); //READING FILE myFile.txt => [-110.0, 0.14, -20.45612, 1200.0654, 0.0, 3.141592654, 2.7182818281234566] */
+					
+		}
+	}
+
