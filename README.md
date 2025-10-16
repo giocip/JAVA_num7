@@ -528,6 +528,32 @@ PERFORMANCE EVALUATION AND SQUARENESS >
 
 FLOAT TO NUM CONVERSION LIST ARRAY >
 
-	Num L[] = {new Num(1011), new Num("0.0"), new Num("9.998412"), new Num("7.0"), new Num("0.123"), new Num("-2.0123"), new Num(10), new Num(6)};
-	ArrayList<Num> LN = new ArrayList<>(Arrays.asList(L));
-	for(Num i : LN) Num.print(i.n, " "); //["1011.0", "0.0", "9.998412", "7.0", "0.123", "-2.0123", "10.0", "6.0"]
+	import num7.Num;
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	
+	public class App {
+		public static void main(String[] args) {
+	
+			Num L[] = {new Num(1011), new Num("0.0"), new Num("9.998412"), new Num("7.0"), new Num("0.123"), new Num("-2.0123"), new Num(10), new Num(6)};
+			ArrayList<Num> LN = new ArrayList<>(Arrays.asList(L));
+			for(Num i : LN) Num.print(i.n, " "); //1011.0 0.0 9.998412 7.0 0.123 -2.0123 10.0 6.0
+					
+		}
+	}
+
+SAVE NUMERIC LIST TO DISK FILE >
+
+	import num7.Num;
+	import java.util.ArrayList;
+	
+	public class App {
+		public static void main(String[] args) {
+	
+			double[] D = { -110.0, +0.14, -20.456120, 1200.0654, 0.0, 3.141592654, 2.7182818281234567899 }; 
+			ArrayList<Num> A = Num.float2num_list(D); 
+			for(Num a : A) Num.print(a, "\r\n"); //-110.0 0.14 -20.45612 1200.0654 0.0 3.141592654 2.7182818281234566
+					
+		}
+	}
+
