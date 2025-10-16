@@ -459,3 +459,69 @@ PERFORMANCE EVALUATION AND SQUARENESS >
 					
 		}
 	}
+
+ SAVING CALCULATOR:
+
+	import num7.Num;
+	import java.text.NumberFormat;
+	import java.util.Locale;
+
+	public class App {
+		public static void main(String[] args) {
+
+			NumberFormat US = NumberFormat.getCurrencyInstance(Locale.US);
+			
+			Num DEPOSIT = new Num("10_000.00");
+			Num ANNUAL_CONTRIBUTION = new Num("1_000.00");
+			Num RATE = new Num("7.25"); 
+			Num YEARS = new Num(10);
+			Num ANNUALS[][] = new Num [10][4]; 
+			Num SQUARENESS_1 = new Num(0), SQUARENESS_2 = new Num(0), SQUARENESS_3  = new Num(0); 
+			for (int i = 0; i < YEARS.toInt(); i++) { 
+				ANNUALS[i][0] = new Num(i + 1);   //year 
+				ANNUALS[i][1] = DEPOSIT;         //DEPOSIT 
+				ANNUALS[i][2] = DEPOSIT.Mul(RATE).Div(100).Round(); 
+				ANNUALS[i][3] = ANNUALS[i][1].Add(ANNUALS[i][2]).Add(ANNUAL_CONTRIBUTION); 
+				DEPOSIT = ANNUALS[i][3]; 
+			} 	
+			Num.print("---------------------------------------------------\n");  
+			for (int i = 0; i < YEARS.toInt(); i++) { 
+				Num.print(ANNUALS[i][0].toInt(), "\t"); //INDEX
+				Num.print(US.format(ANNUALS[i][1].toDouble()), "\t");
+				if(ANNUALS[i][2].get_n0().length() < 4) { Num.print("##"); Num.print(US.format(ANNUALS[i][2].toDouble()) + "\t"); }
+				else Num.print(US.format(ANNUALS[i][2].toDouble()), "\t");
+				Num.print(US.format(ANNUALS[i][3].toDouble()), "\t"); 
+				Num.print("\r\n");
+			} 
+			
+			for (int i = 0; i < YEARS.toInt(); i++) { 
+				SQUARENESS_1 = SQUARENESS_1.Add(ANNUALS[i][1]);
+				SQUARENESS_2 = SQUARENESS_2.Add(ANNUALS[i][2]);
+				SQUARENESS_3 = SQUARENESS_3.Add(ANNUALS[i][3]);
+			}
+			
+			Num.print("---------------------------------------------------\n"); 
+			Num.print("       "); 
+			Num.print(US.format(SQUARENESS_1.toDouble()), "     ");
+			Num.print(US.format(SQUARENESS_2.toDouble()), "      ");
+			Num.print(US.format(SQUARENESS_3.toDouble()), " ");
+			Boolean SQUARENESS = (SQUARENESS_1.Add(SQUARENESS_2)).EQ(SQUARENESS_3.Sub(ANNUAL_CONTRIBUTION.Mul(YEARS)));
+			Num.print(" => SQUARENESS=", (SQUARENESS ? "SUCCESS" : "FAILURE"), "\r\n");
+					
+		}
+	}
+
+	/* VIDEO OUTPUT
+	---------------------------------------------------
+	1	$10,000.00	##$725.00	$11,725.00	
+	2	$11,725.00	##$850.06	$13,575.06	
+	3	$13,575.06	##$984.19	$15,559.25	
+	4	$15,559.25	$1,128.05	$17,687.30	
+	5	$17,687.30	$1,282.33	$19,969.63	
+	6	$19,969.63	$1,447.80	$22,417.43	
+	7	$22,417.43	$1,625.26	$25,042.69	
+	8	$25,042.69	$1,815.60	$27,858.29	
+	9	$27,858.29	$2,019.73	$30,878.02	
+	10	$30,878.02	$2,238.66	$34,116.68	
+	---------------------------------------------------
+		   $194,712.67     $14,116.68      $218,829.35  => SQUARENESS=SUCCESS	*/
