@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintStream;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -2366,9 +2367,9 @@ public class Num implements Comparable<Num> {
     /**  Num.print(Num.toFloat(new Num("-3.141592654")) - 0.000000002, "\r\n"); //-3.1415926560000003 */
     public static double toFloat(Num a) { return Double.parseDouble(a.n); }
 
-     /** ieee754, FLOAT TO IEEE754 CONVERSION LIKE toFloat() METHOD */
-    /**  CODE: Num.print(Num.ieee754(new Num("-3.1234567890123456789999")) - 0.000000000000000002, "\r\n"); //-3.1234567890123457 */
-    public static double ieee754(Num a) { return Double.parseDouble(a.n); }
+     /** ieee754, FLOAT TO IEEE754 CONVERSION METHOD */
+    /**  CODE: Num a = Num.ieee754(0.1); Num.print(a.toString(), "\r\n"); //0.1000000000000000055511151231257827021181583404541015625 */
+    public static Num ieee754(double a) { BigDecimal an = new BigDecimal(a); return new Num(an.toPlainString()); }
 
      /** sqrt, SQUARE ROOT METHOD BY Num -DEFAULT TEN DECIMALs */
     /**  CODE: Num.print(Num.sqrt(new Num("2.0")), "\r\n"); //1.4142135623 */
@@ -2994,10 +2995,14 @@ public class Num implements Comparable<Num> {
     /**  CODE: Num a = new Num("3.0"); System.out.println(a.valueOf()); //3.0 */
     public String valueOf() { return this.n; }
 
-     /** length, Num DIGIT CHARACTER SIZE (RAM) */
-    /**  CODE: Num a = new Num("-3.141592654"); Num.print(a.length(), "\n"); //39 */
-    public int length() { return this.n.length() + this.L_n0 + this.L_n1 + this.n2.length() + 16; }
+     /** size, Num DIGIT CHARACTER SIZE (EXTIMATED RAM) */
+    /**  CODE: Num a = new Num("-3.141592654"); Num.print(a.size(), "\n"); //39 */
+    public int size() { return this.n.length() + this.L_n0 + this.L_n1 + this.n2.length() + 16; }
 
+    /** length, Num.n PROPERTY STRING LENGTH */
+    /**  CODE: Num a = new Num("-3.141592654"); Num.print(a.length(), "\n"); //39 */
+    public int length() { return this.n.length(); }
+    
    /** Len, RETURN AN ARRAY WITH NUM LENGTHS BEFORE AND AFTER FLOATING POINT DOT */
   /**  CODE: Num a = new Num("3.1415"); a.Print("\r\n") ; Num.print(a.Len()[0] + " " + a.Len()[1] + "\r\n"); //3.1415 1 4 */
   public int[] Len() { 
