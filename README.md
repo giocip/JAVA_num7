@@ -596,3 +596,30 @@ A. You must use double quotes or string conversion:
 		new Num("0.1");    		   	   //Num("0.1")  
 		new Num(0.1 + "").toString(); //"0.1" 		
 
+Q. I have two float variables in my code:  
+
+	> double a = 0.1; double b = 0.2;  
+	
+How can i convert them in Num type?  
+A. With Num.float2num method (or directly with String() built-in function): 
+
+	double a = 0.1, b = 0.2;   
+	Num an= Num.float2num(a); Num bn = Num.float2num(b); 
+	Num.print(an.Add(bn).toString(), " => OK. VS  "); Num.print(a+b, " => PRECISION FAILURE!"); //0.3 => OK. VS  0.30000000000000004 => PRECISION FAILURE!
+
+Q. Can i do add or other math operations also with 10,000 digits after floating point?  
+A. Yes, you can by the following:
+
+	Num.print((new Num("1.123456789e-10_000").Add(new Num("3.987654321e-10_000"))).Num2exp(), "\r\n");     //5.11111111e-10000  
+	Num.print((new Num("1.123456789e-10_000").Sub(new Num("3.987654321e-10_000"))).Num2exp(), "\r\n");    //-2.864197532e-10000  
+	Num.print((new Num("1.123456789e-10_000").Mul(new Num("3.987654321e-10_000"))).Num2exp(), "\r\n");   //4.479957319112635269e-20000  
+	Num.print((new Num("1.123456789e-10_000").Div(new Num("3.987654321e-10_000"))).toString(), "\r\n"); //0.281... (10011 digits)
+
+Q. I must enter many integer variables in my code:  
+
+	> Num a = new Num("123.0"); Num b = new Num("456.0"); Num c = new Num("789.0");
+	
+Can i input them without quotes and suffix .0?  
+A. Yes, this the way:
+
+	Num a = new Num(123); Num b = new Num(456); Num c = new Num(789); 
