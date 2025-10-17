@@ -50,6 +50,7 @@ public class App {
   /* FORMAT  */ Num.printf("3005.141592654", 6, false, "\r\n"); //3,005.141593
   /* FORMAT  */ Num.printf("3005.941592654", 0, true, "\r\n"); //3.006
   Num.print("----------------------\n"); 
-  Num.print("*** num7.Num CHEATING TABLE FUNCTIONS LIBRARY ***");  
+  Num.print("*** num7.Num CHEATING TABLE FUNCTIONS LIBRARY ***\r\n");  
  }
+
 }
