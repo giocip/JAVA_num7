@@ -2368,9 +2368,14 @@ public class Num implements Comparable<Num> {
     public static double toFloat(Num a) { return Double.parseDouble(a.n); }
 
      /** ieee754, FLOAT TO IEEE754 CONVERSION METHOD */
-    /**  CODE: Num a = Num.ieee754(0.1); Num.print(a.toString(), "\r\n"); //0.1000000000000000055511151231257827021181583404541015625 */
-    public static Num ieee754(double a) { BigDecimal an = new BigDecimal(a); return new Num(an.toPlainString()); }
-
+    /**  CODE: for(double i = 0; i < 1.0; i = i + 0.1) Num.print(Num.ieee754(i), "\r\n"); 0.0 0.1000000000000000055511151231257827021181583404541015625 0.200000000000000011102230246251565404236316680908203125 ... */
+    public static Num ieee754(double a) { 
+    	BigDecimal an = new BigDecimal(a); 
+    	Num k = new Num(0);
+    	try { k = new Num(an.toPlainString()); }
+    	catch(Exception e) { return new Num(a + ""); }
+    	return new Num(an.toPlainString());
+    }
      /** sqrt, SQUARE ROOT METHOD BY Num -DEFAULT TEN DECIMALs */
     /**  CODE: Num.print(Num.sqrt(new Num("2.0")), "\r\n"); //1.4142135623 */
     public static Num sqrt(Num n) { return Num.sqrt(n, 10); }
