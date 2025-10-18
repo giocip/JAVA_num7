@@ -2376,6 +2376,7 @@ public class Num implements Comparable<Num> {
     	catch(Exception e) { return new Num(a + ""); }
     	return new Num(an.toPlainString());
     }
+	
      /** sqrt, SQUARE ROOT METHOD BY Num -DEFAULT TEN DECIMALs */
     /**  CODE: Num.print(Num.sqrt(new Num("2.0")), "\r\n"); //1.4142135623 */
     public static Num sqrt(Num n) { return Num.sqrt(n, 10); }
