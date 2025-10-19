@@ -2102,9 +2102,9 @@ public class Num implements Comparable<Num> {
     return PRICE_BASE.Add(PCT);
   }
   
-   /** len, RETURN AN ARRAY WITH NUM LENGTHS BEFORE AND AFTER FLOATING POINT DOT */
-  /**  CODE: Num a = new Num("3.1415"); a.Print("\r\n") ; Num.print(Num.len(a)[0] + " " + Num.len(a)[1] + "\r\n"); //3.1415 1 4 */
-  public static int[] len(Num n) { return n.Len(); } 
+   /** len, RETURN Num STRING LENGTH */
+  /**  CODE: Num a = new Num(100); Num.print(a, " "); Num.print(Num.len(a), "\r\n"); //100.0 5 */
+  public static int len(Num n) { return n.length(); } 
   
    /** is OPERATOR, TWO VARIABLES WITH A SAME ADDRESS MEANS ONE OBJECT) */ 
   /**  CODE: Num a = new Num("3.14"); Num b = a; Num.print(Num.is(a, b), "\r\n"); //true */
