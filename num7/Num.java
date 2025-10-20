@@ -2368,13 +2368,13 @@ public class Num implements Comparable<Num> {
     public static double toFloat(Num a) { return Double.parseDouble(a.n); }
 
      /** ieee754, FLOAT TO IEEE754 CONVERSION METHOD */
-    /**  CODE: for(double i = 0; i < 1.0; i = i + 0.1) Num.print(Num.ieee754(i), "\r\n"); 0.0 0.1000000000000000055511151231257827021181583404541015625 0.200000000000000011102230246251565404236316680908203125 ... */
+    /**  CODE: for(double i = 0; i < 1.0; i = i + 0.1) Num.print(Num.ieee754(i), "\r\n"); //0.0 0.1000000000000000055511151231257827021181583404541015625 0.200000000000000011102230246251565404236316680908203125 ... */
     public static Num ieee754(double a) { 
     	BigDecimal an = new BigDecimal(a); 
     	Num k = new Num(0);
     	try { k = new Num(an.toPlainString()); }
     	catch(Exception e) { return new Num(a + ""); }
-    	return new Num(an.toPlainString());
+    	return k;
     }
 	
      /** sqrt, SQUARE ROOT METHOD BY Num -DEFAULT TEN DECIMALs */
