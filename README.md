@@ -26,7 +26,7 @@ Fairly portable to Python one (and vice-versa) also a jvm system can work with a
 
 ## Installation num7 package by MAVEN REPOSITORY:
 
-	[https://mvnrepository.com/artifact/io.github.giocip/num7](https://mvnrepository.com/artifact/io.github.giocip/num7)
+[num7 package](https://mvnrepository.com/artifact/io.github.giocip/num7)
 
 ---
 
