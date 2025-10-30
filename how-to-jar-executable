@@ -1,0 +1,25 @@
+🧩 1. Compile your Java code
+  If your main class is App.java, compile it: 
+    
+      App Main.java
+
+This will produce a App.class file (and possibly others).
+
+  
+📦 2. Create a manifest file
+  You need a file called manifest.txt that tells Java which class to run:
+
+    manifest.txt => Main-Class: Main
+⚠️ Note: There must be a newline at the end of this file!
+
+
+🪄 3. Package into a JAR
+  Run this command to create the executable JAR:
+
+    jar cfm mutuo.jar manifest.txt App.class num7/Num.class
+
+  
+🚀 4. Run the JAR
+  Now you can run your program like this:
+
+    java -jar App.jar
