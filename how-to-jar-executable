@@ -1,7 +1,7 @@
 🧩 1. Compile your Java code
   If your main class is App.java, compile it: 
     
-      App Main.java
+    javac App.java
 
 This will produce a App.class file (and possibly others).
 
