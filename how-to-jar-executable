@@ -16,10 +16,10 @@ This will produce a App.class file (and possibly others).
 🪄 3. Package into a JAR
   Run this command to create the executable JAR:
 
-    jar cfm mutuo.jar manifest.txt App.class num7/Num.class
+    jar cfm app.jar manifest.txt App.class num7/Num.class
 
   
 🚀 4. Run the JAR
   Now you can run your program like this:
 
-    java -jar App.jar
+    java -jar app.jar
