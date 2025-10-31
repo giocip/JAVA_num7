@@ -9,7 +9,7 @@ This will produce a App.class file (and possibly others).
 📦 2. Create a manifest file
   You need a file called manifest.txt that tells Java which class to run:
 
-    manifest.txt => Main-Class: Main
+    manifest.txt => Main-Class: App
 ⚠️ Note: There must be a newline at the end of this file!
 
 
