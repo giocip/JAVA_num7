@@ -2173,7 +2173,7 @@ public class Num implements Comparable<Num> {
   public static Num f_price_spinoff(String price, String t) { Num THIS = new Num(new Num(price).Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
 
    /** f_fund_fr, FRENCH FINANCING MONTH MORTGAGE BY Num */
-  /**  CODE: /* Num principal = new Num("80_000.00"); Num rate = new Num(3); int years = 120; Num.print(Num.f_fund_fr(principal, rate, years).Round(2), "\r\n"); //772.49 */
+  /**  CODE: Num principal = new Num("80_000.00"); Num rate = new Num(3); int months = 120; Num.print(Num.f_fund_fr(principal, rate, months).Round(2), "\r\n"); //772.49 */
   public static Num f_fund_fr(Num asset, Num I, int n) {
 	  Num i = I.Div(100).Div(12);
 	  Num K = new Num(i.Add(1).Pow(n));
