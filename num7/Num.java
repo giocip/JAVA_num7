@@ -2172,23 +2172,15 @@ public class Num implements Comparable<Num> {
   /**  CODE: Num priceRaw = Num.f_price_spinoff("100.0", "22.0").Round(2); priceRaw.Print("\r\n"); //81.97 */
   public static Num f_price_spinoff(String price, String t) { Num THIS = new Num(new Num(price).Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
 
-   /** f_fund_fr, FRENCH FINANCING MONTH MORTGAGE (HIGH PRECISION) BY Num */
-  /**  CODE: Num principal = new Num("150_000.00"); Num rate = new Num(3); int years = 30; Num.print(Num.f_fund_fr(principal, rate, years).Round(2), "\r\n"); //637.74 */
-  public static Num f_fund_fr(Num asset, Num I, int y) {
-    Num i = I.Div(100);
-    Num one = new Num(1);
-    return asset.Mul(i).Div(one.Sub(one.Add(i).Pow(-y))).Div(12);
-  }  
-
-   /** f_fund_fr, FRENCH FINANCING MONTH MORTGAGE (HIGH PRECISION) BY String */
-  /**  CODE: String principal = "150_000.00"; String rate = "3.0"; int years = 30; Num.print(Num.f_fund_fr(principal, rate, years).Round(2), "\r\n"); //637.74 */
-  public static Num f_fund_fr(String ASSET, String ii, int y) {
-	  Num I = new Num(ii);
-	  Num asset = new Num(ASSET);
-	  Num i = I.Div(100);
-	  Num one = new Num(1);
-	  return asset.Mul(i).Div(one.Sub(one.Add(i).Pow(-y))).Div(12);
-  }  
+   /** f_fund_fr, FRENCH FINANCING MONTH MORTGAGE BY Num */
+  /**  CODE: /* Num principal = new Num("80_000.00"); Num rate = new Num(3); int years = 120; Num.print(Num.f_fund_fr(principal, rate, years).Round(2), "\r\n"); //772.49 */
+  public static Num f_fund_fr(Num asset, Num I, int n) {
+	  Num i = I.Div(100).Div(12);
+	  Num K = new Num(i.Add(1).Pow(n));
+	  Num N = new Num(asset.Mul(i).Mul(K));
+	  Num D = new Num(K.Sub(1));	  
+	  return N.Div(D);
+  } 
   
    /** f_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY Num */
   /**  CODE: Num.f_perf(new Num(50), new Num(75)).Print("\r\n"); //50.0 */
