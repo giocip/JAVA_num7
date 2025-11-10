@@ -1,2 +1,3 @@
 javac -cp   num7-1.0.0.jar App.java
-java  -cp .:num7-1.0.0.jar App
+java  -cp .:num7-1.0.0.jar App #LINUX
+java  -cp .;num7-1.0.0.jar App #WIN11
