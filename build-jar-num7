@@ -1,5 +1,5 @@
-javac --release 24 num7/Num.java
-jar cf num7-1.0.0.jar num7/Num.class
-jar cf num7-1.0.0-sources.jar num7/Num.java
+javac --release 21 num7/Num.java
+jar cf num7.jar num7/Num.class
+jar cf num7-sources.jar num7/Num.java
 javadoc -d doc num7/Num.java
-jar cf num7-1.0.0-javadoc.jar -C doc .
+jar cf num7-javadoc.jar -C doc .
