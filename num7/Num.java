@@ -130,11 +130,11 @@ public class Num implements Comparable<Num> {
     /** METHODS */
 
      /** RETURN pi */
-    /** Num.print(new Num(Num.pi()).Round(), "\r\n"); //3.14 */
+    /** Num.print(new Num(Num.pi()).Round(), "\n"); //3.14 */
     public static String pi() { return Num.PI; }
 
      /** RETURN e */
-    /**  Num.print(new Num(Num.e()).Round(), "\r\n"); //2.72 */
+    /**  Num.print(new Num(Num.e()).Round(), "\n"); //2.72 */
     public static String e() { return Num.E; }
 
     /** CONVERT A SCIENTIFIC NOTATION STRING NUMBER TO STRING NUMERIC */
@@ -250,7 +250,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** CONVERT A Num OBJECT TO SCIENTIFIC NOTATION STRING */  
-  /**  CODE: Num a = new Num("1_250.75"); Num.print(Num.num2exp(a), "\r\n"); //1.25075e3 */
+  /**  CODE: Num a = new Num("1_250.75"); Num.print(Num.num2exp(a), "\n"); //1.25075e3 */
   public static String num2exp(Num ob) {
       String CHECK, n1;
       int e, L_n1;
@@ -280,7 +280,7 @@ public class Num implements Comparable<Num> {
         System.out.print("n2="); System.out.print(n.n2 + " ");
         System.out.print("L_n0="); System.out.print(n.L_n0 + " ");
         System.out.print("L_n1="); System.out.print(n.L_n1 + " ");
-        System.out.print("d="); System.out.print(n.d + "\r\n");
+        System.out.print("d="); System.out.print(n.d + "\n");
     }
 
      /** PRINT FOR FORMATTING EUR CURRENCY */
@@ -288,7 +288,7 @@ public class Num implements Comparable<Num> {
     public static PrintStream printf(Num n) { return System.out.printf(Locale.ITALY, "%,.2f", n.Round(2).toFloat()); }
 
      /** PRINT FOR FORMATTING EUR CURRENCY */
-    /** CODE: Num.printf(new Num("3000.141592654"), "\r\n"); //3.000,14 */
+    /** CODE: Num.printf(new Num("3000.141592654"), "\n"); //3.000,14 */
     public static PrintStream printf(Num n, String cr) { return System.out.printf(Locale.ITALY, "%,.2f" + cr, n.Round(2).toFloat()); }
 
      /** PRINT FOR FORMATTING EUR CURRENCY */
@@ -296,7 +296,7 @@ public class Num implements Comparable<Num> {
     public static PrintStream printf(String n) { return System.out.printf(Locale.ITALY, "%,.2f", new Num(n).Round(2).toFloat()); }
 
      /** PRINT FOR FORMATTING EUR CURRENCY */
-    /** CODE: Num.printf("3000.141592654", "\r\n"); //3.000,14 */
+    /** CODE: Num.printf("3000.141592654", "\n"); //3.000,14 */
     public static PrintStream printf(String n, String cr) { return System.out.printf(Locale.ITALY, "%,.2f" + cr, new Num(n).Round(2).toFloat()); }
 
      /** PRINT FOR FORMATTING EUR, US CURRENCY */
@@ -309,7 +309,7 @@ public class Num implements Comparable<Num> {
     }
 
      /** PRINT FOR FORMATTING EUR, US CURRENCY */
-    /** CODE: Num.printf(new Num("3000.141592654"), 2, false, "\r\n"); //3,000.14 */
+    /** CODE: Num.printf(new Num("3000.141592654"), 2, false, "\n"); //3,000.14 */
     public static PrintStream printf(Num n, int DECs, boolean EUR, String cr) { 
       DECs = DECs < 0 ? 0 : DECs;
       String DECs_S = DECs + "";
@@ -318,7 +318,7 @@ public class Num implements Comparable<Num> {
     }
 
      /** PRINT FOR FORMATTING EUR, US CURRENCY */
-    /** CODE: Num.printf("3000.141592654", 2, false, "\r\n"); //3,000.14 */
+    /** CODE: Num.printf("3000.141592654", 2, false, "\n"); //3,000.14 */
     public static PrintStream printf(String n, int DECs, boolean EUR, String cr) { 
       DECs = DECs < 0 ? 0 : DECs;
       String DECs_S = DECs + "";
@@ -350,14 +350,14 @@ public class Num implements Comparable<Num> {
     }
 
      /** PRINT FOR FORMATTING EUR, US CURRENCY */
-    /** CODE: Num.printf(new Num("3000.141592654"), false, "\r\n"); //3,000.14 */
+    /** CODE: Num.printf(new Num("3000.141592654"), false, "\n"); //3,000.14 */
     public static PrintStream printf(Num n, boolean EUR, String cr) { 
       if(EUR == true) return System.out.printf(Locale.ITALY, "%,.2f" + cr, n.Round(2).toFloat()); 
       return System.out.printf(Locale.US, "%,.2f" + cr, n.Round(2).toFloat()); 
     }
 
      /** PRINT FOR FORMATTING EUR, US CURRENCY */
-    /** CODE: Num.printf("3000.141592654", false, "\r\n"); //3,000.14 */
+    /** CODE: Num.printf("3000.141592654", false, "\n"); //3,000.14 */
     public static PrintStream printf(String n, boolean EUR, String cr) { 
       if(EUR == true) return System.out.printf(Locale.ITALY, "%,.2f" + cr, new Num(n).Round(2).toFloat()); 
       return System.out.printf(Locale.US, "%,.2f" + cr, new Num(n).Round(2).toFloat()); 
@@ -388,7 +388,7 @@ public class Num implements Comparable<Num> {
     public static void print(Num n) { System.out.print(n.toString()); }
 
      /** PRINT Num, String (VIDEO OUTPUT) */
-    /** CODE: Num a = new Num("-3.141592654"); Num.print(a, "\r\n"); //-3.141592654 */
+    /** CODE: Num a = new Num("-3.141592654"); Num.print(a, "\n"); //-3.141592654 */
     public static void print(Num n, String s) { System.out.print(n.toString() + s); }
 
      /** PRINT byte (VIDEO OUTPUT) */
@@ -396,7 +396,7 @@ public class Num implements Comparable<Num> {
     public static void print(byte n) { System.out.print(n); }
 
      /** PRINT byte, String (VIDEO OUTPUT) */
-    /** CODE: byte a = 127; Num.print(a, "\r\n"); //127 */
+    /** CODE: byte a = 127; Num.print(a, "\n"); //127 */
     public static void print(byte n, String s) { System.out.print(n + s); }
     
      /** PRINT char (VIDEO OUTPUT) */
@@ -404,7 +404,7 @@ public class Num implements Comparable<Num> {
     public static void print(char n) { System.out.print(n); }
     
      /** PRINT char, String (VIDEO OUTPUT) */
-    /** CODE: char a = 'A'; Num.print(a, "\r\n"); //'A' */
+    /** CODE: char a = 'A'; Num.print(a, "\n"); //'A' */
     public static void print(char n, String s) { System.out.print(n + s); }
     
      /** PRINT int (VIDEO OUTPUT) */
@@ -412,7 +412,7 @@ public class Num implements Comparable<Num> {
     public static void print(int n) { System.out.print(n); }
     
      /** PRINT int, String (VIDEO OUTPUT) */
-    /** CODE: int a = 3; Num.print(a, "\r\n"); //3 - CARRIAGE RETURN */
+    /** CODE: int a = 3; Num.print(a, "\n"); //3 - CARRIAGE RETURN */
     public static void print(int n, String txt) { System.out.print(n + txt); }
 
      /** PRINT long (VIDEO OUTPUT) */
@@ -420,7 +420,7 @@ public class Num implements Comparable<Num> {
     public static void print(long n) { System.out.print(n); }
 
      /** PRINT long, String (VIDEO OUTPUT) */
-    /** CODE: long n = 2000000000L; Num.print(n, "\r\n"); //2000000000 */
+    /** CODE: long n = 2000000000L; Num.print(n, "\n"); //2000000000 */
     public static void print(long n, String txt) { System.out.print(n + txt); }
 
      /** PRINT BigInteger (VIDEO OUTPUT) */
@@ -428,7 +428,7 @@ public class Num implements Comparable<Num> {
     public static void print(BigInteger n) { System.out.print(n.toString()); }
 
      /** PRINT BigInteger, String (VIDEO OUTPUT) */
-    /** CODE: BigInteger n = new BigInteger("2000000000"); Num.print(n, "\r\n"); //2000000000 */
+    /** CODE: BigInteger n = new BigInteger("2000000000"); Num.print(n, "\n"); //2000000000 */
     public static void print(BigInteger n, String txt) { System.out.print(n.toString() + txt); }
 
      /** PRINT double (VIDEO OUTPUT) */
@@ -436,7 +436,7 @@ public class Num implements Comparable<Num> {
     public static void print(double n) { System.out.print(n); }
 
      /** PRINT double, String (VIDEO OUTPUT) */
-    /** CODE: double n = 1.123456; Num.print(n, "\r\n"); //1.123456 */
+    /** CODE: double n = 1.123456; Num.print(n, "\n"); //1.123456 */
     public static void print(double n, String txt) { System.out.print(n + txt); }
 
      /** PRINT boolean (VIDEO OUTPUT) */
@@ -444,7 +444,7 @@ public class Num implements Comparable<Num> {
     public static void print(boolean n) { System.out.print(n); }
     
      /** PRINT boolean, String(VIDEO OUTPUT) */
-    /** CODE: boolean a = true; Num.print(a, "\r\n"); //true */
+    /** CODE: boolean a = true; Num.print(a, "\n"); //true */
     public static void print(boolean n, String txt) { System.out.print(n + txt); }
     
      /** PRINT ArrayList<Num> (VIDEO OUTPUT) */
@@ -452,11 +452,11 @@ public class Num implements Comparable<Num> {
     public static void print(ArrayList<Num> NL) { System.out.print(NL); }
     
      /** PRINT ArrayList<Num>, String (VIDEO OUTPUT) */
-    /** ArrayList<Num> a = new ArrayList<>(Arrays.asList(new Num("3.0"), new Num("4.0"), new Num("5.0"))); Num.print(a, "\r\n"); //[3.0, 4.0, 5.0] */
+    /** ArrayList<Num> a = new ArrayList<>(Arrays.asList(new Num("3.0"), new Num("4.0"), new Num("5.0"))); Num.print(a, "\n"); //[3.0, 4.0, 5.0] */
     public static void print(ArrayList<Num> NL, String txt) { System.out.print(NL + txt); }
     
      /** PRINT Num Array (VIDEO OUTPUT) */
-    /** Num a[] = { new Num("3.0"), new Num("4.0"), new Num("5.0") }; Num.print(a, "\r\n"); //[3.0, 4.0, 5.0] */
+    /** Num a[] = { new Num("3.0"), new Num("4.0"), new Num("5.0") }; Num.print(a, "\n"); //[3.0, 4.0, 5.0] */
     public static void print(Num[] A, String txt) { 
       ArrayList<Num> NL = new ArrayList<>(Arrays.asList(A));
       System.out.print(NL + txt); 
@@ -499,103 +499,103 @@ public class Num implements Comparable<Num> {
     }
 
    /** (+) CALCULATOR ADDITION METHOD */
-  /**  CODE: Num.print(Num.add(new Num("2.1"), new Num("3.2")), "\r\n"); //5.3 */
+  /**  CODE: Num.print(Num.add(new Num("2.1"), new Num("3.2")), "\n"); //5.3 */
   public static Num add(Num a, Num b) { return a.Add(b); }
   
    /** (+) CALCULATOR ADDITION METHOD */
-  /**  CODE: Num.print(Num.add("2.1", "3.2"), "\r\n"); //5.3 */
+  /**  CODE: Num.print(Num.add("2.1", "3.2"), "\n"); //5.3 */
   public static Num add(String a, String b) { Num A = new Num(a); Num B = new Num(b); return A.Add(B); }
 
    /** (+) CALCULATOR ADDITION METHOD */
-  /**  CODE: Num.print(Num.add(2, 3), "\r\n"); //5.0 */
+  /**  CODE: Num.print(Num.add(2, 3), "\n"); //5.0 */
   public static Num add(int a, int b) { Num A = new Num(a); Num B = new Num(b); return A.Add(B); }
 
    /** (+) CALCULATOR ADDITION METHOD */
-  /**  CODE: Num.print(Num.add(1000000000L, 999999999L), "\r\n"); //1999999999.0 */
+  /**  CODE: Num.print(Num.add(1000000000L, 999999999L), "\n"); //1999999999.0 */
   public static Num add(long a, long b) { Num A = new Num(a); Num B = new Num(b); return A.Add(B); }
 
    /** (+) CALCULATOR ADDITION METHOD */
-  /**  CODE: Num.print(Num.add(new BigInteger("100000000000000000000"), new BigInteger("99999999999999999999")), "\r\n"); //199999999999999999999.0 */
+  /**  CODE: Num.print(Num.add(new BigInteger("100000000000000000000"), new BigInteger("99999999999999999999")), "\n"); //199999999999999999999.0 */
   public static Num add(BigInteger a, BigInteger b) { Num A = new Num(a); Num B = new Num(b); return A.Add(B); }
 
    /**  (-) CALCULATOR SUBTRACTION METHOD */
-  /**  CODE: Num.print(Num.sub(new Num("2.1"), new Num("3.2")), "\r\n"); //-1.1 */
+  /**  CODE: Num.print(Num.sub(new Num("2.1"), new Num("3.2")), "\n"); //-1.1 */
   public static Num sub(Num a, Num b) { return a.Sub(b); }
 
    /**  (-) CALCULATOR SUBTRACTION METHOD */
-  /**  CODE: Num.print(Num.sub("2.1", "3.2"), "\r\n"); //-1.1 */
+  /**  CODE: Num.print(Num.sub("2.1", "3.2"), "\n"); //-1.1 */
   public static Num sub(String a, String b) { Num A = new Num(a); Num B = new Num(b); return A.Sub(B); }
 
    /**  (-) CALCULATOR SUBTRACTION METHOD */
-  /**  CODE: Num.print(Num.sub(2, 3), "\r\n"); //-1.0 */
+  /**  CODE: Num.print(Num.sub(2, 3), "\n"); //-1.0 */
   public static Num sub(int a, int b) { Num A = new Num(a); Num B = new Num(b); return A.Sub(B); }
 
    /**  (-) CALCULATOR SUBTRACTION METHOD */
-  /**  CODE: Num.print(Num.sub(1000000000L, 999999999L), "\r\n"); //1.0 */
+  /**  CODE: Num.print(Num.sub(1000000000L, 999999999L), "\n"); //1.0 */
   public static Num sub(long a, long b) { Num A = new Num(a); Num B = new Num(b); return A.Sub(B); }
 
    /**  (-) CALCULATOR SUBTRACTION METHOD */
-  /**  CODE: Num.print(Num.sub(new BigInteger("100000000000000000000"), new BigInteger("99999999999999999999")), "\r\n"); //1.0 */
+  /**  CODE: Num.print(Num.sub(new BigInteger("100000000000000000000"), new BigInteger("99999999999999999999")), "\n"); //1.0 */
   public static Num sub(BigInteger a, BigInteger b) { Num A = new Num(a); Num B = new Num(b); return A.Sub(B); }
   
    /** (*) CALCULATOR MULTIPLICATION METHOD */
-  /**  CODE: Num.print(Num.mul(new Num("2.1"), new Num("3.2")), "\r\n"); //6.72 */
+  /**  CODE: Num.print(Num.mul(new Num("2.1"), new Num("3.2")), "\n"); //6.72 */
   public static Num mul(Num a, Num b) { return a.Mul(b); }
 
-  /**  CODE: Num.print(Num.mul("2.1", "3.2"), "\r\n"); //6.72 */
+  /**  CODE: Num.print(Num.mul("2.1", "3.2"), "\n"); //6.72 */
   public static Num mul(String a, String b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(B); }
 
-  /**  CODE: Num.print(Num.mul(2, 3), "\r\n"); //6.0 */
+  /**  CODE: Num.print(Num.mul(2, 3), "\n"); //6.0 */
   public static Num mul(int a, int b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(B); }
 
-  /**  CODE: Num.print(Num.mul(1000000000L, 999999999L), "\r\n"); //999999999000000000.0 */
+  /**  CODE: Num.print(Num.mul(1000000000L, 999999999L), "\n"); //999999999000000000.0 */
   public static Num mul(long a, long b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(B); }
 
-  /**  CODE: Num.print(Num.mul(new BigInteger("100000000000000000000"), new BigInteger("99999999999999999999")), "\r\n"); //9999999999999999999900000000000000000000.0 */
+  /**  CODE: Num.print(Num.mul(new BigInteger("100000000000000000000"), new BigInteger("99999999999999999999")), "\n"); //9999999999999999999900000000000000000000.0 */
   public static Num mul(BigInteger a, BigInteger b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(B); }
 
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD -DEFAULT PRECISION BY 80 */
-  /**  Num.print(Num.inv(new Num("3.0")), "\r\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333 */
+  /**  Num.print(Num.inv(new Num("3.0")), "\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333 */
   public static Num inv(Num n) { int precision = 80; Num one = new Num("1.0", precision); return one.Div(n, precision); }
 
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD -DEFAULT PRECISION BY 80 */
-  //   CODE: Num.print(Num.inv("3.0"), "\r\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333
+  //   CODE: Num.print(Num.inv("3.0"), "\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333
   public static Num inv(String n) { int precision = 80; Num one = new Num("1.0", precision); return one.Div(new Num(n), precision); }
    
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD -DEFAULT PRECISION BY 80 */
-  /**   CODE: Num.print(Num.inv(3), "\r\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333 */
+  /**   CODE: Num.print(Num.inv(3), "\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333 */
   public static Num inv(int n) { int precision = 80; Num one = new Num("1.0", precision); return one.Div(new Num(n), precision); }
    
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD -DEFAULT PRECISION BY 80 */
-  /**   CODE: Num.print(Num.inv(3000000000L), "\r\n"); //0.00000000033333333333333333333333333333333333333333333333333333333333333333333333 */
+  /**   CODE: Num.print(Num.inv(3000000000L), "\n"); //0.00000000033333333333333333333333333333333333333333333333333333333333333333333333 */
   public static Num inv(long n) { int precision = 80; Num one = new Num("1.0", precision); return one.Div(new Num(n), precision); }
   
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD -DEFAULT PRECISION BY 80 */
-  /** CODE: Num.print(Num.inv(new BigInteger("3")).Round(6).toEXP(), "\r\n"); //3.33333e-1 */
+  /** CODE: Num.print(Num.inv(new BigInteger("3")).Round(6).toEXP(), "\n"); //3.33333e-1 */
   public static Num inv(BigInteger n) { int precision = 80; Num one = new Num("1.0", precision); return one.Div(new Num(n), precision); }
   
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD */
-  /** CODE: Num.print(Num.inv(new Num("9234567890123456789012345678901234567890.0"), 46).toEXP(), "\r\n"); //1.0828877018376991066195041298565409435617e-40 */
+  /** CODE: Num.print(Num.inv(new Num("9234567890123456789012345678901234567890.0"), 46).toEXP(), "\n"); //1.0828877018376991066195041298565409435617e-40 */
   public static Num inv(Num n, int precision) { Num one = new Num("1.0", precision); return one.Div(n, precision); }
 
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD */
-  /** CODE: Num.print(Num.inv("9234567890123456789012345678901234567890.0", 46).toEXP(), "\r\n"); //1.082887e-40 */
+  /** CODE: Num.print(Num.inv("9234567890123456789012345678901234567890.0", 46).toEXP(), "\n"); //1.082887e-40 */
   public static Num inv(String n, int precision) { Num one = new Num("1.0", precision); return one.Div(new Num(n, precision), precision); }
    
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD */
-  /**  CODE: Num.print(Num.inv(3, 6).toEXP(), "\r\n"); //3.33333e-1 */
+  /**  CODE: Num.print(Num.inv(3, 6).toEXP(), "\n"); //3.33333e-1 */
   public static Num inv(int n, int precision) { Num one = new Num("1.0", precision); return one.Div(new Num(n + ".0", precision), precision); }
    
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD */
-  /** CODE: Num.print(Num.inv(3L, 6).toEXP(), "\r\n"); //3.33333e-1 */
+  /** CODE: Num.print(Num.inv(3L, 6).toEXP(), "\n"); //3.33333e-1 */
   public static Num inv(long n, int precision) { Num one = new Num("1.0", precision); return one.Div(new Num(n + ".0", precision), precision); }
    
    /** (1/n) CALCULATOR NUMBER INVERSE METHOD */
-  /**  CODE: Num.print(Num.inv(new BigInteger("3"), 6).toEXP(), "\r\n"); //3.33333e-1 */
+  /**  CODE: Num.print(Num.inv(new BigInteger("3"), 6).toEXP(), "\n"); //3.33333e-1 */
   public static Num inv(BigInteger n, int precision) { Num one = new Num("1.0", precision); return one.Div(new Num(n + ".0", precision), precision); }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div(new Num("1_234.001"), new Num("9.14")), "\r\n"); //135.01105032822757111597374179431072210065645514223194748358862144420131291028446389 */
+  /**  CODE: Num.print(Num.div(new Num("1_234.001"), new Num("9.14")), "\n"); //135.01105032822757111597374179431072210065645514223194748358862144420131291028446389 */
   public static Num div(Num n, Num DIV) { //DEFAULT d = 80
       int d = 80;
       int D = DIV.L_n0 + n.L_n0 + DIV.L_n1 + n.L_n1; //AUTOMATIC FLOATING POINT COUNT
@@ -603,7 +603,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /** CODE: Num.print(Num.div("1_234.001", "9.14"), "\r\n"); //135.01105032822757111597374179431072210065645514223194748358862144420131291028446389 */
+  /** CODE: Num.print(Num.div("1_234.001", "9.14"), "\n"); //135.01105032822757111597374179431072210065645514223194748358862144420131291028446389 */
   public static Num div(String N, String div) { //DEFAULT d = 80
       int d = 80;
       Num DIV = new Num(div);
@@ -613,7 +613,7 @@ public class Num implements Comparable<Num> {
   }
   
    /** (/) CALCULATOR DIVISION METHOD */
-  /** CODE: Num.print(Num.div(1234, 914), "\r\n"); //1.35010940919037199124726477024070021881838074398249452954048140043763676148796498 */
+  /** CODE: Num.print(Num.div(1234, 914), "\n"); //1.35010940919037199124726477024070021881838074398249452954048140043763676148796498 */
   public static Num div(int N, int div) { //DEFAULT d = 80
       int d = 80;
       Num DIV = new Num(div);
@@ -623,7 +623,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div(1234L, 914L), "\r\n"); //1.35010940919037199124726477024070021881838074398249452954048140043763676148796498 */
+  /**  CODE: Num.print(Num.div(1234L, 914L), "\n"); //1.35010940919037199124726477024070021881838074398249452954048140043763676148796498 */
   public static Num div(long N, long div) { //DEFAULT d = 80
       int d = 80;
       Num DIV = new Num(div);
@@ -633,7 +633,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div(new BigInteger("1234"), new BigInteger("914")), "\r\n"); //1.35010940919037199124726477024070021881838074398249452954048140043763676148796498 */
+  /**  CODE: Num.print(Num.div(new BigInteger("1234"), new BigInteger("914")), "\n"); //1.35010940919037199124726477024070021881838074398249452954048140043763676148796498 */
   public static Num div(BigInteger N, BigInteger div) { //DEFAULT d = 80
     int d = 80;
     Num DIV = new Num(div);
@@ -643,7 +643,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div(new Num("1_234.001"), new Num("9.14"), 100), "\r\n"); //135.0110503282275711159737417943107221006564551422319474835886214442013129102844638949671772428884026258 */
+  /**  CODE: Num.print(Num.div(new Num("1_234.001"), new Num("9.14"), 100), "\n"); //135.0110503282275711159737417943107221006564551422319474835886214442013129102844638949671772428884026258 */
   public static Num div(Num n, Num DIV, int precision) { 
       int d = precision;
       int D = DIV.L_n0 + n.L_n0 + DIV.L_n1 + n.L_n1; //AUTOMATIC FLOATING POINT COUNT
@@ -651,7 +651,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div("1_234.001", "9.14", 100), "\r\n"); //135.0110503282275711159737417943107221006564551422319474835886214442013129102844638949671772428884026258 */
+  /**  CODE: Num.print(Num.div("1_234.001", "9.14", 100), "\n"); //135.0110503282275711159737417943107221006564551422319474835886214442013129102844638949671772428884026258 */
   public static Num div(String N, String div, int precision) { 
       int d = precision;
       Num DIV = new Num(div);
@@ -661,7 +661,7 @@ public class Num implements Comparable<Num> {
   }
   
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div(1234, 914, 100), "\r\n"); //1.3501094091903719912472647702407002188183807439824945295404814004376367614879649890590809628008752735 */
+  /**  CODE: Num.print(Num.div(1234, 914, 100), "\n"); //1.3501094091903719912472647702407002188183807439824945295404814004376367614879649890590809628008752735 */
   public static Num div(int N, int div, int precision) { 
       int d = precision;
       Num DIV = new Num(div);
@@ -671,7 +671,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE:  Num.print(Num.div(1234L, 914L, 100), "\r\n"); //1.3501094091903719912472647702407002188183807439824945295404814004376367614879649890590809628008752735 */
+  /**  CODE:  Num.print(Num.div(1234L, 914L, 100), "\n"); //1.3501094091903719912472647702407002188183807439824945295404814004376367614879649890590809628008752735 */
   public static Num div(long N, long div, int precision) {
       int d = precision;
       Num DIV = new Num(div);
@@ -681,7 +681,7 @@ public class Num implements Comparable<Num> {
   }
 
    /** (/) CALCULATOR DIVISION METHOD */
-  /**  CODE: Num.print(Num.div(new BigInteger("1234"), new BigInteger("914"), 100), "\r\n"); //1.3501094091903719912472647702407002188183807439824945295404814004376367614879649890590809628008752735 */
+  /**  CODE: Num.print(Num.div(new BigInteger("1234"), new BigInteger("914"), 100), "\n"); //1.3501094091903719912472647702407002188183807439824945295404814004376367614879649890590809628008752735 */
   public static Num div(BigInteger N, BigInteger div, int precision) { 
     int d = precision;
     Num DIV = new Num(div);
@@ -691,190 +691,190 @@ public class Num implements Comparable<Num> {
   }
   
    /** (%) MODULE BINARY OPERATOR (NUM FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num.print(Num.mod(new Num("1_234.001"), new Num( "9.14")), "\r\n"); //0.101 */
+  /**  CODE: Num.print(Num.mod(new Num("1_234.001"), new Num( "9.14")), "\n"); //0.101 */
   public static Num mod(Num n, Num DIV) { return n.Mod(DIV); }
   
    /** (%) MODULE BINARY OPERATOR (NUM FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num.print(Num.mod("1_234.001", "9.14"), "\r\n"); //0.101 */
+  /**  CODE: Num.print(Num.mod("1_234.001", "9.14"), "\n"); //0.101 */
   public static Num mod(String n, String DIV) { return new Num(n).Mod(new Num(DIV)); }
 
    /** (%) MODULE BINARY OPERATOR (NUM FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num.print(Num.mod(11, 7), "\r\n"); //4.0 */
+  /**  CODE: Num.print(Num.mod(11, 7), "\n"); //4.0 */
   public static Num mod(int n, int DIV) { return new Num(n).Mod(new Num(DIV)); }
 
    /** (%) MODULE BINARY OPERATOR (NUM FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num.print(Num.mod(11L, 7L), "\r\n"); //4.0 */
+  /**  CODE: Num.print(Num.mod(11L, 7L), "\n"); //4.0 */
   public static Num mod(long n, long DIV) { return new Num(n).Mod(new Num(DIV)); }
 
    /** (%) MODULE BINARY OPERATOR (NUM FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num.print(Num.mod(new BigInteger("11"), new BigInteger("7")), "\r\n"); //4.0 */
+  /**  CODE: Num.print(Num.mod(new BigInteger("11"), new BigInteger("7")), "\n"); //4.0 */
   public static Num mod(BigInteger n, BigInteger DIV) { return new Num(n).Mod(new Num(DIV)); }
 
    /** (/) CALCULATOR DIVISION AND MODULUS METHOD RETURN TWO ELEMENT ARRAY */
-  /**  CODE: Num[] QR = Num.divmod(new Num("1_234.001"),new Num( "9.14")); Num.print(QR[0].toString(), "\r\n", QR[1] + "\r\n"); //135.0 0.101 */
+  /**  CODE: Num[] QR = Num.divmod(new Num("1_234.001"),new Num( "9.14")); Num.print(QR[0].toString(), "\n", QR[1] + "\n"); //135.0 0.101 */
   public static Num[] divmod(Num n, Num DIV) { return n.DivMod(DIV); }
 
    /** (/) CALCULATOR DIVISION AND MODULUS METHOD RETURN TWO ELEMENT ARRAY */
-  /**  CODE: Num[] QR = Num.divmod("1_234.001", "9.14"); Num.print(QR[0].toString(), "\r\n", QR[1] + "\r\n"); //135.0 0.101 */
+  /**  CODE: Num[] QR = Num.divmod("1_234.001", "9.14"); Num.print(QR[0].toString(), "\n", QR[1] + "\n"); //135.0 0.101 */
   public static Num[] divmod(String n, String DIV) { return new Num(n).DivMod(new Num(DIV)); }
 
    /** (/) CALCULATOR DIVISION AND MODULUS METHOD RETURN TWO ELEMENT ARRAY */
-  /**  CODE: Num[] QR = Num.divmod(100, 84); Num.print(QR[0].toString(), "\r\n", QR[1] + "\r\n"); //1.0 16.0 */
+  /**  CODE: Num[] QR = Num.divmod(100, 84); Num.print(QR[0].toString(), "\n", QR[1] + "\n"); //1.0 16.0 */
   public static Num[] divmod(int n, int DIV) { return new Num(n).DivMod(new Num(DIV)); }
 
    /** (/) CALCULATOR DIVISION AND MODULUS METHOD RETURN TWO ELEMENT ARRAY */
-  /**  CODE: Num[] QR = Num.divmod(1000000000L, 999999984L); Num.print(QR[0].toString(), "\r\n", QR[1] + "\r\n"); //1.0 16.0 */
+  /**  CODE: Num[] QR = Num.divmod(1000000000L, 999999984L); Num.print(QR[0].toString(), "\n", QR[1] + "\n"); //1.0 16.0 */
   public static Num[] divmod(long n, long DIV) { return new Num(n).DivMod(new Num(DIV)); }
 
    /** (/) CALCULATOR DIVISION AND MODULUS METHOD RETURN TWO ELEMENT ARRAY */
-  /**  CODE: Num[] QR = Num.divmod(new BigInteger("1000000000000000"), new BigInteger("999999999999984")); Num.print(QR[0].toString(), "\r\n", QR[1] + "\r\n"); //1.0 16.0 */
+  /**  CODE: Num[] QR = Num.divmod(new BigInteger("1000000000000000"), new BigInteger("999999999999984")); Num.print(QR[0].toString(), "\n", QR[1] + "\n"); //1.0 16.0 */
   public static Num[] divmod(BigInteger n, BigInteger DIV) { return new Num(n).DivMod(new Num(DIV)); }
 
    /** INCREMENT VARIABLE ADDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.inc(a).Print("\r\n"); //4.0 */
+  /**  CODE: Num a = new Num(3); Num.inc(a).Print("\n"); //4.0 */
   public static Num inc(Num m) { return m.Inc(1); }
 
    /** INCREMENT VARIABLE ADDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.inc(a, new Num("2.1")).Print("\r\n"); //5.1 */
+  /**  CODE: Num a = new Num(3); Num.inc(a, new Num("2.1")).Print("\n"); //5.1 */
   public static Num inc(Num m, Num i) { return m.Inc(i); }
 
    /** INCREMENT VARIABLE ADDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.inc(a, "2.1").Print("\r\n"); //5.1 */
+  /**  CODE: Num a = new Num(3); Num.inc(a, "2.1").Print("\n"); //5.1 */
   public static Num inc(Num m, String i) { return m.Inc(i); }
 
    /** INCREMENT VARIABLE ADDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.inc(a, 2).Print("\r\n"); //5.0 */
+  /**  CODE: Num a = new Num(3); Num.inc(a, 2).Print("\n"); //5.0 */
   public static Num inc(Num m, int i) { return m.Inc(i); }
 
    /** INCREMENT VARIABLE ADDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.inc(a, 2L).Print("\r\n"); //5.0 */
+  /**  CODE: Num a = new Num(3); Num.inc(a, 2L).Print("\n"); //5.0 */
   public static Num inc(Num m, long i) { return m.Inc(i); }
 
    /** INCREMENT VARIABLE ADDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.inc(a, new BigInteger("2")).Print("\r\n"); //5.0 */
+  /**  CODE: Num a = new Num(3); Num.inc(a, new BigInteger("2")).Print("\n"); //5.0 */
   public static Num inc(Num m, BigInteger i) { return m.Inc(i); }
 
    /** INCREMENT VARIABLE MULTIPLYING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.incmul(a).Print("\r\n"); //6.0 */
+  /**  CODE: Num a = new Num(3); Num.incmul(a).Print("\n"); //6.0 */
   public static Num incmul(Num m) { return m.IncMul(2); }
 
    /** INCREMENT VARIABLE MULTIPLYING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.incmul(a, new Num("2.1")).Print("\r\n"); //6.3 */
+  /**  CODE: Num a = new Num(3); Num.incmul(a, new Num("2.1")).Print("\n"); //6.3 */
   public static Num incmul(Num m, Num i) { return m.IncMul(i); }
 
    /** INCREMENT VARIABLE MULTIPLYING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.incmul(a, "2.1").Print("\r\n"); //6.3 */
+  /**  CODE: Num a = new Num(3); Num.incmul(a, "2.1").Print("\n"); //6.3 */
   public static Num incmul(Num m, String i) { return m.IncMul(i); }
 
    /** INCREMENT VARIABLE MULTIPLYING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.incmul(a, 2).Print("\r\n"); //6.0 */
+  /**  CODE: Num a = new Num(3); Num.incmul(a, 2).Print("\n"); //6.0 */
   public static Num incmul(Num m, int i) { return m.IncMul(i); }
 
    /** INCREMENT VARIABLE MULTIPLYING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.incmul(a, 2L).Print("\r\n"); //6.0 */
+  /**  CODE: Num a = new Num(3); Num.incmul(a, 2L).Print("\n"); //6.0 */
   public static Num incmul(Num m, long i) { return m.IncMul(i); }
 
    /** INCREMENT VARIABLE MULTIPLYING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.incmul(a, new BigInteger("2")).Print("\r\n"); //6.0 */
+  /**  CODE: Num a = new Num(3); Num.incmul(a, new BigInteger("2")).Print("\n"); //6.0 */
   public static Num incmul(Num m, BigInteger i) { return m.IncMul(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.dec(a).Print("\r\n"); //2.0 */
+  /**  CODE: Num a = new Num(3); Num.dec(a).Print("\n"); //2.0 */
   public static Num dec(Num m) { return m.Dec(1); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.dec(a, new Num("2.1")).Print("\r\n"); //0.9 */
+  /**  CODE: Num a = new Num(3); Num.dec(a, new Num("2.1")).Print("\n"); //0.9 */
   public static Num dec(Num m, Num i) { return m.Dec(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.dec(a, "2.1").Print("\r\n"); //0.9 */
+  /**  CODE: Num a = new Num(3); Num.dec(a, "2.1").Print("\n"); //0.9 */
   public static Num dec(Num m, String i) { return m.Dec(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.dec(a, 2).Print("\r\n"); //1.0 */
+  /**  CODE: Num a = new Num(3); Num.dec(a, 2).Print("\n"); //1.0 */
   public static Num dec(Num m, int i) { return m.Dec(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.dec(a, 2L).Print("\r\n"); //1.0 */
+  /**  CODE: Num a = new Num(3); Num.dec(a, 2L).Print("\n"); //1.0 */
   public static Num dec(Num m, long i) { return m.Dec(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.dec(a, new BigInteger("2")).Print("\r\n"); //1.0 */
+  /**  CODE: Num a = new Num(3); Num.dec(a, new BigInteger("2")).Print("\n"); //1.0 */
   public static Num dec(Num m, BigInteger i) { return m.Dec(i); }
 
    /** DECREMENT VARIABLE DIVIDING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num(3); Num.decdiv(a).Print("\r\n"); //1.5 */
+  /**  CODE: Num a = new Num(3); Num.decdiv(a).Print("\n"); //1.5 */
   public static Num decdiv(Num m) { return m.DecDiv(2); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, new Num("2.1")).Print("\r\n"); //3.7 */
+  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, new Num("2.1")).Print("\n"); //3.7 */
   public static Num decdiv(Num m, Num i) { return m.DecDiv(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, "2.1").Print("\r\n"); //3.7 */
+  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, "2.1").Print("\n"); //3.7 */
   public static Num decdiv(Num m, String i) { return m.DecDiv(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, 2).Print("\r\n"); //3.885 */
+  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, 2).Print("\n"); //3.885 */
   public static Num decdiv(Num m, int i) { return m.DecDiv(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, 2L).Print("\r\n"); //3.885 */
+  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, 2L).Print("\n"); //3.885 */
   public static Num decdiv(Num m, long i) { return m.DecDiv(i); }
 
    /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, new BigInteger("2")).Print("\r\n"); //3.885 */
+  /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, new BigInteger("2")).Print("\n"); //3.885 */
   public static Num decdiv(Num m, BigInteger i) { return m.DecDiv(i); }
 
    /** minus_unary INVERTED SIGN OF this ARGUMENT  (UNARY MINUS)
-  /**  CODE: Num a = new Num("+3.14"); a.Print("\r\n"); Num.minus_unary(a); a.Print("\r\n"); //3.14 -3.14 */
+  /**  CODE: Num a = new Num("+3.14"); a.Print("\n"); Num.minus_unary(a); a.Print("\n"); //3.14 -3.14 */
   public static Num minus_unary(Num N) { return N.Invsign(); }
   
    /** invsign INVERTED SIGN OF this ARGUMENT (UNARY MINUS) */
-  /**  CODE: Num a = new Num("-3.14"); a.Print("\r\n"); Num.invsign(a); a.Print("\r\n"); //-3.14 3.14 */
+  /**  CODE: Num a = new Num("-3.14"); a.Print("\n"); Num.invsign(a); a.Print("\n"); //-3.14 3.14 */
   public static Num invsign(Num N) { return N.Invsign(); }
   
    /**  plus, SET PLUS SIGN OF Num */
-  /**   CODE: Num a = new Num("-3.14"); a.Print("\r\n"); Num.plus(a); a.Print("\r\n"); //-3.14 3.14 */
+  /**   CODE: Num a = new Num("-3.14"); a.Print("\n"); Num.plus(a); a.Print("\n"); //-3.14 3.14 */
   public static Num plus(Num N) { return N.Plus(); }
   
    /**  minus, SET MINUS SIGN OF Num */
-  /**   CODE: Num a = new Num("3.14"); a.Print("\r\n"); Num.minus(a); a.Print("\r\n"); //3.14 -3.14 */
+  /**   CODE: Num a = new Num("3.14"); a.Print("\n"); Num.minus(a); a.Print("\n"); //3.14 -3.14 */
   public static Num minus(Num N) { return N.Minus(); }
   
    /** CLEAR LEFT CHARACTER STRING */
-  /**  CODE: String s = "00001230"; String sc = Num.lstrip(s); Num.print(sc, "\r\n"); //1230 */
+  /**  CODE: String s = "00001230"; String sc = Num.lstrip(s); Num.print(sc, "\n"); //1230 */
   public static String lstrip(String str) { return lstrip(str, "0"); } //DEFAULT REMOVING LEADING ZEROs
   
    /** CLEAR LEFT CHARACTER STRING */
-  /**  CODE: String s = "-1230"; String sc = Num.lstrip(s, "-"); Num.print(sc, "\r\n"); //1230 */
+  /**  CODE: String s = "-1230"; String sc = Num.lstrip(s, "-"); Num.print(sc, "\n"); //1230 */
   public static String lstrip(String str, String ch) { return str.replaceAll("^" + Pattern.quote(ch) + "+", ""); }
     
     /**  CLEAR RIGHT CHARACTER STRING */
-   /**  CODE: String s = "1230.20030000"; String sc = Num.rstrip(s); Num.print(sc, "\r\n"); //1230.2003 */
+   /**  CODE: String s = "1230.20030000"; String sc = Num.rstrip(s); Num.print(sc, "\n"); //1230.2003 */
    public static String rstrip(String str) { return rstrip(str, "0"); } //DEFAULT REMOVING TRAILING ZEROs
    
     /**  CLEAR RIGHT CHARACTER STRING */
-   /**  CODE: String s = "1230.2003+++"; String sc = Num.rstrip(s, "+"); Num.print(sc, "\r\n"); //1230.2003 */
+   /**  CODE: String s = "1230.2003+++"; String sc = Num.rstrip(s, "+"); Num.print(sc, "\n"); //1230.2003 */
    public static String rstrip(String str, String ch) { return str.replaceAll(Pattern.quote(ch) + "+$", ""); }
   
     /**  is_numstr BOOLEAN CHECKS NUMERIC STRING VALIDATION */
-   /**   CODE: String a = "7.14"; Num.print(Num.is_numstr(a), "\r\n"); //true */
+   /**   CODE: String a = "7.14"; Num.print(Num.is_numstr(a), "\n"); //true */
    public static boolean is_numstr(String n) { 
        try { new Num(n); return true;
        } catch (Exception e) { return false; }
     }
 
    /** double2num, FLOAT TO Num CONVERSION */  
-  /**  CODE: Num.double2num(3.14).Print("\r\n"); //3.14 (Num) */
+  /**  CODE: Num.double2num(3.14).Print("\n"); //3.14 (Num) */
   public static Num double2num(double f) { return new Num(f + ""); }
  
    /** float2num, FLOAT TO Num CONVERSION */  
-  /**  CODE: Num.float2num(3.14).Print("\r\n"); //3.14 (Num) */
+  /**  CODE: Num.float2num(3.14).Print("\n"); //3.14 (Num) */
   public static Num float2num(double f) { return new Num(f + ""); }
  
    /** float2num_list, FLOAT TO NUM LIST CONVERSION */
-  /**  CODE: double[] D = { -110.0, +0.14, -20.456120, 1200.0654, 0.0, 3.141592654, 2.7182818281234567899 }; ArrayList<Num> A = Num.float2num_list(D); for(Num a : A) Num.print(a, "\r\n"); //3.141592654 2.7182818281234566 */
+  /**  CODE: double[] D = { -110.0, +0.14, -20.456120, 1200.0654, 0.0, 3.141592654, 2.7182818281234567899 }; ArrayList<Num> A = Num.float2num_list(D); for(Num a : A) Num.print(a, "\n"); //3.141592654 2.7182818281234566 */
   public static ArrayList<Num> float2num_list(double[] L) {
     ArrayList<Num> LN = new ArrayList<>();
     for(double d : L) LN.add(new Num(d + "")); 
@@ -882,135 +882,135 @@ public class Num implements Comparable<Num> {
   }
   
      /**  trunc, FLOATING POINT TRUNCATION */
-    /**   CODE: Num a = new Num("27.953"); Num.print(Num.trunc(a), "\r\n"); //27.0 */
+    /**   CODE: Num a = new Num("27.953"); Num.print(Num.trunc(a), "\n"); //27.0 */
     public static Num trunc(Num a) { return a.Trunc(0); }
 
      /**  trunc, FLOATING POINT TRUNCATION */
-    /**   CODE: Num.print(Num.trunc("27.953"), "\r\n"); //27.0 */
+    /**   CODE: Num.print(Num.trunc("27.953"), "\n"); //27.0 */
     public static Num trunc(String a) { return new Num(a).Trunc(0); }
 
      /**  trunc, FLOATING POINT TRUNCATION */
-    /**   CODE: Num a = new Num("27.953"); Num.print(Num.trunc(a, 1), "\r\n"); //27.9 */
+    /**   CODE: Num a = new Num("27.953"); Num.print(Num.trunc(a, 1), "\n"); //27.9 */
     public static Num trunc(Num a, int d) { return a.Trunc(d); }
     
      /**  trunc, FLOATING POINT TRUNCATION */
-    /**   CODE: Num.print(Num.trunc("27.953", -1), "\r\n"); //20.0 */
+    /**   CODE: Num.print(Num.trunc("27.953", -1), "\n"); //20.0 */
     public static Num trunc(String a, int d) { return new Num(a).Trunc(d); }
     
      /**  round_floor, FLOOR ROUNDING -RELATIVE ROUND DOWN d=1: 0.12 => 0.1 -0.12 => -0.2 */
-    /**   CODE: Num a = new Num("27.953"); Num.print(Num.round_floor(a), "\r\n"); //27.0 */
+    /**   CODE: Num a = new Num("27.953"); Num.print(Num.round_floor(a), "\n"); //27.0 */
     public static Num round_floor(Num a) { return a.Round_floor(0); } //-> RELATIVE VALUE (REAL NUMBER R)
 
      /**  round_floor, FLOOR ROUNDING -RELATIVE ROUND DOWN d=1: 0.12 => 0.1 -0.12 => -0.2 */
-    /**  CODE: Num.print(Num.round_floor("-27.953"), "\r\n"); //-28.0 */
+    /**  CODE: Num.print(Num.round_floor("-27.953"), "\n"); //-28.0 */
     public static Num round_floor(String a) { return new Num(a).Round_floor(0); } //-> RELATIVE VALUE (REAL NUMBER R)
 
      /**  round_floor, FLOOR ROUNDING -RELATIVE ROUND DOWN d=1: 0.12 => 0.1 -0.12 => -0.2 */
-    /**   CODE: Num a = new Num("27.953"); Num.print(Num.round_floor(a, 2), "\r\n"); //27.95 */
+    /**   CODE: Num a = new Num("27.953"); Num.print(Num.round_floor(a, 2), "\n"); //27.95 */
     public static Num round_floor(Num a, int d) { return a.Round_floor(d); } //-> RELATIVE VALUE (REAL NUMBER R)
 
      /**  round_floor, FLOOR ROUNDING -RELATIVE ROUND DOWN d=1: 0.12 => 0.1 -0.12 => -0.2 */
-    /**   CODE: Num.print(Num.round_floor("-27.958", 2), "\r\n"); //-27.96 */
+    /**   CODE: Num.print(Num.round_floor("-27.958", 2), "\n"); //-27.96 */
     public static Num round_floor(String a, int d) { return new Num(a).Round_floor(d); } //-> RELATIVE VALUE (REAL NUMBER R)
 
      /**  round, HALF UP ROUNDING - COMMON STANDARD -RELATIVE ROUND_HALF_CEIL d=1: 0.15 => 0.2 -0.15 => -0.1 */
-    /**   CODE: Num a = new Num("27.955"); Num.print(Num.round(a), "\r\n"); //27.96 */
+    /**   CODE: Num a = new Num("27.955"); Num.print(Num.round(a), "\n"); //27.96 */
     public static Num round(Num a) { return a.Round(2); }
 
      /**  round, HALF UP ROUNDING - COMMON STANDARD -RELATIVE ROUND_HALF_CEIL d=1: 0.15 => 0.2 -0.15 => -0.1 */
-    /**   CODE: Num.print(Num.round("27.955"), "\r\n"); //27.96 */
+    /**   CODE: Num.print(Num.round("27.955"), "\n"); //27.96 */
     public static Num round(String a) { return new Num(a).Round(2); }
 
      /**  round, HALF UP ROUNDING - COMMON STANDARD -RELATIVE ROUND_HALF_CEIL d=1: 0.15 => 0.2 -0.15 => -0.1 */
-    /**   CODE: Num a = new Num("-26.5"); Num.print(Num.round(a, 0), "\r\n"); //-26.0 */
+    /**   CODE: Num a = new Num("-26.5"); Num.print(Num.round(a, 0), "\n"); //-26.0 */
     public static Num round(Num a, int d) { return a.Round(d); }
 
      /**  round, HALF UP ROUNDING - COMMON STANDARD -RELATIVE ROUND_HALF_CEIL d=1: 0.15 => 0.2 -0.15 => -0.1 */
-    /**  CODE: Num.print(Num.round("25.5", 0), "\r\n"); //26.0 */
+    /**  CODE: Num.print(Num.round("25.5", 0), "\n"); //26.0 */
     public static Num round(String a, int d) { return new Num(a).Round(d); }
 
      /**  round_ceil, CEIL ROUNDING -RELATIVE ROUND UP d=1: 0.12 => 0.2 -0.12 => -0.1 */
-    /**   CODE:Num a = new Num("27.953"); Num.print(Num.round_ceil(a), "\r\n"); //28.0 */
+    /**   CODE:Num a = new Num("27.953"); Num.print(Num.round_ceil(a), "\n"); //28.0 */
     public static Num round_ceil(Num a) { return a.Round_ceil(0); }
 
      /**  round_ceil, CEIL ROUNDING -RELATIVE ROUND UP d=1: 0.12 => 0.2 -0.12 => -0.1 */
-    /**   CODE: Num.print(Num.round_ceil("27.953"), "\r\n"); //28.0 */
+    /**   CODE: Num.print(Num.round_ceil("27.953"), "\n"); //28.0 */
     public static Num round_ceil(String a) { return new Num(a).Round_ceil(0); }
 
      /**  round_ceil, CEIL ROUNDING -RELATIVE ROUND UP d=1: 0.12 => 0.2 -0.12 => -0.1 */
-    /**   CODE: Num.print(Num.round_ceil(new Num("27.953"), 2), "\r\n"); //27.96 */
+    /**   CODE: Num.print(Num.round_ceil(new Num("27.953"), 2), "\n"); //27.96 */
     public static Num round_ceil(Num a, int d) { return a.Round_ceil(d); }
 
      /**  round_ceil, CEIL ROUNDING -RELATIVE ROUND UP d=1: 0.12 => 0.2 -0.12 => -0.1 */
-    /**   CODE: String a = "27.953"; Num.print(Num.round_ceil(a, 2), "\r\n"); //27.96 */
+    /**   CODE: String a = "27.953"; Num.print(Num.round_ceil(a, 2), "\n"); //27.96 */
     public static Num round_ceil(String a, int d) { return new Num(a).Round_ceil(d); }
 
      /**  round_bank, HALF EVEN ROUNDING */
-    /**   CODE: Num.print(Num.round_bank(new Num("27.965")), "\r\n"); //27.96 */
+    /**   CODE: Num.print(Num.round_bank(new Num("27.965")), "\n"); //27.96 */
     public static Num round_bank(Num a) { return a.Round_bank(2); }
 
      /**  round_bank, HALF EVEN ROUNDING */
-    /**   CODE: Num.print(Num.round_bank("27.965"), "\r\n"); //27.96 */
+    /**   CODE: Num.print(Num.round_bank("27.965"), "\n"); //27.96 */
     public static Num round_bank(String a) { return new Num(a).Round_bank(2); }
 
      /**  round_bank, HALF EVEN ROUNDING */
-    /**   CODE: Num.print(Num.round_bank(new Num("21.5"), 0), "\r\n"); //22.0 */
+    /**   CODE: Num.print(Num.round_bank(new Num("21.5"), 0), "\n"); //22.0 */
     public static Num round_bank(Num a, int d) { return a.Round_bank(d); }
 
      /**  round_bank, HALF EVEN ROUNDING */
-    /**   CODE: Num.print(Num.round_bank("26.5", 0), "\r\n"); //26.0 */
+    /**   CODE: Num.print(Num.round_bank("26.5", 0), "\n"); //26.0 */
     public static Num round_bank(String a, int d) { return new Num(a).Round_bank(d); }
 
      /**  CALCULATOR, Array by sum METHOD */
-    /**  CODE: Num[] cart = { new Num("0.1"), new Num("0.2"), new Num("0.3"), new Num("0.4") }; Num.print(Num.sum(cart), "\r\n"); //1.0 */
+    /**  CODE: Num[] cart = { new Num("0.1"), new Num("0.2"), new Num("0.3"), new Num("0.4") }; Num.print(Num.sum(cart), "\n"); //1.0 */
     public static Num sum(Num[] cart) { Num sum = new Num(0); for (Num v : cart) sum = sum.Add(v); return sum; }
 
      /**  CALCULATOR, ArrayList by sum METHOD */
-    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.1")); cart.add(new Num("0.2")); cart.add(new Num("0.3")); cart.add(new Num("0.4")); Num.print(Num.sum(cart), "\r\n"); //1.0 */
+    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.1")); cart.add(new Num("0.2")); cart.add(new Num("0.3")); cart.add(new Num("0.4")); Num.print(Num.sum(cart), "\n"); //1.0 */
     public static Num sum(ArrayList<Num> cart) { Num sum = new Num(0); for (Num v : cart) sum = sum.Add(v); return sum; }
 
      /**  CALCULATOR, String by sum METHOD */
-    /**   CODE: String[] cart = { "0.1", "0.2", "0.3", "0.4" }; Num.print(Num.sum(cart), "\r\n"); //1.0 */
+    /**   CODE: String[] cart = { "0.1", "0.2", "0.3", "0.4" }; Num.print(Num.sum(cart), "\n"); //1.0 */
     public static Num sum(String[] cart) { Num sum = new Num(0); for (String v : cart) sum = sum.Add(new Num(v)); return sum; }    
 
      /**  CALCULATOR, int by sum METHOD */
-    /**   CODE: int[] cart = { 2147483647, 2147483646, 2147483645, 2147483644 }; Num.print(Num.sum(cart), "\r\n"); //8589934582.0 */
+    /**   CODE: int[] cart = { 2147483647, 2147483646, 2147483645, 2147483644 }; Num.print(Num.sum(cart), "\n"); //8589934582.0 */
     public static Num sum(int[] cart) { Num sum = new Num(0); for (int v : cart) sum = sum.Add(new Num(v)); return sum; }    
     
      /**  CALCULATOR, long by sum METHOD */
-    /**  CODE: long[] cart = { -4294967295L, -4294967296L, -4294967297L, -4294967298L }; Num.print(Num.sum(cart), "\r\n"); //-17179869186.0 */
+    /**  CODE: long[] cart = { -4294967295L, -4294967296L, -4294967297L, -4294967298L }; Num.print(Num.sum(cart), "\n"); //-17179869186.0 */
     public static Num sum(long[] cart) { Num sum = new Num(0); for (long v : cart) sum = sum.Add(new Num(v)); return sum; }    
     
      /**  CALCULATOR, BigInteger by sum METHOD */
-    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("4294967296"), new BigInteger("4294967297"), new BigInteger("4294967298") }; Num.print(Num.sum(cart), "\r\n"); //17179869186.0 */
+    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("4294967296"), new BigInteger("4294967297"), new BigInteger("4294967298") }; Num.print(Num.sum(cart), "\n"); //17179869186.0 */
     public static Num sum(BigInteger[] cart) { Num sum = new Num(0); for (BigInteger v : cart) sum = sum.Add(new Num(v)); return sum; }    
     
      /**  CALCULATOR, Array by mean METHOD */
-    /**   CODE: Num[] cart = { new Num("0.1"), new Num("0.2"), new Num("0.3"), new Num("0.4") }; Num.print(Num.mean(cart), "\r\n"); //0.25 */
+    /**   CODE: Num[] cart = { new Num("0.1"), new Num("0.2"), new Num("0.3"), new Num("0.4") }; Num.print(Num.mean(cart), "\n"); //0.25 */
     public static Num mean(Num[] L) { return Num.sum(L).Div(L.length); }
 
      /**  CALCULATOR, ArrayList by mean METHOD */
-    /**   CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.1")); cart.add(new Num("0.2")); cart.add(new Num("0.3")); cart.add(new Num("0.4")); Num.print(Num.mean(cart), "\r\n"); //0.25 */
+    /**   CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.1")); cart.add(new Num("0.2")); cart.add(new Num("0.3")); cart.add(new Num("0.4")); Num.print(Num.mean(cart), "\n"); //0.25 */
     public static Num mean(ArrayList<Num> L) { return Num.sum(L).Div(L.size()); }
 
      /**  CALCULATOR, String by mean METHOD */
-    /**   CODE: String[] cart = { "0.1", "0.2", "0.3", "0.4" }; Num.print(Num.mean(cart), "\r\n"); //0.25 */
+    /**   CODE: String[] cart = { "0.1", "0.2", "0.3", "0.4" }; Num.print(Num.mean(cart), "\n"); //0.25 */
     public static Num mean(String[] L) { Num sum = new Num(0); for (String v : L) sum = sum.Add(new Num(v)); return sum.Div(L.length); }
     
      /**  CALCULATOR, int by mean METHOD */
-    /**   CODE: int[] cart = { 1, 2, 3, 4 }; Num.print(Num.mean(cart), "\r\n"); //2.5 */
+    /**   CODE: int[] cart = { 1, 2, 3, 4 }; Num.print(Num.mean(cart), "\n"); //2.5 */
     public static Num mean(int[] L) { Num sum = new Num(0); for (int v : L) sum = sum.Add(new Num(v)); return sum.Div(L.length); }
     
      /**  CALCULATOR, long by mean METHOD */
-    /**   CODE: long[] cart = { 1L, 2L, 3L, 4L }; Num.print(Num.mean(cart), "\r\n"); //2.5 */
+    /**   CODE: long[] cart = { 1L, 2L, 3L, 4L }; Num.print(Num.mean(cart), "\n"); //2.5 */
     public static Num mean(long[] L) { Num sum = new Num(0); for (long v : L) sum = sum.Add(new Num(v)); return sum.Div(L.length); }
     
      /**  CALCULATOR, BigInteger by mean METHOD */
-    /**   CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("4294967296"), new BigInteger("4294967297"), new BigInteger("4294967298") }; Num.print(Num.mean(cart), "\r\n"); //4294967296.5 */
+    /**   CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("4294967296"), new BigInteger("4294967297"), new BigInteger("4294967298") }; Num.print(Num.mean(cart), "\n"); //4294967296.5 */
     public static Num mean(BigInteger[] L) { Num sum = new Num(0); for (BigInteger v : L) sum = sum.Add(new Num(v)); return sum.Div(L.length); }
     
      /**  CALCULATOR, Array by min METHOD */
-    /**   CODE: Num[] cart = { new Num("0.1"), new Num("-0.2"), new Num("0.3"), new Num("0.4") }; Num.print(Num.min(cart), "\r\n"); //-0.2 */
+    /**   CODE: Num[] cart = { new Num("0.1"), new Num("-0.2"), new Num("0.3"), new Num("0.4") }; Num.print(Num.min(cart), "\n"); //-0.2 */
     public static Num min(Num[] L) {
         Num m, t;
         m = new Num(L[0]);                    //FIRST ELEMENT
@@ -1022,7 +1022,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, ArrayList by min METHOD */
-    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.4")); Num.print(Num.min(cart), "\r\n"); //0.1 */
+    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.4")); Num.print(Num.min(cart), "\n"); //0.1 */
     public static Num min(ArrayList<Num> L) {
         Num m, t;
         m = new Num(L.get(0));                //FIRST ELEMENT
@@ -1034,7 +1034,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, String by min METHOD */
-    /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "0.4" }; Num.print(Num.min(cart), "\r\n"); //-0.3 */
+    /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "0.4" }; Num.print(Num.min(cart), "\n"); //-0.3 */
     public static Num min(String[] L) {
         Num m, t;
         m = new Num(L[0]);                    //FIRST ELEMENT
@@ -1046,7 +1046,7 @@ public class Num implements Comparable<Num> {
     }
 
      /** CALCULATOR, int by min METHOD */
-    /**  CODE: int[] cart = { 1, -2, 3, 4 }; Num.print(Num.min(cart), "\r\n"); //-2.0 */
+    /**  CODE: int[] cart = { 1, -2, 3, 4 }; Num.print(Num.min(cart), "\n"); //-2.0 */
     public static Num min(int[] L) {
     	Num m, t;
     	m = new Num(L[0]);                    //FIRST ELEMENT
@@ -1058,7 +1058,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, long by min METHOD */
-    /**  CODE: long[] cart = { 1L, -2L, 3L, 4L }; Num.print(Num.min(cart), "\r\n"); //-2.0 */
+    /**  CODE: long[] cart = { 1L, -2L, 3L, 4L }; Num.print(Num.min(cart), "\n"); //-2.0 */
     public static Num min(long[] L) {
     	Num m, t;
     	m = new Num(L[0]);                    //FIRST ELEMENT
@@ -1070,7 +1070,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, BigInteger by min METHOD */
-    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("-4294967296"), new BigInteger("4294967297"), new BigInteger("4294967298") }; Num.print(Num.min(cart), "\r\n"); //-4294967296.0 */
+    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("-4294967296"), new BigInteger("4294967297"), new BigInteger("4294967298") }; Num.print(Num.min(cart), "\n"); //-4294967296.0 */
     public static Num min(BigInteger[] L) {
     	Num m, t;
     	m = new Num(L[0]);                    //FIRST ELEMENT
@@ -1082,7 +1082,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, Array by max METHOD */
-    /**  CODE: Num[] cart = { new Num("0.1"), new Num("-0.2"), new Num("0.3"), new Num("-0.4") }; Num.print(Num.max(cart), "\r\n"); //0.3 */
+    /**  CODE: Num[] cart = { new Num("0.1"), new Num("-0.2"), new Num("0.3"), new Num("-0.4") }; Num.print(Num.max(cart), "\n"); //0.3 */
     public static Num max(Num[] L) {
         Num m, t;
         m = new Num(L[0]); 					  //FIRST ELEMENT
@@ -1095,7 +1095,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, ArrayList by max METHOD */
-    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.3")); Num.print(Num.max(cart), "\r\n"); //0.4 */
+    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.3")); Num.print(Num.max(cart), "\n"); //0.4 */
     public static Num max(ArrayList<Num> L) {
         Num m, t;
         m = new Num(L.get(0)); 			      //FIRST ELEMENT
@@ -1107,7 +1107,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, String by max METHOD */
-    /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "-0.4" }; Num.print(Num.max(cart), "\r\n"); //0.2 */
+    /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "-0.4" }; Num.print(Num.max(cart), "\n"); //0.2 */
     public static Num max(String[] L) {
         Num m, t;
         m = new Num(L[0]); 					  //FIRST ELEMENT
@@ -1120,7 +1120,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, int by max METHOD */
-    /**  CODE: int[] cart = { 1, 4, 5, 3 }; Num.print(Num.max(cart), "\r\n"); //5.0 */
+    /**  CODE: int[] cart = { 1, 4, 5, 3 }; Num.print(Num.max(cart), "\n"); //5.0 */
     public static Num max(int[] L) {
     	Num m, t;
     	m = new Num(L[0]); 					  //FIRST ELEMENT
@@ -1133,7 +1133,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, long by max METHOD */
-    /**  CODE: long[] cart = { 1L, 4L, 5L, 3L }; Num.print(Num.max(cart), "\r\n"); //5.0 */
+    /**  CODE: long[] cart = { 1L, 4L, 5L, 3L }; Num.print(Num.max(cart), "\n"); //5.0 */
     public static Num max(long[] L) {
     	Num m, t;
     	m = new Num(L[0]); 					  //FIRST ELEMENT
@@ -1146,7 +1146,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, BigInteger by max METHOD */
-    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("-4294967296"), new BigInteger("4294967297"), new BigInteger("-4294967298") }; Num.print(Num.max(cart), "\r\n"); //4294967297.0 */
+    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("-4294967296"), new BigInteger("4294967297"), new BigInteger("-4294967298") }; Num.print(Num.max(cart), "\n"); //4294967297.0 */
     public static Num max(BigInteger[] L) {
     	Num m, t;
     	m = new Num(L[0]); 					  //FIRST ELEMENT
@@ -1159,7 +1159,7 @@ public class Num implements Comparable<Num> {
     }
     
      /** CALCULATOR, Num Array by minmax METHOD */
-    /**  CODE: Num[] cart = { new Num("19.31999"), new Num("19.32"), new Num("18.37"), new Num("-15.13"), new Num("-15.12") }; Num.print(Num.minmax(cart), "\r\n"); //[-15.13, 19.32] */
+    /**  CODE: Num[] cart = { new Num("19.31999"), new Num("19.32"), new Num("18.37"), new Num("-15.13"), new Num("-15.12") }; Num.print(Num.minmax(cart), "\n"); //[-15.13, 19.32] */
     public static Num[] minmax(Num A[]) {
         Num V[] = new Num[2];
         V[0] = Num.min(A);
@@ -1168,7 +1168,7 @@ public class Num implements Comparable<Num> {
     }    
     
      /** CALCULATOR, Num ArrayList by minmax METHOD */
-    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.3")); Num.print(Num.minmax(cart), "\r\n"); //[0.1, 0.4] */
+    /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.3")); Num.print(Num.minmax(cart), "\n"); //[0.1, 0.4] */
     public static Num[] minmax(ArrayList<Num> A) {
     	Num V[] = new Num[2];
     	V[0] = Num.min(A);
@@ -1177,7 +1177,7 @@ public class Num implements Comparable<Num> {
     }    
     
      /** CALCULATOR, numeric String Array by minmax METHOD */
-    /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "-0.4" }; Num.print(Num.minmax(cart), "\r\n"); //[-0.4, 0.2] */
+    /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "-0.4" }; Num.print(Num.minmax(cart), "\n"); //[-0.4, 0.2] */
     public static Num[] minmax(String A[]) {
     	Num V[] = new Num[2];
     	V[0] = Num.min(A);
@@ -1186,7 +1186,7 @@ public class Num implements Comparable<Num> {
     }    
     
      /** CALCULATOR, int Array by minmax METHOD */
-    /**  CODE: int[] cart = { 2, 4, -1, 3 }; Num.print(Num.minmax(cart), "\r\n"); //[-1.0, 4.0] */
+    /**  CODE: int[] cart = { 2, 4, -1, 3 }; Num.print(Num.minmax(cart), "\n"); //[-1.0, 4.0] */
     public static Num[] minmax(int A[]) {
     	Num V[] = new Num[2];
     	V[0] = Num.min(A);
@@ -1195,7 +1195,7 @@ public class Num implements Comparable<Num> {
     }    
     
      /** CALCULATOR, long Array by minmax METHOD */
-    /**  CODE: long[] cart = { 2L, 4L, -1L, 3L }; Num.print(Num.minmax(cart), "\r\n"); //[-1.0, 4.0] */
+    /**  CODE: long[] cart = { 2L, 4L, -1L, 3L }; Num.print(Num.minmax(cart), "\n"); //[-1.0, 4.0] */
     public static Num[] minmax(long A[]) {
     	Num V[] = new Num[2];
     	V[0] = Num.min(A);
@@ -1204,7 +1204,7 @@ public class Num implements Comparable<Num> {
     }    
     
      /** CALCULATOR, BigInteger Array by minmax METHOD */
-    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("-4294967296"), new BigInteger("4294967297"), new BigInteger("-4294967298") }; Num.print(Num.minmax(cart), "\r\n"); //[-4294967298.0, 4294967297.0] */
+    /**  CODE: BigInteger[] cart = { new BigInteger("4294967295"), new BigInteger("-4294967296"), new BigInteger("4294967297"), new BigInteger("-4294967298") }; Num.print(Num.minmax(cart), "\n"); //[-4294967298.0, 4294967297.0] */
     public static Num[] minmax(BigInteger A[]) {
     	Num V[] = new Num[2];
     	V[0] = Num.min(A);
@@ -1213,7 +1213,7 @@ public class Num implements Comparable<Num> {
     }    
     
     /** CALCULATOR, Num Array by suminmax METHOD */
-   /**  CODE: Num[] cart = { new Num("5.0"), new Num("1.0"), new Num("4.0"), new Num("3.0"), new Num("2.0") }; Num.print(Num.suminmax(cart), "\r\n"); //[15.0, 3.0, 1.0, 5.0] */
+   /**  CODE: Num[] cart = { new Num("5.0"), new Num("1.0"), new Num("4.0"), new Num("3.0"), new Num("2.0") }; Num.print(Num.suminmax(cart), "\n"); //[15.0, 3.0, 1.0, 5.0] */
    public static Num[] suminmax(Num A[]) {
        Num V[] = new Num[4];
        V[0] = Num.sum(A);
@@ -1224,7 +1224,7 @@ public class Num implements Comparable<Num> {
    }    
 
     /** CALCULATOR, Num ArrayList by suminmax METHOD */
-   /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.3")); Num.print(Num.suminmax(cart), "\r\n"); //[1.1, 0.275, 0.1, 0.4] */
+   /**  CODE: ArrayList<Num> cart = new ArrayList<>(); cart.add(new Num("0.4")); cart.add(new Num("0.3")); cart.add(new Num("0.1")); cart.add(new Num("0.3")); Num.print(Num.suminmax(cart), "\n"); //[1.1, 0.275, 0.1, 0.4] */
    public static Num[] suminmax(ArrayList<Num> A) {
 	   Num V[] = new Num[4];
 	   V[0] = Num.sum(A);
@@ -1235,7 +1235,7 @@ public class Num implements Comparable<Num> {
    }    
    
     /** CALCULATOR, numeric String by suminmax METHOD */
-   /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "-0.4" }; Num.print(Num.suminmax(cart), "\r\n"); //[-0.4, -0.1, -0.4, 0.2] */
+   /**  CODE: String[] cart = { "0.1", "0.2", "-0.3", "-0.4" }; Num.print(Num.suminmax(cart), "\n"); //[-0.4, -0.1, -0.4, 0.2] */
    public static Num[] suminmax(String[] A) {
 	   Num V[] = new Num[4];
 	   V[0] = Num.sum(A);
@@ -1246,7 +1246,7 @@ public class Num implements Comparable<Num> {
    }    
    
     /** CALCULATOR, int by suminmax METHOD */
-   /**  CODE: int[] cart = { 4, 2, 5, 1, 3 }; Num.print(Num.suminmax(cart), "\r\n"); //[15.0, 3.0, 1.0, 5.0] */
+   /**  CODE: int[] cart = { 4, 2, 5, 1, 3 }; Num.print(Num.suminmax(cart), "\n"); //[15.0, 3.0, 1.0, 5.0] */
    public static Num[] suminmax(int[] A) {
 	   Num V[] = new Num[4];
 	   V[0] = Num.sum(A);
@@ -1257,7 +1257,7 @@ public class Num implements Comparable<Num> {
    }    
    
     /** CALCULATOR, long by suminmax METHOD */
-   /**  CODE: long[] cart = { 4L, 2L, 5L, 1L, 3L }; Num.print(Num.suminmax(cart), "\r\n"); //[15.0, 3.0, 1.0, 5.0] */
+   /**  CODE: long[] cart = { 4L, 2L, 5L, 1L, 3L }; Num.print(Num.suminmax(cart), "\n"); //[15.0, 3.0, 1.0, 5.0] */
    public static Num[] suminmax(long[] A) {
 	   Num V[] = new Num[4];
 	   V[0] = Num.sum(A);
@@ -1268,7 +1268,7 @@ public class Num implements Comparable<Num> {
    }    
    
     /** CALCULATOR, BigInteger by suminmax METHOD */
-   /**  CODE: BigInteger[] cart = { new BigInteger("4"), new BigInteger("2"), new BigInteger("5"), new BigInteger("1"), new BigInteger("3"), }; Num.print(Num.suminmax(cart), "\r\n"); //[15.0, 3.0, 1.0, 5.0] */
+   /**  CODE: BigInteger[] cart = { new BigInteger("4"), new BigInteger("2"), new BigInteger("5"), new BigInteger("1"), new BigInteger("3"), }; Num.print(Num.suminmax(cart), "\n"); //[15.0, 3.0, 1.0, 5.0] */
    public static Num[] suminmax(BigInteger[] A) {
 	   Num V[] = new Num[4];
 	   V[0] = Num.sum(A);
@@ -1279,375 +1279,375 @@ public class Num implements Comparable<Num> {
    }    
    
      /** hypot, PYTHAGOREAN THEOREM -DEFAULT PRECISION TEN */
-    /**  CODE: Num a = new Num(3); Num b = new Num(4); Num.print(Num.hypot(a, b), "\r\n"); //5.0 */
+    /**  CODE: Num a = new Num(3); Num b = new Num(4); Num.print(Num.hypot(a, b), "\n"); //5.0 */
     public static Num hypot(Num a, Num b) { Num H = a.Mul(a).Add(b.Mul(b)); return H.Sqrt(); }
     
      /** hypot, PYTHAGOREAN THEOREM -DEFAULT PRECISION TEN */
-    /**  CODE: Num.print(Num.hypot("3.0","4.0"), "\r\n"); //5.0 */
+    /**  CODE: Num.print(Num.hypot("3.0","4.0"), "\n"); //5.0 */
     public static Num hypot(String a, String b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(); }
     
      /** hypot, PYTHAGOREAN THEOREM -DEFAULT PRECISION TEN */
-    /**  CODE:  Num.print(Num.hypot(3, 4), "\r\n"); //5.0 */
+    /**  CODE:  Num.print(Num.hypot(3, 4), "\n"); //5.0 */
     public static Num hypot(int a, int b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(); }
     
      /** hypot, PYTHAGOREAN THEOREM -DEFAULT PRECISION TEN */
-    /**  CODE:  Num.print(Num.hypot(3L, 4L), "\r\n"); //5.0 */
+    /**  CODE:  Num.print(Num.hypot(3L, 4L), "\n"); //5.0 */
     public static Num hypot(long a, long b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(); }
     
      /** hypot, PYTHAGOREAN THEOREM -DEFAULT PRECISION TEN */
-    /**  CODE:  Num.print(Num.hypot(new BigInteger("3"), new BigInteger("4")), "\r\n"); //5.0 */
+    /**  CODE:  Num.print(Num.hypot(new BigInteger("3"), new BigInteger("4")), "\n"); //5.0 */
     public static Num hypot(BigInteger a, BigInteger b) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(); }
     
      /** hypot, PYTHAGOREAN THEOREM BY PRECISIION */
-    /**  CODE: Num a = new Num(3); Num b = new Num(5); Num.print(Num.hypot(a, b, 40), "\r\n"); //5.8309518948453004708741528775455830765213 */
+    /**  CODE: Num a = new Num(3); Num b = new Num(5); Num.print(Num.hypot(a, b, 40), "\n"); //5.8309518948453004708741528775455830765213 */
     public static Num hypot(Num a, Num b, int p) { Num H = a.Mul(a).Add(b.Mul(b)); return H.Sqrt(p); }
     
      /** hypot, PYTHAGOREAN THEOREM BY PRECISIION */
-    /**  CODE: Num.print(Num.hypot("3.0","5.0", 40), "\r\n"); //5.8309518948453004708741528775455830765213 */
+    /**  CODE: Num.print(Num.hypot("3.0","5.0", 40), "\n"); //5.8309518948453004708741528775455830765213 */
     public static Num hypot(String a, String b, int p) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(p); }
     
      /** hypot, PYTHAGOREAN THEOREM BY PRECISIION */
-    /**  CODE: Num.print(Num.hypot(3, 5, 40), "\r\n"); //5.8309518948453004708741528775455830765213 */
+    /**  CODE: Num.print(Num.hypot(3, 5, 40), "\n"); //5.8309518948453004708741528775455830765213 */
     public static Num hypot(int a, int b, int p) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(p); }
     
      /** hypot, PYTHAGOREAN THEOREM BY PRECISIION */
-    /**  CODE: Num.print(Num.hypot(3L, 5L, 40), "\r\n"); //5.8309518948453004708741528775455830765213 */
+    /**  CODE: Num.print(Num.hypot(3L, 5L, 40), "\n"); //5.8309518948453004708741528775455830765213 */
     public static Num hypot(long a, long b, int p) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(p); }
     
      /** hypot, PYTHAGOREAN THEOREM BY PRECISIION */
-    /**  CODE: Num.print(Num.hypot(new BigInteger("3"), new BigInteger("5"), 40), "\r\n"); //5.8309518948453004708741528775455830765213 */
+    /**  CODE: Num.print(Num.hypot(new BigInteger("3"), new BigInteger("5"), 40), "\n"); //5.8309518948453004708741528775455830765213 */
     public static Num hypot(BigInteger a, BigInteger b, int p) { Num A = new Num(a); Num B = new Num(b); return A.Mul(A).Add(B.Mul(B)).Sqrt(p); }
     
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow(new Num("3.14"), new Num("5.0")), "\r\n"); //305.2447761824 */
+    /**  CODE: Num.print(Num.pow(new Num("3.14"), new Num("5.0")), "\n"); //305.2447761824 */
     public static Num pow(Num b, Num e) { return b.Pow(e); } 
 
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow(new Num("3.14"), 5), "\r\n"); //305.2447761824 */
+    /**  CODE: Num.print(Num.pow(new Num("3.14"), 5), "\n"); //305.2447761824 */
     public static Num pow(Num b, int e) { return b.Pow(e); } 
 
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow("3.14", "5.0"), "\r\n"); //305.2447761824 */
+    /**  CODE: Num.print(Num.pow("3.14", "5.0"), "\n"); //305.2447761824 */
     public static Num pow(String b, String e) { return new Num(b).Pow(e); } 
    
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow("3.14", 5), "\r\n"); //305.2447761824 */
+    /**  CODE: Num.print(Num.pow("3.14", 5), "\n"); //305.2447761824 */
     public static Num pow(String b, int e) { return new Num(b).Pow(e); } 
    
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow(2, 256), "\r\n"); //115792089237316195423570985008687907853269984665640564039457584007913129639936.0 */
+    /**  CODE: Num.print(Num.pow(2, 256), "\n"); //115792089237316195423570985008687907853269984665640564039457584007913129639936.0 */
     public static Num pow(int b, int e) { return new Num(b).Pow(e); } 
    
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow(2L, 256L), "\r\n"); //115792089237316195423570985008687907853269984665640564039457584007913129639936.0 */
+    /**  CODE: Num.print(Num.pow(2L, 256L), "\n"); //115792089237316195423570985008687907853269984665640564039457584007913129639936.0 */
     public static Num pow(long b, long e) { return new Num(b).Pow(e); } 
    
      /** (**) pow, POWER BINARY OPERATOR */
-    /**  CODE: Num.print(Num.pow(new BigInteger("2"), new BigInteger("256")), "\r\n"); //115792089237316195423570985008687907853269984665640564039457584007913129639936.0 */
+    /**  CODE: Num.print(Num.pow(new BigInteger("2"), new BigInteger("256")), "\n"); //115792089237316195423570985008687907853269984665640564039457584007913129639936.0 */
     public static Num pow(BigInteger b, BigInteger e) { return new Num(b).Pow(e); } 
    
      /** (<=) le, LESS OR EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.le(new Num("32.0"), new Num("00032.0000")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.le(new Num("32.0"), new Num("00032.0000")), "\n"); //true */
     public static boolean le(Num a, Num b) { return a.LE(b); }
 
      /** (<=) le, LESS OR EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.le("32.0", "00032.0000"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.le("32.0", "00032.0000"), "\n"); //true */
     public static boolean le(String a, String b) { return new Num(a).LE(new Num(b)); }
    
      /** (<=) le, LESS OR EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.le(32, 32), "\r\n"); //true */
+    /**  CODE: Num.print(Num.le(32, 32), "\n"); //true */
     public static boolean le(int a, int b) { return new Num(a).LE(new Num(b)); }
     
      /** (<=) le, LESS OR EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.le(32L, 32L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.le(32L, 32L), "\n"); //true */
     public static boolean le(long a, long b) { return new Num(a).LE(new Num(b)); }
     
      /** (<=) le, LESS OR EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.le(new BigInteger("32"), new BigInteger("32")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.le(new BigInteger("32"), new BigInteger("32")), "\n"); //true */
     public static boolean le(BigInteger a, BigInteger b) { return new Num(a).LE(new Num(b)); }
     
      /** (<) lt, LESS LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.lt(new Num("32.0"), new Num("0032.0001")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.lt(new Num("32.0"), new Num("0032.0001")), "\n"); //true */
     public static boolean lt(Num a, Num b) { return a.LT(b); }
 
      /** (<) lt, LESS LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.lt("32.0", "0032.0001"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.lt("32.0", "0032.0001"), "\n"); //true */
     public static boolean lt(String a, String b) { return new Num(a).LT(new Num(b)); }
 
      /** (<) lt, LESS LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.lt(32, 33), "\r\n"); //true */
+    /**  CODE: Num.print(Num.lt(32, 33), "\n"); //true */
     public static boolean lt(int a, int b) { return new Num(a).LT(new Num(b)); }
     
      /** (<) lt, LESS LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.lt(32L, 33L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.lt(32L, 33L), "\n"); //true */
     public static boolean lt(long a, long b) { return new Num(a).LT(new Num(b)); }
     
      /** (<) lt, LESS LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.lt(new BigInteger("32"), new BigInteger("33")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.lt(new BigInteger("32"), new BigInteger("33")), "\n"); //true */
     public static boolean lt(BigInteger a, BigInteger b) { return new Num(a).LT(new Num(b)); }
     
      /** (!=) ne, NOT EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num a = new Num("32.0"); Num b = new Num("00032.000"); Num.print(Num.ne(a, b), "\r\n"); //false */
+    /**  CODE: Num a = new Num("32.0"); Num b = new Num("00032.000"); Num.print(Num.ne(a, b), "\n"); //false */
     public static boolean ne(Num a, Num b) { return a.NE(b); }  
       
      /** (!=) ne, NOT EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.ne("32.0", "00032.000"), "\r\n"); //false */
+    /**  CODE: Num.print(Num.ne("32.0", "00032.000"), "\n"); //false */
     public static boolean ne(String a, String b) { return new Num(a).NE(new Num(b)); }  
       
      /** (!=) ne, NOT EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.ne(32, 31+1), "\r\n"); //false */
+    /**  CODE: Num.print(Num.ne(32, 31+1), "\n"); //false */
     public static boolean ne(int a, int b) { return new Num(a).NE(new Num(b)); }  
     
      /** (!=) ne, NOT EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.ne(32L, 31+1L), "\r\n"); //false */
+    /**  CODE: Num.print(Num.ne(32L, 31+1L), "\n"); //false */
     public static boolean ne(long a, long b) { return new Num(a).NE(new Num(b)); }  
     
      /** (!=) ne, NOT EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.ne(new BigInteger("32"), new BigInteger("32")), "\r\n"); //false */
+    /**  CODE: Num.print(Num.ne(new BigInteger("32"), new BigInteger("32")), "\n"); //false */
     public static boolean ne(BigInteger a, BigInteger b) { return new Num(a).NE(new Num(b)); }  
     
      /** (==) eq, EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.eq(new Num("32.0"), new Num("00032.000")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.eq(new Num("32.0"), new Num("00032.000")), "\n"); //true */
     public static boolean eq(Num a, Num b) { return a.EQ(b); }
 
      /** (==) eq, EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.eq(new Num("32.0"), new Num("00032.000")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.eq(new Num("32.0"), new Num("00032.000")), "\n"); //true */
     public static boolean eq(String a, String b) { return new Num(a).EQ(new Num(b)); }
  
      /** (==) eq, EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.eq(32, 32), "\r\n"); //true */
+    /**  CODE: Num.print(Num.eq(32, 32), "\n"); //true */
     public static boolean eq(int a, int b) { return new Num(a).EQ(new Num(b)); }
     
      /** (==) eq, EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.eq(32L, 32L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.eq(32L, 32L), "\n"); //true */
     public static boolean eq(long a, long b) { return new Num(a).EQ(new Num(b)); }
     
      /** (==) eq, EQUAL LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.eq(new BigInteger("32"), new BigInteger("32")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.eq(new BigInteger("32"), new BigInteger("32")), "\n"); //true */
     public static boolean eq(BigInteger a, BigInteger b) { return new Num(a).EQ(new Num(b)); }
     
      /** (>) gt, GREATER LOGIC BINARY OPERATOR */
-    /**  CODE: Num a = new Num("32.0"); Num b = new Num("31.009"); Num.print(Num.gt(a, b), "\r\n"); //true */
+    /**  CODE: Num a = new Num("32.0"); Num b = new Num("31.009"); Num.print(Num.gt(a, b), "\n"); //true */
     public static boolean gt(Num a, Num b) { return a.GT(b); }
 
      /** (>) gt, GREATER LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.gt("32.0", "31.009"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.gt("32.0", "31.009"), "\n"); //true */
     public static boolean gt(String a, String b) { return new Num(a).GT(new Num(b)); }
  
      /** (>) gt, GREATER LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.gt(32, 31), "\r\n"); //true */
+    /**  CODE: Num.print(Num.gt(32, 31), "\n"); //true */
     public static boolean gt(int a, int b) { return new Num(a).GT(new Num(b)); }
     
      /** (>) gt, GREATER LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.gt(32L, 31L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.gt(32L, 31L), "\n"); //true */
     public static boolean gt(long a, long b) { return new Num(a).GT(new Num(b)); }
     
      /** (>) gt, GREATER LOGIC BINARY OPERATOR */
-    /**  CODE: Num.print(Num.gt(new BigInteger("32"), new BigInteger("31")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.gt(new BigInteger("32"), new BigInteger("31")), "\n"); //true */
     public static boolean gt(BigInteger a, BigInteger b) { return new Num(a).GT(new Num(b)); }
     
     /** (>=) ge, GREATER OR EQUAL LOGIC BINARY OPERATOR */
-   /**  Num.print(Num.ge(new Num("32.0"), new Num("00032.000")), "\r\n"); //true */
+   /**  Num.print(Num.ge(new Num("32.0"), new Num("00032.000")), "\n"); //true */
    public static boolean ge(Num a, Num b) { return a.GE(b); }
 
     /** (>=) ge, GREATER OR EQUAL LOGIC BINARY OPERATOR */
-   /**  Num.print(Num.ge("32.0", "00032.000"), "\r\n"); //true */
+   /**  Num.print(Num.ge("32.0", "00032.000"), "\n"); //true */
    public static boolean ge(String a, String b) { return new Num(a).GE(new Num(b)); }
 
     /** (>=) ge, GREATER OR EQUAL LOGIC BINARY OPERATOR */
-   /**  Num.print(Num.ge(32, 32), "\r\n"); //true */
+   /**  Num.print(Num.ge(32, 32), "\n"); //true */
    public static boolean ge(int a, int b) { return new Num(a).GE(new Num(b)); }
    
     /** (>=) ge, GREATER OR EQUAL LOGIC BINARY OPERATOR */
-   /**  Num.print(Num.ge(32L, 32L), "\r\n"); //true */
+   /**  Num.print(Num.ge(32L, 32L), "\n"); //true */
    public static boolean ge(long a, long b) { return new Num(a).GE(new Num(b)); }
    
     /** (>=) ge, GREATER OR EQUAL LOGIC BINARY OPERATOR */
-   /**  CODE: Num.print(Num.ge(new BigInteger("32"), new BigInteger("33")), "\r\n"); //false */
+   /**  CODE: Num.print(Num.ge(new BigInteger("32"), new BigInteger("33")), "\n"); //false */
    public static boolean ge(BigInteger a, BigInteger b) { return new Num(a).GE(new Num(b)); }
 
      /** (!) not, LOGIC UNARY OPERATOR */
-    /** CODE: Num a = new Num("32.0"); Num.print(Num.not(a), "\r\n"); //false */
+    /** CODE: Num a = new Num("32.0"); Num.print(Num.not(a), "\n"); //false */
     public static boolean not(Num a) { return a.Not(); }
 
      /** (!) not, LOGIC UNARY OPERATOR */
-    /**  CODE: Num.print(Num.not("32.0"), "\r\n"); //false */
+    /**  CODE: Num.print(Num.not("32.0"), "\n"); //false */
     public static boolean not(String a) { return new Num(a).Not(); }
 
      /** (!) not, LOGIC UNARY OPERATOR */
-    /**  CODE: Num.print(Num.not(32), "\r\n"); //false */
+    /**  CODE: Num.print(Num.not(32), "\n"); //false */
     public static boolean not(int a) { return new Num(a).Not(); }
 
      /** (!) not, LOGIC UNARY OPERATOR */
-    /**  CODE: Num.print(Num.not(32L), "\r\n"); //false */
+    /**  CODE: Num.print(Num.not(32L), "\n"); //false */
     public static boolean not(long a) { return new Num(a).Not(); }
 
      /** (!) not, LOGIC UNARY OPERATOR */
-    /**  CODE: Num.print(Num.not(new BigInteger("32")), "\r\n"); //false */
+    /**  CODE: Num.print(Num.not(new BigInteger("32")), "\n"); //false */
     public static boolean not(BigInteger a) { return new Num(a).Not(); }
 
      /**  is_numeven, BOOLEAN CHECKS FOR Num EVEN (0 2 4 6 8) */
-    /**   CODE: Num a = new Num("32.0"); Num.print(Num.is_numeven(a), "\r\n"); //true */
+    /**   CODE: Num a = new Num("32.0"); Num.print(Num.is_numeven(a), "\n"); //true */
     public static boolean is_numeven(Num n) { return n.Is_numeven(); }
     
      /**  is_numeven, BOOLEAN CHECKS FOR String EVEN (0 2 4 6 8) */
-    /**   CODE: Num.print(Num.is_numeven("32.0"), "\r\n"); //true */
+    /**   CODE: Num.print(Num.is_numeven("32.0"), "\n"); //true */
     public static boolean is_numeven(String N) { Num n = new Num(N); return n.Is_numeven(); }
     
      /**  is_numeven, BOOLEAN CHECKS FOR int EVEN (0 2 4 6 8) */
-    /**   CODE: Num.print(Num.is_numeven(32), "\r\n"); //true */
+    /**   CODE: Num.print(Num.is_numeven(32), "\n"); //true */
     public static boolean is_numeven(int N) { Num n = new Num(N); return n.Is_numeven(); }
     
      /**  is_numeven, BOOLEAN CHECKS FOR long EVEN (0 2 4 6 8) */
-    /**   CODE: Num.print(Num.is_numeven(32L), "\r\n"); //true */
+    /**   CODE: Num.print(Num.is_numeven(32L), "\n"); //true */
     public static boolean is_numeven(long N) { Num n = new Num(N); return n.Is_numeven(); }
     
      /**  is_numeven, BOOLEAN CHECKS FOR BigInteger EVEN (0 2 4 6 8) */
-    /**   CODE: Num.print(Num.is_numeven(new BigInteger("32")), "\r\n"); //true */
+    /**   CODE: Num.print(Num.is_numeven(new BigInteger("32")), "\n"); //true */
     public static boolean is_numeven(BigInteger N) { Num n = new Num(N); return n.Is_numeven(); }
     
      /** is_numodd, BOOLEAN CHECKS FOR Num ODD (1 3 5 7 9) */ 
-    /**  CODE: Num a = new Num("3.0"); Num.print(Num.is_numodd(a), "\r\n"); //true */
+    /**  CODE: Num a = new Num("3.0"); Num.print(Num.is_numodd(a), "\n"); //true */
     public static boolean  is_numodd(Num n) { return n.Is_numodd(); }
 
      /** is_numodd, BOOLEAN CHECKS FOR String ODD (1 3 5 7 9) */ 
-    /**  CODE: Num.print(Num.is_numodd("3.0"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_numodd("3.0"), "\n"); //true */
     public static boolean  is_numodd(String N) { Num n = new Num(N); return n.Is_numodd(); }
     
      /** is_numodd, BOOLEAN CHECKS FOR int ODD (1 3 5 7 9) */ 
-    /**  CODE: Num.print(Num.is_numodd(3), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_numodd(3), "\n"); //true */
     public static boolean  is_numodd(int N) { Num n = new Num(N); return n.Is_numodd(); }
     
      /** is_numodd, BOOLEAN CHECKS FOR long ODD (1 3 5 7 9) */ 
-    /**  CODE: Num.print(Num.is_numodd(3L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_numodd(3L), "\n"); //true */
     public static boolean  is_numodd(long N) { Num n = new Num(N); return n.Is_numodd(); }
     
      /** is_numodd, BOOLEAN CHECKS FOR BigInteger ODD (1 3 5 7 9) */ 
-    /**  CODE: Num.print(Num.is_numodd(new BigInteger("33")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_numodd(new BigInteger("33")), "\n"); //true */
     public static boolean  is_numodd(BigInteger N) { Num n = new Num(N); return n.Is_numodd(); }
     
      /** is_positive, BOOLEAN CHECKS FOR Num POSITIVE */ 
-    /**  CODE: Num a = new Num("60.0"); Num.print(Num.is_positive(a), "\r\n"); //true */
+    /**  CODE: Num a = new Num("60.0"); Num.print(Num.is_positive(a), "\n"); //true */
     public static boolean is_positive(Num n) { return !n.Is_negative(); }
 
      /** is_positive, BOOLEAN CHECKS FOR String POSITIVE */ 
-    /**  CODE: Num.print(Num.is_positive("60.0"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_positive("60.0"), "\n"); //true */
     public static boolean is_positive(String N) { Num n = new Num(N); return !n.Is_negative(); }
     
      /** is_positive, BOOLEAN CHECKS FOR int POSITIVE */ 
-    /**  CODE: Num.print(Num.is_positive(60), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_positive(60), "\n"); //true */
     public static boolean is_positive(int N) { Num n = new Num(N); return !n.Is_negative(); }
     
      /** is_positive, BOOLEAN CHECKS FOR long POSITIVE */ 
-    /**  CODE: Num.print(Num.is_positive(60L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_positive(60L), "\n"); //true */
     public static boolean is_positive(long N) { Num n = new Num(N); return !n.Is_negative(); }
     
      /** is_positive, BOOLEAN CHECKS FOR BigInteger POSITIVE */ 
-    /**  CODE: Num.print(Num.is_positive(new BigInteger("60")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_positive(new BigInteger("60")), "\n"); //true */
     public static boolean is_positive(BigInteger N) { Num n = new Num(N); return !n.Is_negative(); }
     
      /** is_negative, BOOLEAN CHECKS BY Num NEGATIVE */
-    /**  CODE: Num a = new Num("-60.0"); Num.print(Num.is_negative(a), "\r\n"); //true */
+    /**  CODE: Num a = new Num("-60.0"); Num.print(Num.is_negative(a), "\n"); //true */
     public static boolean is_negative(Num n) { return n.Is_negative(); }
 
      /** is_negative, BOOLEAN CHECKS BY String NEGATIVE */
-    /**  CODE: Num.print(Num.is_negative("-60.0"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_negative("-60.0"), "\n"); //true */
     public static boolean is_negative(String N) { Num n = new Num(N); return n.Is_negative(); }
     
      /** is_negative, BOOLEAN CHECKS BY int NEGATIVE */
-    /**  CODE: Num.print(Num.is_negative(-60), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_negative(-60), "\n"); //true */
     public static boolean is_negative(int N) { Num n = new Num(N); return n.Is_negative(); }
     
     /** is_negative, BOOLEAN CHECKS BY long NEGATIVE */
-    /**  CODE: Num.print(Num.is_negative(-60L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_negative(-60L), "\n"); //true */
     public static boolean is_negative(long N) { Num n = new Num(N); return n.Is_negative(); }
     
      /** is_negative, BOOLEAN CHECKS BY BigInteger NEGATIVE */
-    /**  CODE: Num.print(Num.is_negative(new BigInteger("-60")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_negative(new BigInteger("-60")), "\n"); //true */
     public static boolean is_negative(BigInteger N) { Num n = new Num(N); return n.Is_negative(); }
     
      /** is_zero, BOOLEAN CHECKS BY ZERO Num VALUE */
-    /**  CODE: Num a = new Num("0.0"); Num.print(Num.is_zero(a), "\r\n"); //true */
+    /**  CODE: Num a = new Num("0.0"); Num.print(Num.is_zero(a), "\n"); //true */
     public static boolean is_zero(Num n) { return n.Is_zero(); }
  
      /** is_zero, BOOLEAN CHECKS BY ZERO String VALUE */
-    /**  CODE: Num.print(Num.is_zero("0.0"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_zero("0.0"), "\n"); //true */
     public static boolean is_zero(String N) { Num n = new Num(N); return n.Is_zero(); }
     
      /** is_zero, BOOLEAN CHECKS BY ZERO int VALUE */
-    /**  CODE: Num.print(Num.is_zero(0), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_zero(0), "\n"); //true */
     public static boolean is_zero(int N) { Num n = new Num(N); return n.Is_zero(); }
     
      /** is_zero, BOOLEAN CHECKS BY ZERO long VALUE */
-    /**  CODE: Num.print(Num.is_zero(0L), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_zero(0L), "\n"); //true */
     public static boolean is_zero(long N) { Num n = new Num(N); return n.Is_zero(); }
     
      /** is_zero, BOOLEAN CHECKS BY ZERO BigInteger VALUE */
-    /**  CODE: Num.print(Num.is_zero(new BigInteger("0")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_zero(new BigInteger("0")), "\n"); //true */
     public static boolean is_zero(BigInteger N) { Num n = new Num(N); return n.Is_zero(); }
     
      /** is_numfloat, BOOLEAN CHECKS BY FLOATING POINT Num */
-    /**  CODE: Num a = new Num("7.14"); Num.print(Num.is_numfloat(a), "\r\n"); //true */
+    /**  CODE: Num a = new Num("7.14"); Num.print(Num.is_numfloat(a), "\n"); //true */
     public static boolean is_numfloat(Num n) { return n.Is_numfloat(); }
     
      /** is_numfloat, BOOLEAN CHECKS BY FLOATING POINT String */
-    /**  CODE: Num.print(Num.is_numfloat("7.14"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_numfloat("7.14"), "\n"); //true */
     public static boolean is_numfloat(String n) { return new Num(n).Is_numfloat(); }
     
      /** is_numfloat, BOOLEAN CHECKS BY FLOATING POINT int */
-    /**  CODE: Num.print(Num.is_numfloat(-7), "\r\n"); //false */
+    /**  CODE: Num.print(Num.is_numfloat(-7), "\n"); //false */
     public static boolean is_numfloat(int n) { return false; }
     
      /** is_numfloat, BOOLEAN CHECKS BY FLOATING POINT long */
-    /**  CODE: Num.print(Num.is_numfloat(-7L), "\r\n"); //false */
+    /**  CODE: Num.print(Num.is_numfloat(-7L), "\n"); //false */
     public static boolean is_numfloat(long n) { return false; }
     
      /** is_numfloat, BOOLEAN CHECKS BY FLOATING POINT BigInteger */
-    /**  CODE: Num.print(Num.is_numfloat(new BigInteger("-7") ), "\r\n"); //false */
+    /**  CODE: Num.print(Num.is_numfloat(new BigInteger("-7") ), "\n"); //false */
     public static boolean is_numfloat(BigInteger n) { return false; }
     
    /**  is_numint, BOOLEAN CHECKS IF INTEGER Num */
-  /**   CODE: Num a = new Num("7.14"); Num.print(Num.is_numint(a), "\r\n"); //false */
+  /**   CODE: Num a = new Num("7.14"); Num.print(Num.is_numint(a), "\n"); //false */
   public static boolean is_numint(Num n) { return n.Is_numint(); }
 
    /**  is_numint, BOOLEAN CHECKS IF INTEGER String */
-  /**  CODE: Num.print(Num.is_numint("7.14"), "\r\n"); //false */
+  /**  CODE: Num.print(Num.is_numint("7.14"), "\n"); //false */
   public static boolean is_numint(String n) {return new Num(n).Is_numint(); }
 
    /**  is_numint, BOOLEAN CHECKS IF INTEGER int */
-  /**  CODE: Num.print(Num.is_numint(7), "\r\n"); //true */
+  /**  CODE: Num.print(Num.is_numint(7), "\n"); //true */
   public static boolean is_numint(int n) {return true; }
   
    /**  is_numint, BOOLEAN CHECKS IF INTEGER long */
-  /**  CODE: Num.print(Num.is_numint(7L), "\r\n"); //true */
+  /**  CODE: Num.print(Num.is_numint(7L), "\n"); //true */
   public static boolean is_numint(long n) {return true; }
   
    /**  is_numint, BOOLEAN CHECKS IF INTEGER long */
-  /**  CODE: Num.print(Num.is_numint(new BigInteger("7")), "\r\n"); //true */
+  /**  CODE: Num.print(Num.is_numint(new BigInteger("7")), "\n"); //true */
   public static boolean is_numint(BigInteger n) {return true; }
   
    /**  abs, RETURN THE ABSOLUTE VALUE OF Num */
-  /**   CODE: Num a = new Num(-4); Num b = Num.abs(a); b.Print("\r\n"); //4.0 */
+  /**   CODE: Num a = new Num(-4); Num b = Num.abs(a); b.Print("\n"); //4.0 */
   public static Num abs(Num n) { return new Num(n).Abs(); }
 
    /**  abs, RETURN THE ABSOLUTE VALUE OF Num STRING */
-  /**   CODE: Num.abs("-36.2").Print("\r\n"); //36.2 */
+  /**   CODE: Num.abs("-36.2").Print("\n"); //36.2 */
   public static Num abs(String n) { return new Num(n).Abs(); }
 
    /**  abs, RETURN THE ABSOLUTE VALUE OF int */
-  /**   CODE: Num.abs(-36).Print("\r\n"); //36.0 */
+  /**   CODE: Num.abs(-36).Print("\n"); //36.0 */
   public static Num abs(int n) { return new Num(n).Abs(); }
 
    /**  abs, RETURN THE ABSOLUTE VALUE OF long */
-  /**   CODE: Num.abs(-36L).Print("\r\n"); //36.0 */
+  /**   CODE: Num.abs(-36L).Print("\n"); //36.0 */
   public static Num abs(long n) { return new Num(n).Abs(); }
 
    /**  abs, RETURN THE ABSOLUTE VALUE OF BigInteger */
-  /**   CODE: Num.abs(new BigInteger("-36")).Print("\r\n"); //36.0 */
+  /**   CODE: Num.abs(new BigInteger("-36")).Print("\n"); //36.0 */
   public static Num abs(BigInteger n) { return new Num(n).Abs(); }
 
    /**  clear, CLEAR VARIABLE SETTING TO ZERO */
-  /**   CODE: Num a = new Num(4); Num.clear(a); a.Print("\r\n"); //0.0 */
+  /**   CODE: Num a = new Num(4); Num.clear(a); a.Print("\n"); //0.0 */
   public static void clear(Num v) { v.Clear(); }
 
     /** isDigit, CHECK FOR ONLY DIGITS IN A STRING */
@@ -1656,11 +1656,11 @@ public class Num implements Comparable<Num> {
   public static boolean isDigit(String str) { return str.matches("^\\d+$"); }
   
    /** IN, BOOLEAN IN CHECKS CHARACTER IN A STRING */
-  /**  CODE:  Num.print(Num.IN("123#4", "."), "\r\n"); //false */
+  /**  CODE:  Num.print(Num.IN("123#4", "."), "\n"); //false */
   public static boolean IN(String s, String ch) { return Pattern.compile(Pattern.quote(ch)).matcher(s).find(); }
 
    /** shift, SHIFT Num LEFT AND RIGHT BY int TIMES (MULTIPLY AND DIVIDE BY TEN) */
-  /**  CODE: Num a = new Num("123.456789"); Num.print(Num.shift(a, 3), "\r\n"); //123456.789 */
+  /**  CODE: Num a = new Num("123.456789"); Num.print(Num.shift(a, 3), "\n"); //123456.789 */
   public static Num shift(Num N, int zeros) {
       if      (zeros > 0) { return new Num(N.Mul(new Num(new BigInteger("10").pow(zeros)))); } 
       else if (zeros < 0) { return new Num(N.Div(new Num(new BigInteger("10").pow(-zeros), -zeros + N.L_n1))); }
@@ -1668,87 +1668,87 @@ public class Num implements Comparable<Num> {
   }
 
    /** shift, SHIFT NUMERIC String LEFT AND RIGHT BY int TIMES (MULTIPLY AND DIVIDE BY TEN) */
-  /**  CODE: Num.print(Num.shift("123.456789", 3), "\r\n"); //123456.789 */
+  /**  CODE: Num.print(Num.shift("123.456789", 3), "\n"); //123456.789 */
   public static Num shift(String N, int zeros) { return Num.shift(new Num(N), zeros); }
 
    /** shift, SHIFT int LEFT AND RIGHT BY int TIMES (MULTIPLY AND DIVIDE BY TEN) */
-  /**  CODE: Num.print(Num.shift(5, -3), "\r\n"); //0.005 */
+  /**  CODE: Num.print(Num.shift(5, -3), "\n"); //0.005 */
   public static Num shift(int N, int zeros) { return Num.shift(new Num(N), zeros); }
 
    /** shift, SHIFT long LEFT AND RIGHT BY int TIMES (MULTIPLY AND DIVIDE BY TEN) */
-  /**  CODE: Num.print(Num.shift(-5L, -3), "\r\n"); //-0.005 */
+  /**  CODE: Num.print(Num.shift(-5L, -3), "\n"); //-0.005 */
   public static Num shift(long N, int zeros) { return Num.shift(new Num(N), zeros); }
 
    /** shift, SHIFT BigInteger LEFT AND RIGHT BY int TIMES (MULTIPLY AND DIVIDE BY TEN) */
-  /**  CODE: Num.print(Num.shift(new BigInteger("-5"), -3), "\r\n"); //-0.005 */
+  /**  CODE: Num.print(Num.shift(new BigInteger("-5"), -3), "\n"); //-0.005 */
   public static Num shift(BigInteger N, int zeros) { return Num.shift(new Num(N), zeros); }
 
    /** in, BOOLEAN MATCH OPERATOR BY ARRAY */
-  /**  CODE:  Num A[] = { new Num(3), new Num(-6), new Num(0), new Num("9.7"), new Num("6.1") }; Num.print(Num.in(A, new Num("9.7")), "\r\n"); //true */
+  /**  CODE:  Num A[] = { new Num(3), new Num(-6), new Num(0), new Num("9.7"), new Num("6.1") }; Num.print(Num.in(A, new Num("9.7")), "\n"); //true */
   public static boolean in(Num[] L, Num v) { for(Num e : L) if (e.EQ(v)) return true; return false; }
 
    /** not_in, BOOLEAN NOT MATCH OPERATOR BY ARRAY */ 
-  /**  CODE:  Num A[] = { new Num(3), new Num(-6), new Num(0), new Num("9.7"), new Num("6.1") }; Num.print(Num.not_in(A, new Num("9.7")), "\r\n"); //false */
+  /**  CODE:  Num A[] = { new Num(3), new Num(-6), new Num(0), new Num("9.7"), new Num("6.1") }; Num.print(Num.not_in(A, new Num("9.7")), "\n"); //false */
   public static boolean not_in(Num[] L, Num v) { for(Num e : L) if (e.EQ(v)) return false; return true; }
 
    /** CALCULATOR MODE: _10y, TEN POWER BY int */
-  /**  CODE: int a = 9; Num._10y(a).Print("\r\n"); //1000000000.0 */
+  /**  CODE: int a = 9; Num._10y(a).Print("\n"); //1000000000.0 */
   public static Num _10y(int E) { return new Num(10).Shift(E - 1); }
 
    /** CALCULATOR MODE: _10y, TEN POWER BY long */
-  /**  CODE: long a = 9; Num._10y(a).Print("\r\n"); //1000000000.0 */
+  /**  CODE: long a = 9; Num._10y(a).Print("\n"); //1000000000.0 */
   public static Num _10y(long E) { return new Num(10).Shift((int) E - 1); }
 
    /** CALCULATOR MODE: _10y, TEN POWER BY BigInteger */
-  /**  CODE: BigInteger a = new BigInteger("9"); Num._10y(a).Print("\r\n"); //1000000000.0 */
+  /**  CODE: BigInteger a = new BigInteger("9"); Num._10y(a).Print("\n"); //1000000000.0 */
   public static Num _10y(BigInteger E) { return new Num(10).Shift(E.intValue() - 1); }
 
    /** CALCULATOR MODE: _10y, TEN POWER BY NUMERIC String */
-  /**  CODE: String a = "9.0"; Num._10y(a).Print("\r\n"); //1000000000.0 */
+  /**  CODE: String a = "9.0"; Num._10y(a).Print("\n"); //1000000000.0 */
   public static Num _10y(String E) { return new Num(10).Shift(new Num(E).toInt() - 1); }
 
    /** CALCULATOR MODE: _10y, TEN POWER BY Num */
-  /** CODE: Num a = new Num("9.0"); Num._10y(a).Print("\r\n"); //1000000000.0 */
+  /** CODE: Num a = new Num("9.0"); Num._10y(a).Print("\n"); //1000000000.0 */
   public static Num _10y(Num E) { return new Num(10).Shift(E.toInt() - 1); }
 
    /** CALCULATOR MODE: _ey, e POWER BY int */
-  /**  CODE: int a = 5; Num._ey(a).Round(30).Print("\r\n"); //148.413159102576603421115580040563 */
+  /**  CODE: int a = 5; Num._ey(a).Round(30).Print("\n"); //148.413159102576603421115580040563 */
   public static Num _ey(int ex) { return Num.pow(Num.e(), ex); }
 
    /** CALCULATOR MODE: _ey, e POWER BY long */
-  /**  CODE: long a = 5; Num._ey(a).Round(30).Print("\r\n"); //148.413159102576603421115580040563 */
+  /**  CODE: long a = 5; Num._ey(a).Round(30).Print("\n"); //148.413159102576603421115580040563 */
   public static Num _ey(long  ex) { return Num.pow(Num.e(), (int) ex); }
 
    /** CALCULATOR MODE: _ey, e POWER BY BigInteger */
-  /**  CODE: BigInteger a = new BigInteger("5"); Num._ey(a).Round(30).Print("\r\n"); //148.413159102576603421115580040563 */
+  /**  CODE: BigInteger a = new BigInteger("5"); Num._ey(a).Round(30).Print("\n"); //148.413159102576603421115580040563 */
   public static Num _ey(BigInteger ex) { return Num.pow(Num.e(), ex.intValue()); }
 
    /** CALCULATOR MODE: _ey, e POWER BY NUMERIC String */
-  /**  CODE: String a = "5.0"; Num._ey(a).Round(30).Print("\r\n"); //148.413159102576603421115580040563 */
+  /**  CODE: String a = "5.0"; Num._ey(a).Round(30).Print("\n"); //148.413159102576603421115580040563 */
   public static Num _ey(String ex) { return Num.pow(Num.e(), new Num(ex).toInt()); }
 
    /** CALCULATOR MODE: _ey, e POWER BY Num */
-  /**  CODE: Num a = new Num("5.0"); Num._ey(a).Round(30).Print("\r\n"); //148.413159102576603421115580040563 */
+  /**  CODE: Num a = new Num("5.0"); Num._ey(a).Round(30).Print("\n"); //148.413159102576603421115580040563 */
   public static Num _ey(Num ex) { return Num.pow(Num.e(), ex.toInt()); }
 
    /** CALCULATOR MODE: _2y, TWO POWER BY int */
-  /**  CODE: Num._2y(5).Print("\r\n"); //32.0 */
+  /**  CODE: Num._2y(5).Print("\n"); //32.0 */
   public static Num _2y(int E) { return Num.pow(2, E); }
 
    /** CALCULATOR MODE: _2y, TWO POWER BY long */
-  /**  CODE: Num._2y(5L).Print("\r\n"); //32.0 */
+  /**  CODE: Num._2y(5L).Print("\n"); //32.0 */
   public static Num _2y(long E) { return Num.pow(2, (int) E); }
 
    /** CALCULATOR MODE: _2y, TWO POWER BY BigInteger */
-  /**  CODE: Num._2y(new BigInteger("5")).Print("\r\n"); //32.0 */
+  /**  CODE: Num._2y(new BigInteger("5")).Print("\n"); //32.0 */
   public static Num _2y(BigInteger E) { return Num.pow(2, E.intValue()); }
 
    /** CALCULATOR MODE: _2y, TWO POWER BY NUMERIC String */
-  /**  CODE: Num._2y("5.0").Print("\r\n"); //32.0 */
+  /**  CODE: Num._2y("5.0").Print("\n"); //32.0 */
   public static Num _2y(String E) { return Num.pow(2, new Num(E).toInt()); }
 
    /** CALCULATOR MODE: _2y, TWO POWER BY Num */
-  /**  CODE: Num._2y(new Num("5.0")).Print("\r\n"); //32.0 */
+  /**  CODE: Num._2y(new Num("5.0")).Print("\n"); //32.0 */
   public static Num _2y(Num E) { return Num.pow(2, E.toInt()); }
 
    /** CALCULATOR MODE: fact, FACTORIAL COMPUTATION BY Num */
@@ -1777,315 +1777,315 @@ public class Num implements Comparable<Num> {
   public static Num fact(BigInteger n) { return Num.fact(new Num(n).toInt()); }
 
    /** CALCULATOR MODE: x2, SQUARE POWER BY Num */
-  /**  CODE: Num a = new Num("3.1415"); Num.x2(a).Print("\r\n"); //9.86902225 */
+  /**  CODE: Num a = new Num("3.1415"); Num.x2(a).Print("\n"); //9.86902225 */
   public static Num x2(Num n) { return Num.mul(n, n); }
 
    /** CALCULATOR MODE: x2, SQUARE POWER BY String */
-  /**  CODE: Num.x2("3.1415").Print("\r\n"); //9.86902225 */
+  /**  CODE: Num.x2("3.1415").Print("\n"); //9.86902225 */
   public static Num x2(String n) { return Num.mul(n, n); }
 
    /** CALCULATOR MODE: x2, SQUARE POWER BY int */
-  /**  CODE: Num.x2(3).Print("\r\n"); //9.0 */
+  /**  CODE: Num.x2(3).Print("\n"); //9.0 */
   public static Num x2(int n) { return Num.mul(n, n); }
   
    /** CALCULATOR MODE: x2, SQUARE POWER BY long */
-  /**  CODE: Num.x2(3L).Print("\r\n"); //9.0 */
+  /**  CODE: Num.x2(3L).Print("\n"); //9.0 */
   public static Num x2(long n) { return Num.mul(n, n); }
   
    /** CALCULATOR MODE: x2, SQUARE POWER BY BigInteger */
-  /**  CODE: Num.x2(new BigInteger("3")).Print("\r\n"); //9.0 */
+  /**  CODE: Num.x2(new BigInteger("3")).Print("\n"); //9.0 */
   public static Num x2(BigInteger n) { return Num.mul(n, n); }
   
    /** CALCULATOR MODE: x3, CUBE POWER BY Num */
-  /**  CODE: Num a = new Num("123.456"); Num.x3(a).Print("\r\n"); //1881640.295202816 */
+  /**  CODE: Num a = new Num("123.456"); Num.x3(a).Print("\n"); //1881640.295202816 */
   public static Num x3(Num n) { return Num.mul(n, n).Mul(n); }
 
    /** CALCULATOR MODE: x3, CUBE POWER by String */
-  /**  CODE: Num.x3("123.456").Print("\r\n"); //1881640.295202816 */
+  /**  CODE: Num.x3("123.456").Print("\n"); //1881640.295202816 */
   public static Num x3(String n) { return Num.mul(n, n).Mul(n); }
 
    /** CALCULATOR MODE: x3, CUBE POWER by int */
-  /**  CODE: Num.x3(123).Print("\r\n"); //1860867.0 */
+  /**  CODE: Num.x3(123).Print("\n"); //1860867.0 */
   public static Num x3(int n) { return Num.mul(n, n).Mul(n); }
   
    /** CALCULATOR MODE: x3, CUBE POWER by long */
-  /**  CODE: Num.x3(123L).Print("\r\n"); //1860867.0 */
+  /**  CODE: Num.x3(123L).Print("\n"); //1860867.0 */
   public static Num x3(long n) { return Num.mul(n, n).Mul(n); }
   
    /** CALCULATOR MODE: x3, CUBE POWER by BigInteger */
-  /**  CODE: Num.x3(new BigInteger("123")).Print("\r\n"); //1860867.0 */
+  /**  CODE: Num.x3(new BigInteger("123")).Print("\n"); //1860867.0 */
   public static Num x3(BigInteger n) { return Num.mul(n, n).Mul(n); }
   
    /** CALCULATOR MODE: xe10 (shift), RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY Num */
-  /**  CODE: Num a = new Num("0.001"); Num.xe10(a, 6).Print("\r\n"); //1000.0 */
+  /**  CODE: Num a = new Num("0.001"); Num.xe10(a, 6).Print("\n"); //1000.0 */
   public static Num xe10(Num a, int x) { return Num.shift(a, x); }
 
    /** CALCULATOR MODE: xe10 (shift), RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY String */
-  /**  CODE: Num.xe10("0.001", 6).Print("\r\n"); //1000.0 */
+  /**  CODE: Num.xe10("0.001", 6).Print("\n"); //1000.0 */
   public static Num xe10(String a, int x) { return Num.shift(a, x); }
   
    /** CALCULATOR MODE: xe10 (shift), RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY int */
-  /**  CODE: Num.xe10(1, 6).Print("\r\n"); //1000000.0 */
+  /**  CODE: Num.xe10(1, 6).Print("\n"); //1000000.0 */
   public static Num xe10(int a, int x) { return Num.shift(a, x); }
   
    /** CALCULATOR MODE: xe10 (shift), RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY long */
-  /**  CODE: Num.xe10(1L, 6).Print("\r\n"); //1000000.0 */
+  /**  CODE: Num.xe10(1L, 6).Print("\n"); //1000000.0 */
   public static Num xe10(long a, int x) { return Num.shift(a, x); }
   
    /** CALCULATOR MODE: xe10 (shift), RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY BigInteger */
-  /**  CODE: Num.xe10(new BigInteger("1"), 6).Print("\r\n"); //1000000.0 */
+  /**  CODE: Num.xe10(new BigInteger("1"), 6).Print("\n"); //1000000.0 */
   public static Num xe10(BigInteger a, int x) { return Num.shift(a, x); }
   
    /** CALCULATOR MODE: xy, POWER BY Num, Num */ 
-  /**  CODE: Num.xy(new Num(4), new Num(30)).Print("\r\n"); //1152921504606846976.0 */
+  /**  CODE: Num.xy(new Num(4), new Num(30)).Print("\n"); //1152921504606846976.0 */
   public static Num xy(Num x, Num y) { return Num.pow(x.n, y.toInt()); }
   
    /** CALCULATOR MODE: xy, POWER BY Num, int */ 
-  /**  CODE: Num.xy(new Num(4), 30).Print("\r\n"); //1152921504606846976.0 */
+  /**  CODE: Num.xy(new Num(4), 30).Print("\n"); //1152921504606846976.0 */
   public static Num xy(Num x, int y) { return Num.pow(x.n, y); }
 
    /** CALCULATOR MODE: xy, POWER BY String, String */ 
-  /**  CODE: Num.xy("3.0", "4.0").Print("\r\n"); //81.0 */
+  /**  CODE: Num.xy("3.0", "4.0").Print("\n"); //81.0 */
   public static Num xy(String x, String y) { return Num.pow(x, y); }
 
    /** CALCULATOR MODE: xy, POWER String, int */ 
-  /**  CODE: Num.xy("-3.14", 7).Print("\r\n"); //-3009.59139524799104 */
+  /**  CODE: Num.xy("-3.14", 7).Print("\n"); //-3009.59139524799104 */
   public static Num xy(String x, int y) { return Num.pow(x, y); }
 
    /** CALCULATOR MODE: xy, POWER BY int, int */ 
-  /**  CODE: Num.xy(-2, -4).Print("\r\n"); //0.0625 */
+  /**  CODE: Num.xy(-2, -4).Print("\n"); //0.0625 */
   public static Num xy(int x, int y) { return Num.pow(x, y); }
 
    /** CALCULATOR MODE: xy, POWER BY long, long */ 
-  /**  CODE: Num.xy(-2L, -4L).Print("\r\n"); //0.0625 */
+  /**  CODE: Num.xy(-2L, -4L).Print("\n"); //0.0625 */
   public static Num xy(long x, long y) { return Num.pow((int) x, (int) y); }
 
    /** CALCULATOR MODE: xy, POWER BY BigInteger, BigInteger */ 
-  /**  CODE: Num.xy(new BigInteger("-2"), new BigInteger("-4")).Print("\r\n"); //0.0625 */
+  /**  CODE: Num.xy(new BigInteger("-2"), new BigInteger("-4")).Print("\n"); //0.0625 */
   public static Num xy(BigInteger x, BigInteger y) { return Num.pow(new Num(x).toInt(), new Num(y).toInt()); }
 
    /** address, RETURN Num ADDRESS */
-  /** CODE: Num.print(Num.address(new Num("3.0")), "\r\n"); //... (-523236767) */
+  /** CODE: Num.print(Num.address(new Num("3.0")), "\n"); //... (-523236767) */
   public static int address(Num n) { return n.hashCode(); } 
 
    /** CALCULATOR MODE: _2x, DOUBLED VALUE BY int */
-  /** CODE: Num._2x(-2147483648).Print("\r\n"); //-4294967296.0 */
+  /** CODE: Num._2x(-2147483648).Print("\n"); //-4294967296.0 */
   public static Num _2x(int n) { return new Num(n).Add(n); }
   
    /** CALCULATOR MODE: _2x, DOUBLED VALUE BY long */
-  /**  CODE: Num._2x(-2147483648L).Print("\r\n"); //-4294967296.0 */
+  /**  CODE: Num._2x(-2147483648L).Print("\n"); //-4294967296.0 */
   public static Num _2x(long n) { return new Num(n).Add(n); }
   
    /** CALCULATOR MODE: _2x, DOUBLED VALUE BY BigInteger */
-  /**  CODE: Num._2x(new BigInteger("-2147483648")).Print("\r\n"); //-4294967296.0 */
+  /**  CODE: Num._2x(new BigInteger("-2147483648")).Print("\n"); //-4294967296.0 */
   public static Num _2x(BigInteger n) { return new Num(n).Add(n); }
   
    /** CALCULATOR MODE: _2x, DOUBLED VALUE BY String */
-  /**  CODE: Num._2x("123.0").Print("\r\n"); //246.0 */
+  /**  CODE: Num._2x("123.0").Print("\n"); //246.0 */
   public static Num _2x(String n) { return new Num(n).Add(n); }
   
    /** CALCULATOR MODE: _2x, DOUBLED VALUE BY Num */
-  /**  CODE: Num a = new Num ("123.0"); Num._2x(a).Print("\r\n"); //246.0 */
+  /**  CODE: Num a = new Num ("123.0"); Num._2x(a).Print("\n"); //246.0 */
   public static Num _2x(Num n) { return n.Add(n); }
 
    /** CALCULATOR MODE: _3x, TRIPLED VALUE BY int */
-  /** CODE: Num._3x(123).Print("\r\n"); //369.0 */
+  /** CODE: Num._3x(123).Print("\n"); //369.0 */
   public static Num _3x(int n) { return new Num(n).Add(n).Add(n); }
 
    /** CALCULATOR MODE: _3x, TRIPLED VALUE BY long */
-  /**  CODE: Num._3x(123L).Print("\r\n"); //369.0 */
+  /**  CODE: Num._3x(123L).Print("\n"); //369.0 */
   public static Num _3x(long n) { return new Num(n).Add(n).Add(n); }
 
    /** CALCULATOR MODE: _3x, TRIPLED VALUE BY BigInteger */
-  /**  CODE: Num._3x(new BigInteger("123")).Print("\r\n"); //369.0 */
+  /**  CODE: Num._3x(new BigInteger("123")).Print("\n"); //369.0 */
   public static Num _3x(BigInteger n) { return new Num(n).Add(n).Add(n); }
 
   /** CALCULATOR MODE: _3x, TRIPLED VALUE BY String  */
-  /** CODE: Num._3x("123.0").Print("\r\n"); //369.0 */
+  /** CODE: Num._3x("123.0").Print("\n"); //369.0 */
   public static Num _3x(String n) { return new Num(n).Add(n).Add(n); }
 
    /** CALCULATOR MODE: _3x, TRIPLED VALUE BY Num */
-  /**  CODE: Num a = new Num ("123.0"); Num._3x(a).Print("\r\n"); //369.0 */
+  /**  CODE: Num a = new Num ("123.0"); Num._3x(a).Print("\n"); //369.0 */
   public static Num _3x(Num n) { return n.Add(n).Add(n); }
 
    /** CALCULATOR MODE: _10x, MULTIPLY FOR TEN BY int */
-  /**  CODE: Num._10x(3).Print("\r\n"); //30.0 */
+  /**  CODE: Num._10x(3).Print("\n"); //30.0 */
   public static Num _10x(int n) { return new Num(n).Shift(1); }
 
    /** CALCULATOR MODE: _10x, MULTIPLY FOR TEN BY long */
-  /** CODE: Num._10x(3L).Print("\r\n"); //30.0 */
+  /** CODE: Num._10x(3L).Print("\n"); //30.0 */
   public static Num _10x(long n) { return new Num(n).Shift(1); }
 
    /** CALCULATOR MODE: _10x, MULTIPLY FOR TEN BY BigInteger */
-  /**  CODE: Num._10x(new BigInteger("3")).Print("\r\n"); //30.0 */
+  /**  CODE: Num._10x(new BigInteger("3")).Print("\n"); //30.0 */
   public static Num _10x(BigInteger n) { return new Num(n).Shift(1); }
 
    /** CALCULATOR MODE: _10x, MULTIPLY FOR TEN BY String */
-  /**  CODE: Num._10x("3.2").Print("\r\n"); //32.0 */
+  /**  CODE: Num._10x("3.2").Print("\n"); //32.0 */
   public static Num _10x(String n) { return new Num(n).Shift(1); }
 
    /** CALCULATOR MODE: _10x, MULTIPLY FOR TEN BY Num */
-  /**  CODE: Num._10x(new Num("3.2")).Print("\r\n"); //32.0 */
+  /**  CODE: Num._10x(new Num("3.2")).Print("\n"); //32.0 */
   public static Num _10x(Num n) { return n.Shift(1); }
 
    /** CALCULATOR MODE: _100x, MULTIPLY FOR HUNDRED BY int */
-  /**  CODE: Num._100x(3).Print("\r\n"); //300.0 */
+  /**  CODE: Num._100x(3).Print("\n"); //300.0 */
   public static Num _100x(int n) { return new Num(n).Shift(2); }
   
    /** CALCULATOR MODE: _100x, MULTIPLY FOR HUNDRED BY long */
-  /**  CODE: Num._100x(3L).Print("\r\n"); //300.0 */
+  /**  CODE: Num._100x(3L).Print("\n"); //300.0 */
   public static Num _100x(long n) { return new Num(n).Shift(2); }
   
    /** CALCULATOR MODE: _100x, MULTIPLY FOR HUNDRED BY BigInteger */
-  /**  CODE: Num._100x(new BigInteger("3")).Print("\r\n"); //300.0 */
+  /**  CODE: Num._100x(new BigInteger("3")).Print("\n"); //300.0 */
   public static Num _100x(BigInteger n) { return new Num(n).Shift(2); }
 
    /** CALCULATOR MODE: _100x, MULTIPLY FOR HUNDRED BY String */
-  /**  CODE: Num._100x("3.2").Print("\r\n"); //320.0 */
+  /**  CODE: Num._100x("3.2").Print("\n"); //320.0 */
   public static Num _100x(String n) { return new Num(n).Shift(2); }
 
    /** CALCULATOR MODE: _100x, MULTIPLY FOR HUNDRED BY Num  */
-  /**  CODE: Num._100x(new Num("3.2")).Print("\r\n"); //320.0 */
+  /**  CODE: Num._100x(new Num("3.2")).Print("\n"); //320.0 */
   public static Num _100x(Num n) { return n.Shift(2); }
 
    /** CALCULATOR MODE: _1000x, MULTIPLY FOR THOUSAND BY int */
-  /** CODE: Num._1000x(3).Print("\r\n"); //3000.0 */
+  /** CODE: Num._1000x(3).Print("\n"); //3000.0 */
   public static Num _1000x(int n) { return new Num(n).Shift(3); }
   
   /** CALCULATOR MODE: _1000x, MULTIPLY FOR THOUSAND BY long */
-  /** CODE: Num._1000x(3L).Print("\r\n"); //3000.0 */
+  /** CODE: Num._1000x(3L).Print("\n"); //3000.0 */
   public static Num _1000x(long n) { return new Num(n).Shift(3); }
   
    /** CALCULATOR MODE: _1000, MULTIPLY FOR THOUSAND BY BigInteger */
-  /**  CODE: Num._1000x(new BigInteger("3")).Print("\r\n"); //3000.0 */
+  /**  CODE: Num._1000x(new BigInteger("3")).Print("\n"); //3000.0 */
   public static Num _1000x(BigInteger n) { return new Num(n).Shift(3); }
 
    /** CALCULATOR MODE: _1000x, MULTIPLY FOR THOUSAND BY String */
-  /**  CODE: Num._1000x("3.2").Print("\r\n"); //3200.0 */
+  /**  CODE: Num._1000x("3.2").Print("\n"); //3200.0 */
   public static Num _1000x(String n) { return new Num(n).Shift(3); }
 
    /** CALCULATOR MODE: _1000x, MULTIPLY FOR THOUSAND BY Num */
-  /**  CODE: Num._1000x(new Num("3.2")).Print("\r\n"); //3200.0 */
+  /**  CODE: Num._1000x(new Num("3.2")).Print("\n"); //3200.0 */
   public static Num _1000x(Num n) { return n.Shift(3); }
 
    /** CALCULATOR MODE: _10div, DIVIDE FOR TEN BY int */
-  /**  CODE: Num._10div(3).Print("\r\n"); //0.3 */
+  /**  CODE: Num._10div(3).Print("\n"); //0.3 */
   public static Num _10div(int n) { return new Num(n).Shift(-1); }
 
    /** CALCULATOR MODE: _10div, DIVIDE FOR TEN BY long */
-  /**  CODE: Num._10div(3L).Print("\r\n"); //0.3 */
+  /**  CODE: Num._10div(3L).Print("\n"); //0.3 */
   public static Num _10div(long n) { return new Num(n).Shift(-1); }
 
    /** CALCULATOR MODE: _10div, DIVIDE FOR TEN BY BigInteger */
-  /** CODE: Num._10div(new BigInteger("3")).Print("\r\n"); //0.3 */
+  /** CODE: Num._10div(new BigInteger("3")).Print("\n"); //0.3 */
   public static Num _10div(BigInteger n) { return new Num(n).Shift(-1); }
 
    /** CALCULATOR MODE: _10div, DIVIDE FOR TEN BY String */
-  /** CODE: Num._10div("3.2").Print("\r\n"); //0.32 */
+  /** CODE: Num._10div("3.2").Print("\n"); //0.32 */
   public static Num _10div(String n) { return new Num(n).Shift(-1); }
 
    /** CALCULATOR MODE: _10div, DIVIDE FOR TEN BY Num */
-  /**  CODE: Num._10div(new Num("3.2")).Print("\r\n"); //0.32 */
+  /**  CODE: Num._10div(new Num("3.2")).Print("\n"); //0.32 */
   public static Num _10div(Num n) { return n.Shift(-1); }
 
    /** CALCULATOR MODE: _100div, DIVIDE FOR HUNDRED BY int */
-  /**  CODE: Num._100div(3).Print("\r\n"); //0.03 */
+  /**  CODE: Num._100div(3).Print("\n"); //0.03 */
   public static Num _100div(int n) { return new Num(n).Shift(-2); }
 
    /** CALCULATOR MODE: _100div, DIVIDE FOR HUNDRED BY long */
-  /**  CODE: Num._100div(3L).Print("\r\n"); //0.03 */
+  /**  CODE: Num._100div(3L).Print("\n"); //0.03 */
   public static Num _100div(long n) { return new Num(n).Shift(-2); }
 
    /** CALCULATOR MODE: _100div, DIVIDE FOR HUNDRED BY BigInteger */
-  /**  CODE: Num._100div(new BigInteger("3")).Print("\r\n"); //0.03 */
+  /**  CODE: Num._100div(new BigInteger("3")).Print("\n"); //0.03 */
   public static Num _100div(BigInteger n) { return new Num(n).Shift(-2); }
 
    /** CALCULATOR MODE: _100div, DIVIDE FOR HUNDRED BY String */
-  /**  CODE: Num._100div("3.2").Print("\r\n"); //0.032 */
+  /**  CODE: Num._100div("3.2").Print("\n"); //0.032 */
   public static Num _100div(String n) { return new Num(n).Shift(-2); }
 
    /** CALCULATOR MODE: _100div, DIVIDE FOR HUNDRED BY Num */
-  /**  CODE: Num._100div(new Num("3.2")).Print("\r\n"); //0.032 */
+  /**  CODE: Num._100div(new Num("3.2")).Print("\n"); //0.032 */
   public static Num _100div(Num n) { return new Num(n).Shift(-2); }
 
    /** CALCULATOR MODE: _1000div, DIVIDE FOR THOUSAND BY int */
-  /**  CODE: Num._1000div(3).Print("\r\n"); //0.003 */
+  /**  CODE: Num._1000div(3).Print("\n"); //0.003 */
   public static Num _1000div(int n) { return new Num(n).Shift(-3); }
 
    /** CALCULATOR MODE: _1000div, DIVIDE FOR THOUSAND BY long */
-  /**  CODE: Num._1000div(3L).Print("\r\n"); //0.003 */
+  /**  CODE: Num._1000div(3L).Print("\n"); //0.003 */
   public static Num _1000div(long n) { return new Num(n).Shift(-3); }
 
    /** CALCULATOR MODE: _1000div, DIVIDE FOR THOUSAND BY BigInteger */
-  /**  CODE: Num._1000div(new BigInteger("3")).Print("\r\n"); //0.003 */
+  /**  CODE: Num._1000div(new BigInteger("3")).Print("\n"); //0.003 */
   public static Num _1000div(BigInteger n) { return new Num(n).Shift(-3); }
 
    /** CALCULATOR MODE: _1000div, DIVIDE FOR THOUSAND BY String */
-  /**  CODE: Num._1000div("32.0").Print("\r\n"); //0.032 */
+  /**  CODE: Num._1000div("32.0").Print("\n"); //0.032 */
   public static Num _1000div(String n) { return new Num(n).Shift(-3); }
 
    /** CALCULATOR MODE: _1000div, DIVIDE FOR THOUSAND BY Num */
-  /**  CODE: Num._1000div(new Num("32.0")).Print("\r\n"); //0.032 */
+  /**  CODE: Num._1000div(new Num("32.0")).Print("\n"); //0.032 */
   public static Num _1000div(Num n) { return new Num(n).Shift(-3); }
 
    /** CALCULATOR MODE: pct, PERCENTAGE VALUE BY Num, Num */
-  /**  CODE: Num.pct(new Num("10.00"), new Num("1_648.98")).Round().Print(" => DISCOUNT\r\n"); //164.9 => DISCOUNT */
+  /**  CODE: Num.pct(new Num("10.00"), new Num("1_648.98")).Round().Print(" => DISCOUNT\n"); //164.9 => DISCOUNT */
   public static Num pct(Num rate, Num all) { return rate.Mul(all.Shift(-2)); }
     
    /** CALCULATOR MODE: pct, PERCENTAGE VALUE BY String, String */
-  /**  CODE: Num.pct("10.00", "1_648.98").Round().Print(" => DISCOUNT\r\n"); //164.9 => DISCOUNT */
+  /**  CODE: Num.pct("10.00", "1_648.98").Round().Print(" => DISCOUNT\n"); //164.9 => DISCOUNT */
   public static Num pct(String rate, String all) { Num R = new Num(rate); Num A = new Num(all); return R.Mul(A.Shift(-2)); }
 
    /** CALCULATOR MODE: pct, PERCENTAGE VALUE FOR String -PCT BY ONE */
-  /**  CODE: Num.pct("2.75").Print(" => PCT BY ONE\r\n"); //0.0275 => PCT BY ONE */
+  /**  CODE: Num.pct("2.75").Print(" => PCT BY ONE\n"); //0.0275 => PCT BY ONE */
   public static Num pct(String rate) { Num R = new Num(rate); Num A = new Num(1); return R.Mul(A.Shift(-2)); }
 
    /** CALCULATOR MODE: rate, WITH THE ALL, RETURN THE RATE OF SPECIFIED PERCENTAGE BY Num, Num */
-  /**  CODE: Num.rate(new Num("20.0"), new Num("1000.0")).Print("\r\n"); //2.0 */
+  /**  CODE: Num.rate(new Num("20.0"), new Num("1000.0")).Print("\n"); //2.0 */
   public static Num rate(Num pct, Num all) { return pct.Shift(2).Div(all); }
     
    /** CALCULATOR MODE: rate, WITH THE ALL, RETURN THE RATE OF SPECIFIED PERCENTAGE BY String, String */
-  /**  CODE: Num.rate("20.0", "1000.0").Print("\r\n"); //2.0 */
+  /**  CODE: Num.rate("20.0", "1000.0").Print("\n"); //2.0 */
   public static Num rate(String pct, String all) { Num PCT = new Num(pct); Num ALL = new Num(all); return PCT.Shift(2).Div(ALL); }
     
    /** CALCULATOR MODE: all, WITH THE RATE AND PERCENTAGE RETURN THE ALL BY Num, Num */ 
-  /**  CODE: Num.all(new Num(2), new Num(20)).Print("\r\n"); //1000 */
+  /**  CODE: Num.all(new Num(2), new Num(20)).Print("\n"); //1000 */
   public static Num all(Num RATE, Num PCT) { return PCT.Shift(2).Div(RATE); }
 
    /** CALCULATOR MODE: all, WITH THE RATE AND PERCENTAGE RETURN THE ALL BY String, String */ 
-  /**  CODE: Num.all("2.0", "20.0").Print("\r\n"); //1000 */
+  /**  CODE: Num.all("2.0", "20.0").Print("\n"); //1000 */
   public static Num all(String RATE, String PCT) { return new Num(PCT).Shift(2).Div(new Num(RATE)); }
 
    /** CALCULATOR MODE: pth, RETURN THE PERTHOUSAND TO SPECIFIED RATE AND ALL BY Num, Num */
-  /**  CODE: Num.pth(new Num("2.0"), new Num("10000.0")).Print("\r\n"); //20.0 */
+  /**  CODE: Num.pth(new Num("2.0"), new Num("10000.0")).Print("\n"); //20.0 */
   public static Num pth(Num rate_th, Num all) { return rate_th.Mul(all.Shift(-3)); }
   
    /** CALCULATOR MODE: pth, RETURN THE PERTHOUSAND TO SPECIFIED RATE AMD ALL BY String, String */
-  /**  CODE: Num.pth("2.0", "10000.0").Print("\r\n"); //20.0 */
+  /**  CODE: Num.pth("2.0", "10000.0").Print("\n"); //20.0 */
   public static Num pth(String rate_th, String all) { return new Num(rate_th).Mul(new Num(all).Shift(-3)); }
   
    /** CALCULATOR MODE: pth, RETURN THE PERTHOUSAND TO SPECIFIED RATE -PTH BY ONE */
-  /**  CODE: Num.pth("2.0").Print("\r\n"); //0.002 */
+  /**  CODE: Num.pth("2.0").Print("\n"); //0.002 */
   public static Num pth(String rate_th) { return new Num(rate_th).Mul(new Num(1).Shift(-3)); }
 
    /** CALCULATOR MODE: rate_th, WITH PTH AND ALL RETURN THE RATE BY Num, Num */
-  /**  CODE: Num.rate_th(new Num("20.0"), new Num("10000.0")).Round().Print(" => RATE_TH\r\n"); //2.0 => RATE_TH */
+  /**  CODE: Num.rate_th(new Num("20.0"), new Num("10000.0")).Round().Print(" => RATE_TH\n"); //2.0 => RATE_TH */
   public static Num rate_th(Num pth, Num all) { return pth.Shift(3).Div(all); }
   
    /** CALCULATOR MODE: rate_th, WITH PTH AND ALL RETURN THE RATE BY String, String */
-  /**  CODE: Num.rate_th("20.0", "10000.0").Print(" => RATE_TH\r\n"); //2.0 => RATE_TH */
+  /**  CODE: Num.rate_th("20.0", "10000.0").Print(" => RATE_TH\n"); //2.0 => RATE_TH */
   public static Num rate_th(String pth, String all) { return new Num(pth).Shift(3).Div(new Num(all)); }
   
    /** CALCULATOR MODE: all_th, WITH RATE AND PERTHOUSAND RETURN THE ALL BY Num, Num */ 
-  /**  CODE: Num.all_th(new Num("2.00"), new Num("20.00")).Print(" => ALL_TH\r\n"); //10000.0 => ALL_TH */
+  /**  CODE: Num.all_th(new Num("2.00"), new Num("20.00")).Print(" => ALL_TH\n"); //10000.0 => ALL_TH */
   public static Num all_th(Num rate, Num pth) { return pth.Shift(3).Div(rate); }
   
    /** CALCULATOR MODE: all_th, WITH RATE AND PERTHOUSAND RETURN THE ALL BY String, String */ 
-  /**  CODE: Num.all_th("2.00", "20.00").Print(" => ALL_TH\r\n"); //10000.0 => ALL_TH */
+  /**  CODE: Num.all_th("2.00", "20.00").Print(" => ALL_TH\n"); //10000.0 => ALL_TH */
   public static Num all_th(String rate, String pth) { return new Num(pth).Shift(3).Div(new Num(rate)); }
 
    /** price_sell, FINAL PRICE WITH DISCOUNTS */
-  /** CODE: Num.print(Num.price_sell(new Num("1007.79"), new Num("5.75"), new Num("4.25") , new Num("3.75"), new Num("2.25"), new Num("22.0")) + "\r\n"); //1043.91 */
+  /** CODE: Num.print(Num.price_sell(new Num("1007.79"), new Num("5.75"), new Num("4.25") , new Num("3.75"), new Num("2.25"), new Num("22.0")) + "\n"); //1043.91 */
   public static Num price_sell(Num price_base, Num discount1, Num discount2, Num discount3, Num discount4, Num TAX) {
     Num PRICE_BASE  = new Num(price_base);
     Num PRICE_BASE2 = new Num(price_base);
@@ -2103,77 +2103,77 @@ public class Num implements Comparable<Num> {
   }
   
    /** len, RETURN Num STRING LENGTH */
-  /**  CODE: Num a = new Num(100); Num.print(a, " "); Num.print(Num.len(a), "\r\n"); //100.0 5 */
+  /**  CODE: Num a = new Num(100); Num.print(a, " "); Num.print(Num.len(a), "\n"); //100.0 5 */
   public static int len(Num n) { return n.length(); } 
   
    /** is OPERATOR, TWO VARIABLES WITH A SAME ADDRESS MEANS ONE OBJECT) */ 
-  /**  CODE: Num a = new Num("3.14"); Num b = a; Num.print(Num.is(a, b), "\r\n"); //true */
+  /**  CODE: Num a = new Num("3.14"); Num b = a; Num.print(Num.is(a, b), "\n"); //true */
   public static boolean is(Num a, Num b) { return a.hashCode() == b.hashCode(); }
 
    /** is_not OPERATOR, TWO VARIABLES WITH A DIFFERENT ADDRESS MEANS TWO OBJECT */
-  /**  CODE: Num a = new Num("3.14"); Num b = a; Num.print(Num.is_not(a, b), "\r\n"); //false */
+  /**  CODE: Num a = new Num("3.14"); Num b = a; Num.print(Num.is_not(a, b), "\n"); //false */
   public static boolean is_not(Num a, Num b) { return a.hashCode() != b.hashCode(); }
 
    /**  or, OR LOGIC BINARY OPERATOR BY Num */
-  /**   CODE: Num a = new Num("0.0"); Num b = new Num("0.02"); if(Num.or(a, b) == true) Num.print(a.toString() + " or " + b.toString(), " => true\r\n"); else Num.print(a.toString() + " or " + b.toString(), " => false\r\n"); //0.0 or 0.02 => true */
+  /**   CODE: Num a = new Num("0.0"); Num b = new Num("0.02"); if(Num.or(a, b) == true) Num.print(a.toString() + " or " + b.toString(), " => true\n"); else Num.print(a.toString() + " or " + b.toString(), " => false\n"); //0.0 or 0.02 => true */
   public static boolean or(Num a, Num b) { return a.Is_true() || b.Is_true(); }
   
    /**  or, OR LOGIC BINARY OPERATOR BY String */
-  /**   CODE: String a = "0.0"; String b = "0.02"; if(Num.or(a, b) == true) Num.print(a.toString() + " or " + b.toString(), " => true\r\n"); //0.0 or 0.02 => true */
+  /**   CODE: String a = "0.0"; String b = "0.02"; if(Num.or(a, b) == true) Num.print(a.toString() + " or " + b.toString(), " => true\n"); //0.0 or 0.02 => true */
   public static boolean or(String A, String B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() || b.Is_true(); }
   
    /**  or, OR LOGIC BINARY OPERATOR BY int */
-  /**   CODE: int a = 0; int b = 1; if(Num.or(a, b) == true) Num.print(a + " or " + b, " => true\r\n"); //0 or 1 => true */
+  /**   CODE: int a = 0; int b = 1; if(Num.or(a, b) == true) Num.print(a + " or " + b, " => true\n"); //0 or 1 => true */
   public static boolean or(int A, int B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() || b.Is_true(); }
   
    /**  or, OR LOGIC BINARY OPERATOR BY long */
-  /**   CODE: long a = 0; long b = 1; if(Num.or(a, b) == true) Num.print(a + " or " + b, " => true\r\n"); //0 or 1 => true */
+  /**   CODE: long a = 0; long b = 1; if(Num.or(a, b) == true) Num.print(a + " or " + b, " => true\n"); //0 or 1 => true */
   public static boolean or(long A, long B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() || b.Is_true(); }
   
    /**  or, OR LOGIC BINARY OPERATOR BY BigInteger */
-  /**   CODE: BigInteger a = new BigInteger("0"); BigInteger b = new BigInteger("1"); if(Num.or(a, b) == true) Num.print(a + " or " + b, " => true\r\n"); //0 or 1 => true */
+  /**   CODE: BigInteger a = new BigInteger("0"); BigInteger b = new BigInteger("1"); if(Num.or(a, b) == true) Num.print(a + " or " + b, " => true\n"); //0 or 1 => true */
   public static boolean or(BigInteger A, BigInteger B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() || b.Is_true(); }
   
    /**  and, AND LOGIC BINARY OPERATOR BY Num */
-  /**   CODE: Num a = new Num("0.001"); Num b = new Num("0.02"); if(Num.and(a, b) == true) Num.print(a.toString() + " and " + b.toString(), " => true\r\n"); else Num.print(a.toString() + " and " + b.toString(), " => false\r\n"); //0.001 and 0.02 => true */
+  /**   CODE: Num a = new Num("0.001"); Num b = new Num("0.02"); if(Num.and(a, b) == true) Num.print(a.toString() + " and " + b.toString(), " => true\n"); else Num.print(a.toString() + " and " + b.toString(), " => false\n"); //0.001 and 0.02 => true */
   public static boolean and(Num a, Num b) { return a.Is_true() && b.Is_true(); }
 
    /**  and, AND LOGIC BINARY OPERATOR BY String */
-  /**   CODE:  String a = "0.001"; String b = "0.02"; if(Num.and(a, b) == true) Num.print(a.toString() + " and " + b.toString(), " => true\r\n"); else Num.print(a.toString() + " and " + b.toString(), " => false\r\n"); //0.001 and 0.02 => true */
+  /**   CODE:  String a = "0.001"; String b = "0.02"; if(Num.and(a, b) == true) Num.print(a.toString() + " and " + b.toString(), " => true\n"); else Num.print(a.toString() + " and " + b.toString(), " => false\n"); //0.001 and 0.02 => true */
   public static boolean and(String A, String B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() && b.Is_true(); }
   
    /**  and, AND LOGIC BINARY OPERATOR BY int */
-  /**   CODE:  int a = 1; int b = 2; if(Num.and(a, b) == true) Num.print(a + " and " + b, " => true\r\n"); else Num.print(a + " and " + b, " => false\r\n"); //1 and 2 => true */
+  /**   CODE:  int a = 1; int b = 2; if(Num.and(a, b) == true) Num.print(a + " and " + b, " => true\n"); else Num.print(a + " and " + b, " => false\n"); //1 and 2 => true */
   public static boolean and(int A, int B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() && b.Is_true(); }
   
    /**  and, AND LOGIC BINARY OPERATOR BY long */
-  /**   CODE:  long a = 1; long b = 2; if(Num.and(a, b) == true) Num.print(a + " and " + b, " => true\r\n"); else Num.print(a + " and " + b, " => false\r\n"); //1 and 2 => true */
+  /**   CODE:  long a = 1; long b = 2; if(Num.and(a, b) == true) Num.print(a + " and " + b, " => true\n"); else Num.print(a + " and " + b, " => false\n"); //1 and 2 => true */
   public static boolean and(long A, long B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() && b.Is_true(); }
   
    /**  and, AND LOGIC BINARY OPERATOR BY BigInteger */
-  /**   CODE:  BigInteger a = new BigInteger("1"); BigInteger b = new BigInteger("2"); if(Num.and(a, b) == true) Num.print(a + " and " + b, " => true\r\n"); else Num.print(a + " and " + b, " => false\r\n"); //1 and 2 => true */
+  /**   CODE:  BigInteger a = new BigInteger("1"); BigInteger b = new BigInteger("2"); if(Num.and(a, b) == true) Num.print(a + " and " + b, " => true\n"); else Num.print(a + " and " + b, " => false\n"); //1 and 2 => true */
   public static boolean and(BigInteger A, BigInteger B) { Num a = new Num(A); Num b = new Num(B); return a.Is_true() && b.Is_true(); }
   
     /** f_price_over, ADD OR SUB A PERCENTAGE VALUE TO PRICE BY Num */
-   /**  CODE: Num overPrice = Num.f_price_over(new Num(1000), new Num(22)); overPrice.Print("\r\n");   //1220.0 */
-  /**   CODE: Num overPrice = Num.f_price_over(new Num(1000), new Num(-22)); overPrice.Print("\r\n"); //780.0  */
+   /**  CODE: Num overPrice = Num.f_price_over(new Num(1000), new Num(22)); overPrice.Print("\n");   //1220.0 */
+  /**   CODE: Num overPrice = Num.f_price_over(new Num(1000), new Num(-22)); overPrice.Print("\n"); //780.0  */
   public static Num f_price_over(Num price, Num t) { Num THIS = new Num(price.Mul(t).Shift(-2).Add(price)); return THIS; }
 
     /** f_price_over, ADD OR SUB A PERCENTAGE VALUE TO PRICE BY String */
-   /**  CODE: Num overPrice = Num.f_price_over("1000.0", "22.0"); overPrice.Print("\r\n");   //1220.0 */
-  /**   CODE: Num overPrice = Num.f_price_over("1000.0", "-22.0"); overPrice.Print("\r\n"); //780.0  */
+   /**  CODE: Num overPrice = Num.f_price_over("1000.0", "22.0"); overPrice.Print("\n");   //1220.0 */
+  /**   CODE: Num overPrice = Num.f_price_over("1000.0", "-22.0"); overPrice.Print("\n"); //780.0  */
   public static Num f_price_over(String price, String t) { Num THIS = new Num(new Num(price).Mul(t).Shift(-2).Add(price)); return THIS; }
 
    /** f_price_spinoff, SPIN OFF PERCENTAGE TAX VALUE FROM PRICE BY Num */  
-  /**  CODE: Num priceRaw = Num.f_price_spinoff(new Num(100), new Num(22)).Round(2); priceRaw.Print("\r\n"); //81.97 */
+  /**  CODE: Num priceRaw = Num.f_price_spinoff(new Num(100), new Num(22)).Round(2); priceRaw.Print("\n"); //81.97 */
   public static Num f_price_spinoff(Num price, Num t) { Num THIS = new Num(price.Div((t.Add(100).Shift(-2)))); return THIS; }
 
    /** f_price_spinoff, SPIN OFF PERCENTAGE TAX VALUE FROM PRICE BY String */  
-  /**  CODE: Num priceRaw = Num.f_price_spinoff("100.0", "22.0").Round(2); priceRaw.Print("\r\n"); //81.97 */
+  /**  CODE: Num priceRaw = Num.f_price_spinoff("100.0", "22.0").Round(2); priceRaw.Print("\n"); //81.97 */
   public static Num f_price_spinoff(String price, String t) { Num THIS = new Num(new Num(price).Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
 
    /** f_fund_fr, FRENCH FINANCING MONTH MORTGAGE BY Num */
-  /**  CODE: Num principal = new Num("80_000.00"); Num rate = new Num(3); int months = 120; Num.print(Num.f_fund_fr(principal, rate, months).Round(2), "\r\n"); //772.49 */
+  /**  CODE: Num principal = new Num("80_000.00"); Num rate = new Num(3); int months = 120; Num.print(Num.f_fund_fr(principal, rate, months).Round(2), "\n"); //772.49 */
   public static Num f_fund_fr(Num asset, Num I, int n) {
 	  Num i = I.Div(100).Div(12);
 	  Num K = new Num(i.Add(1).Pow(n));
@@ -2183,19 +2183,19 @@ public class Num implements Comparable<Num> {
   } 
   
   /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY 3 ARGs */
- /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240), "\r\n"); //[1579.52] */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240), "\n"); //[1579.52] */
  public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N) { return Num.f_fund_fr_full(ASSET, ii, N, "0", 0, true); }  
   
   /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY 4 ARGs */
- /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "1579.55"), "\r\n"); //[1579.55, 1579.5, 1579.51, 1579.52] */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "1579.55"), "\n"); //[1579.55, 1579.5, 1579.51, 1579.52] */
  public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N, String payGoal) { return Num.f_fund_fr_full(ASSET, ii, N, payGoal, 0, true); }  
 	 	 
   /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY 5 ARGs */
- /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "1579.55", 1), "\r\n"); //[1579.55] */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "1579.55", 1), "\n"); //[1579.55] */
  public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N, String payGoal, int S) { return Num.f_fund_fr_full(ASSET, ii, N, payGoal, S, true); }  
   	 
   /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY ALL ARGs */
- /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "0", 0, false), "\r\n"); //[1579.52] */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "0", 0, false), "\n"); //[1579.52] */
  public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N, String payGoal, int S, boolean VIDEO) {
 	  Num rate = new Num(ii);
 	  Num asset     = new Num(ASSET);
@@ -2227,13 +2227,13 @@ public class Num implements Comparable<Num> {
 		  k++;
 		  principal_CHECK = new Num(0);
 		  if(VIDEO) {
-			  Num.print("\r\n{"); Num.print(k, "} Simulation-START => "); System.out.printf(TAB, principal.toFloat());
-			  Num.print("\r\n------------------------------------------------------------------------------\r\n");
+			  Num.print("\n{"); Num.print(k, "} Simulation-START => "); System.out.printf(TAB, principal.toFloat());
+			  Num.print("\n------------------------------------------------------------------------------\n");
 			  System.out.printf(TABS, "qta");
 			  System.out.printf(TABS, "CAP");
 			  System.out.printf(TABS, "Qcap");
 			  System.out.printf(TABS, "Qint");
-			  System.out.printf(TABS, "PAY"); Num.print("\r\n");
+			  System.out.printf(TABS, "PAY"); Num.print("\n");
 		  }
 		  int j = 0; //PAYMENTS QUANTITY
 		  for( ; j < pay_n.toInt(); j++) {
@@ -2245,7 +2245,7 @@ public class Num implements Comparable<Num> {
 				  System.out.printf(TAB, principal.toFloat());
 				  System.out.printf(TAB, principal_share.toFloat());
 				  System.out.printf(TAB, interest_share.toFloat());
-				  System.out.printf(TAB + "\r\n", principal_share.Add(interest_share).toFloat());
+				  System.out.printf(TAB + "\n", principal_share.Add(interest_share).toFloat());
 			  }
 			  TOTAL_pays = TOTAL_pays.Add(pay);
 			  	
@@ -2254,21 +2254,21 @@ public class Num implements Comparable<Num> {
 		  }		  
 		  pay_rest = new Num(principal).Div(pay_n).Round(2); //POSITIVE OR NEGATIVE
 		  if(VIDEO) {
-			  Num.print("******************************************************************************\r\n");
-			  Num.print("{"); Num.print(k, "} Simulation-END\r\n");
+			  Num.print("******************************************************************************\n");
+			  Num.print("{"); Num.print(k, "} Simulation-END\n");
 			  System.out.printf("[%,#5.2f" + "]  ", asset.toFloat()); System.out.printf("(%,#5.2f" + ")  ", principal_CHECK.toFloat());
 			  System.out.printf("%,#5.2f" + "=TOTAL_pays  ", TOTAL_pays.toFloat()); 
-			  System.out.printf("%,#5.2f" + "=TOTAL_ints\r\n", (TOTAL_pays.Sub(asset)).toFloat());
+			  System.out.printf("%,#5.2f" + "=TOTAL_ints\n", (TOTAL_pays.Sub(asset)).toFloat());
 		  }
 		  TOTAL_pays.Clear();
 		  principal_OFFSET = asset.Sub(principal_CHECK);
 		  if(VIDEO) {
 			  System.out.printf("%,#3.2f=principal-OFFSET  ", principal_OFFSET.toFloat());
-			  System.out.printf("[%,#3.2f] => interest-OFFSET\r\n", principal_OFFSET.Pct(rate).Round().toFloat());
-			  System.out.printf("%,#3.2f=pay_rest\r\n", pay_rest.toFloat());
+			  System.out.printf("[%,#3.2f] => interest-OFFSET\n", principal_OFFSET.Pct(rate).Round().toFloat());
+			  System.out.printf("%,#3.2f=pay_rest\n", pay_rest.toFloat());
 			  System.out.printf("%,#4.2f=PAYMENT ", pay.toFloat());
-			  Num.print(j, "=QTA "); System.out.printf("%,#5.3f=RATE\r\n", rate.toFloat());
-			  Num.print("******************************************************************************\r\n");
+			  Num.print(j, "=QTA "); System.out.printf("%,#5.3f=RATE\n", rate.toFloat());
+			  Num.print("******************************************************************************\n");
 		  }
 		  pay_MAX.CopyFrom(pay); //MAX
 		  pay_return.CopyFrom(pay);
@@ -2295,19 +2295,19 @@ public class Num implements Comparable<Num> {
  }  
  
  /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY 3 ARGs -RETURN String */
-/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240), "\r\n"); //{1} Simulation-START =>      240.000,00	... [1579.52] */
+/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240), "\n"); //{1} Simulation-START =>      240.000,00	... [1579.52] */
 public static String f_fund_fr_full_s(String ASSET, String ii, int N) { return Num.f_fund_fr_full_s(ASSET, ii, N, "0", 0, true); }  
  
  /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY 4 ARGs -RETURN String */
-/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "1579.55"), "\r\n"); //{1} Simulation-START =>      240.000,00 ... [1579.55, 1579.5, 1579.51, 1579.52] */
+/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "1579.55"), "\n"); //{1} Simulation-START =>      240.000,00 ... [1579.55, 1579.5, 1579.51, 1579.52] */
 public static String f_fund_fr_full_s(String ASSET, String ii, int N, String payGoal) { return Num.f_fund_fr_full_s(ASSET, ii, N, payGoal, 0, true); }  
 	 	 
  /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY 5 ARGs -RETURN String */
-/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "1579.55", 1), "\r\n"); //{1} Simulation-START =>      240.000,00 ... [1579.55] */
+/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "1579.55", 1), "\n"); //{1} Simulation-START =>      240.000,00 ... [1579.55] */
 public static String f_fund_fr_full_s(String ASSET, String ii, int N, String payGoal, int S) { return Num.f_fund_fr_full_s(ASSET, ii, N, payGoal, S, true); }  
 
   /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY ALL ARGs -RETURN String */
- /**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "0", 0, false), "\r\n"); //[1579.52] */
+ /**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "0", 0, false), "\n"); //[1579.52] */
  public static String f_fund_fr_full_s(String ASSET, String ii, int N, String payGoal, int S, boolean VIDEO) {
 	 Num rate = new Num(ii);
 	 Num asset     = new Num(ASSET);
@@ -2341,15 +2341,15 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 		 k++;
 		 principal_CHECK = new Num(0);
 		 if(VIDEO) {
-			 PAYLOAD = PAYLOAD + "\r\n{" + k + "} Simulation-START => ";
+			 PAYLOAD = PAYLOAD + "\n{" + k + "} Simulation-START => ";
 			 PAYLOAD = PAYLOAD + String.format(TAB, principal.toFloat());
-			 PAYLOAD = PAYLOAD + "\r\n------------------------------------------------------------------------------\r\n";
+			 PAYLOAD = PAYLOAD + "\n------------------------------------------------------------------------------\n";
 			 PAYLOAD = PAYLOAD + String.format(TABS, "qta");
 			 PAYLOAD = PAYLOAD + String.format(TABS, "CAP");
 			 PAYLOAD = PAYLOAD + String.format(TABS, "Qcap");
 			 PAYLOAD = PAYLOAD + String.format(TABS, "Qint");
 			 PAYLOAD = PAYLOAD + String.format(TABS, "PAY");
-			 PAYLOAD = PAYLOAD  + "\r\n"; 
+			 PAYLOAD = PAYLOAD  + "\n"; 
 		 }
 		 int j = 0; //PAYMENTS QUANTITY
 		 for( ; j < pay_n.toInt(); j++) {
@@ -2361,7 +2361,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 				 PAYLOAD = PAYLOAD + String.format(TAB, principal.toFloat());
 				 PAYLOAD = PAYLOAD + String.format(TAB, principal_share.toFloat());
 				 PAYLOAD = PAYLOAD + String.format(TAB, interest_share.toFloat());
-				 PAYLOAD = PAYLOAD + String.format(TAB + "\r\n", principal_share.Add(interest_share).toFloat());
+				 PAYLOAD = PAYLOAD + String.format(TAB + "\n", principal_share.Add(interest_share).toFloat());
 			 }
 			 TOTAL_pays = TOTAL_pays.Add(pay);
 			 
@@ -2370,23 +2370,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 		 }		  
 		 pay_rest = new Num(principal).Div(pay_n).Round(2); //POSITIVE OR NEGATIVE
 		 if(VIDEO) {
-			 PAYLOAD = PAYLOAD + "******************************************************************************\r\n";
-			 PAYLOAD = PAYLOAD + "{" + k + "} Simulation-END\r\n";
+			 PAYLOAD = PAYLOAD + "******************************************************************************\n";
+			 PAYLOAD = PAYLOAD + "{" + k + "} Simulation-END\n";
 			 PAYLOAD = PAYLOAD + String.format("[%,#5.2f" + "]  ", asset.toFloat());
 			 PAYLOAD = PAYLOAD + String.format("(%,#5.2f" + ")  ", principal_CHECK.toFloat());
 			 PAYLOAD = PAYLOAD + String.format("%,#5.2f" + "=TOTAL_pays  ", TOTAL_pays.toFloat());
-			 PAYLOAD = PAYLOAD + String.format("%,#5.2f" + "=TOTAL_ints\r\n", (TOTAL_pays.Sub(asset)).toFloat());
+			 PAYLOAD = PAYLOAD + String.format("%,#5.2f" + "=TOTAL_ints\n", (TOTAL_pays.Sub(asset)).toFloat());
 		 }
 		 TOTAL_pays.Clear();
 		 principal_OFFSET = asset.Sub(principal_CHECK);
 		 if(VIDEO) {
 			 PAYLOAD = PAYLOAD + String.format("%,#3.2f=principal-OFFSET  ", principal_OFFSET.toFloat());
-			 PAYLOAD = PAYLOAD + String.format("[%,#3.2f] => interest-OFFSET\r\n", principal_OFFSET.Pct(rate).Round().toFloat());
-			 PAYLOAD = PAYLOAD + String.format("%,#3.2f=pay_rest\r\n", pay_rest.toFloat());
+			 PAYLOAD = PAYLOAD + String.format("[%,#3.2f] => interest-OFFSET\n", principal_OFFSET.Pct(rate).Round().toFloat());
+			 PAYLOAD = PAYLOAD + String.format("%,#3.2f=pay_rest\n", pay_rest.toFloat());
 			 PAYLOAD = PAYLOAD + String.format("%,#4.2f=PAYMENT ", pay.toFloat());
 			 PAYLOAD = PAYLOAD + j + "=QTA ";
-			 PAYLOAD = PAYLOAD + String.format("%,#5.3f=RATE\r\n", rate.toFloat());
-			 PAYLOAD = PAYLOAD + "******************************************************************************\r\n";
+			 PAYLOAD = PAYLOAD + String.format("%,#5.3f=RATE\n", rate.toFloat());
+			 PAYLOAD = PAYLOAD + "******************************************************************************\n";
 		 }
 		 pay_MAX.CopyFrom(pay); //MAX
 		 pay_return.CopyFrom(pay);
@@ -2414,16 +2414,16 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
  }  
 
    /** f_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY Num */
-  /**  CODE: Num.f_perf(new Num(50), new Num(75)).Print("\r\n"); //50.0 */
+  /**  CODE: Num.f_perf(new Num(50), new Num(75)).Print("\n"); //50.0 */
   public static Num f_perf(Num a, Num sob) { return (sob.Sub(a)).Div(a).Shift(2); }
 
    /** f_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY String */
-  /**  CODE: Num.f_perf("50.0", "75.0").Print("\r\n"); //50.0 */
+  /**  CODE: Num.f_perf("50.0", "75.0").Print("\n"); //50.0 */
   public static Num f_perf(String a, String sob) { Num A = new Num(a); return (new Num(sob).Sub(A)).Div(A).Shift(new Num(2)); }
 
     /** f_perf_time, PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY Num */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = Num.f_perf_time(new Num(50), new Num("37.5")); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //33.33 0.33 */
+  /**   CODE: Num A[] = Num.f_perf_time(new Num(50), new Num("37.5")); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //33.33 0.33 */
   public static Num[] f_perf_time(Num a, Num sob) {
     Num[] A = new Num[2];
     Num THIS= new Num(a);
@@ -2434,7 +2434,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 
     /** f_perf_time, PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY String */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = Num.f_perf_time("50.0", "37.5"); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //33.33 0.33 */
+  /**   CODE: Num A[] = Num.f_perf_time("50.0", "37.5"); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //33.33 0.33 */
   public static Num[] f_perf_time(String a, String sob) {
     Num SOB = new Num(sob);
     Num[] A = new Num[2];
@@ -2444,8 +2444,8 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } else { A[0] = R; A[1] = THIS.Div(SOB).Sub(1); return A; }
   }
 
-   /** f_fileread, READ A NUMBER STRINGS COLUMN FROM DISK FILE DEFAULT NAMED "nums.txt" => 10.0\r\n11.0\r\n12.0\r\n */
-  /**  CODE: Num.print(Num.f_fileread(), "\r\n"); //READING FILE nums.txt => [10.0, 11.0, 12.0] */
+   /** f_fileread, READ A NUMBER STRINGS COLUMN FROM DISK FILE DEFAULT NAMED "nums.txt" => 10.0\n11.0\n12.0\n */
+  /**  CODE: Num.print(Num.f_fileread(), "\n"); //READING FILE nums.txt => [10.0, 11.0, 12.0] */
   public static ArrayList<Num> f_fileread() {
     String filename = "nums.txt";
     ArrayList<Num> LN = new ArrayList<>();
@@ -2455,12 +2455,12 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
       in = new Scanner(file);
       while(in.hasNextLine()) LN.add(new Num(in.nextLine())); 
       in.close();
-    } catch (Exception e) { Num.print("Num.f_fileread => data reading disk error: " + filename + "\r\n"); }
+    } catch (Exception e) { Num.print("Num.f_fileread => data reading disk error: " + filename + "\n"); }
     return LN;
   }
 
-   /** f_fileread, READ A NUMBER STRINGS COLUMN FROM DISK FILE => 10.0\r\n11.0\r\n12.0\r\n */
-  /**  CODE: Num.print(Num.f_fileread("nums.txt"), "\r\n"); //READING FILE nums.txt => [10.0, 11.0, 12.0] */
+   /** f_fileread, READ A NUMBER STRINGS COLUMN FROM DISK FILE => 10.0\n11.0\n12.0\n */
+  /**  CODE: Num.print(Num.f_fileread("nums.txt"), "\n"); //READING FILE nums.txt => [10.0, 11.0, 12.0] */
   public static ArrayList<Num> f_fileread(String filename) {
     ArrayList<Num> LN = new ArrayList<>();
     File file = new File(filename);
@@ -2469,39 +2469,39 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
       in = new Scanner(file);
       while(in.hasNextLine()) LN.add(new Num(in.nextLine()));
       in.close();
-    } catch (Exception e) { Num.print("Num.f_fileread => File not found: " + filename + "\r\n"); }
+    } catch (Exception e) { Num.print("Num.f_fileread => File not found: " + filename + "\n"); }
     return LN;
   }
   
    /** f_filewriteString, WRITE OR APPEND A SINGLE STRING ON DISK */
-  /**  CODE: Num.f_filewriteString("13.0" + "\r\n", "nums.txt"); */
+  /**  CODE: Num.f_filewriteString("13.0" + "\n", "nums.txt"); */
   public static String f_filewriteString(String single, String filename) {
       try (FileWriter file = new FileWriter(filename, true)) {
         file.write(single);
-      } catch (Exception e) { Num.print("Num.f_filewriteString => Unable to write to file: " + filename + "\r\n"); }
+      } catch (Exception e) { Num.print("Num.f_filewriteString => Unable to write to file: " + filename + "\n"); }
       return single;
   }
 
    /** f_filewrite, WRITE A NUMBER STRINGS COLUMN ON DISK BY ArrayList<Num> -DEFAULT FILE nums.txt */
-  /**  CODE: ArrayList<Num> nums = new ArrayList<>(Arrays.asList(new Num("3.14"), new Num("2.72"), new Num("1.0"))); Num.f_filewrite(nums); //WRITING FILE nums.txt => 3.14\r\n2.72\r\n1.0\r\n */
+  /**  CODE: ArrayList<Num> nums = new ArrayList<>(Arrays.asList(new Num("3.14"), new Num("2.72"), new Num("1.0"))); Num.f_filewrite(nums); //WRITING FILE nums.txt => 3.14\n2.72\n1.0\n */
   public static void f_filewrite(ArrayList<Num> nums) {
     String filename = "nums.txt";   
     try {
           try (BufferedWriter file = new BufferedWriter(new FileWriter(filename))) {
               for (Num num : nums) { file.write(num.toString()); file.newLine(); } //WRITES PLATFORM-INDEPENDENT NEWLINE
           }
-    } catch (Exception e) { Num.print("Num.f_filewrite => Unable to write file: " + filename + "\r\n"); }
+    } catch (Exception e) { Num.print("Num.f_filewrite => Unable to write file: " + filename + "\n"); }
   }
 
    /** f_filewrite, WRITE A NUMBER STRINGS COLUMN ON DISK */
-  /**  CODE: ArrayList<Num> nums = new ArrayList<>(Arrays.asList(new Num("3.14"), new Num("2.72"), new Num("1.0"))); Num.f_filewrite(nums, "nums.TXT"); //WRITING FILE nums.txt => 3.14\r\n2.72\r\n1.0\r\n */
+  /**  CODE: ArrayList<Num> nums = new ArrayList<>(Arrays.asList(new Num("3.14"), new Num("2.72"), new Num("1.0"))); Num.f_filewrite(nums, "nums.TXT"); //WRITING FILE nums.txt => 3.14\n2.72\n1.0\n */
   public static void f_filewrite(ArrayList<Num> nums, String filename) {
     //String filename = "nums.txt";   
     try {
       try (BufferedWriter file = new BufferedWriter(new FileWriter(filename))) {
           for (Num num : nums) { file.write(num.toString()); file.newLine(); } //WRITES PLATFORM-INDEPENDENT NEWLINE
       }
-    } catch (Exception e) { Num.print("Num.f_filewrite => Unable to write file: " + filename + "\r\n"); }
+    } catch (Exception e) { Num.print("Num.f_filewrite => Unable to write file: " + filename + "\n"); }
     
   }
 
@@ -2528,20 +2528,20 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** f_filewrite_RandomInt, WRITE A RANDOM INTEGER NUMBER STRINGS COLUMN ON DISK -DEFAULT FILE nums.txt */
-  /**  CODE: Num.print(Num.f_filewrite_RandomInt(new Num("1000000000000000000000000000000000000000000.0"), new Num("9000000000000000000000000000000000000000000.0"), 3) + "\r\n"); */
+  /**  CODE: Num.print(Num.f_filewrite_RandomInt(new Num("1000000000000000000000000000000000000000000.0"), new Num("9000000000000000000000000000000000000000000.0"), 3) + "\n"); */
   public static int f_filewrite_RandomInt(Num min, Num max, int qty) {
     String filename = "nums.txt"; 
     int i = 0;
-    for ( ; i < qty; i++) Num.f_filewriteString(Num.randInt(min, max).toString() + "\r\n", filename);
+    for ( ; i < qty; i++) Num.f_filewriteString(Num.randInt(min, max).toString() + "\n", filename);
     return i;
   }
 
    /** f_filewrite_RandomInt, WRITE A RANDOM INTEGER NUMBER STRINGS COLUMN ON DISK BY FILE NAME */
-  /**  CODE: Num.print(Num.f_filewrite_RandomInt(new Num("1000000000000000000000000000000000000000000.0"), new Num("9000000000000000000000000000000000000000000.0"), 3, "nums.txt") + "\r\n"); */
+  /**  CODE: Num.print(Num.f_filewrite_RandomInt(new Num("1000000000000000000000000000000000000000000.0"), new Num("9000000000000000000000000000000000000000000.0"), 3, "nums.txt") + "\n"); */
   public static int f_filewrite_RandomInt(Num min, Num max, int qty, String filename) {
 	  //String filename = "nums.txt"; 
 	  int i = 0;
-	  for ( ; i < qty; i++) Num.f_filewriteString(Num.randInt(min, max).toString() + "\r\n", filename);
+	  for ( ; i < qty; i++) Num.f_filewriteString(Num.randInt(min, max).toString() + "\n", filename);
 	  return i;
   }
   
@@ -2550,7 +2550,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   public static Num copy(Num a) { return new Num(a); }
 
    /** randInt, RANDOM Num INTEGER BETWEEN MIN AND MAX BY Num, Num */
-  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(new Num("1000000000000000.0"), new Num("6000000000000000.0")), "\r\n"); //0 => ... */
+  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(new Num("1000000000000000.0"), new Num("6000000000000000.0")), "\n"); //0 => ... */
   public static Num randInt(Num min, Num max) { 
     SecureRandom random = new SecureRandom();
     BigInteger MIN = min.toBigInt();
@@ -2562,23 +2562,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
    }
 
    /** randInt, RANDOM Num INTEGER BETWEEN MIN AND MAX BY String, String */
-  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt("1000000000000000.0", "6000000000000000.0"), "\r\n"); //0 => ... */
+  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt("1000000000000000.0", "6000000000000000.0"), "\n"); //0 => ... */
   public static Num randInt(String min, String max) { return Num.randInt(new Num(min), new Num(max)); }
 
    /** randInt, RANDOM Num INTEGER BETWEEN MIN AND MAX BY int, int */
-  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(100, 600), "\r\n"); //0 => ... */
+  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(100, 600), "\n"); //0 => ... */
   public static Num randInt(int min, int max) { return Num.randInt(new Num(min), new Num(max)); }
 
    /** randInt, RANDOM Number INTEGER BETWEEN MIN AND MAX BY long, long */
-  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(100L, 600L), "\r\n"); //0 => ... */
+  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(100L, 600L), "\n"); //0 => ... */
   public static Num randInt(long min, long max) { return Num.randInt(new Num(min), new Num(max)); }
 
    /** randInt, RANDOM Num INTEGER BETWEEN MIN AND MAX BY BigInteger, BigInteger */
-  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(new BigInteger("100"), new BigInteger("600")), "\r\n"); //0 => ... */
+  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randInt(new BigInteger("100"), new BigInteger("600")), "\n"); //0 => ... */
   public static Num randInt(BigInteger min, BigInteger max) { return Num.randInt(new Num(min), new Num(max)); }
 
    /** randFloat, RANDOM Number FLOAT BETWEEN MIN AND MAX */
-  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randFloat(1953.14, 2000.0), "\r\n"); //0 => ... */
+  /**  CODE: for (int i = 0; i < 3; i++) Num.print(i + " => " + Num.randFloat(1953.14, 2000.0), "\n"); //0 => ... */
   public static Num randFloat(double min, double max) { 
     Random rand = new Random();
     double random = rand.nextDouble() * (max - min) + min;
@@ -2587,11 +2587,11 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
      /** toFloat, Num TO float */
-    /**  Num.print(Num.toFloat(new Num("-3.141592654")) - 0.000000002, "\r\n"); //-3.1415926560000003 */
+    /**  Num.print(Num.toFloat(new Num("-3.141592654")) - 0.000000002, "\n"); //-3.1415926560000003 */
     public static double toFloat(Num a) { return Double.parseDouble(a.n); }
 
      /** ieee754, FLOAT TO IEEE754 CONVERSION METHOD */
-    /**  CODE: for(double i = 0; i < 1.0; i = i + 0.1) Num.print(Num.ieee754(i), "\r\n"); //0.0 0.1000000000000000055511151231257827021181583404541015625 0.200000000000000011102230246251565404236316680908203125 ... */
+    /**  CODE: for(double i = 0; i < 1.0; i = i + 0.1) Num.print(Num.ieee754(i), "\n"); //0.0 0.1000000000000000055511151231257827021181583404541015625 0.200000000000000011102230246251565404236316680908203125 ... */
     public static Num ieee754(double a) { 
     	BigDecimal an = new BigDecimal(a); 
     	Num k = new Num(0);
@@ -2601,19 +2601,19 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 	
      /** sqrt, SQUARE ROOT METHOD BY Num -DEFAULT TEN DECIMALs */
-    /**  CODE: Num.print(Num.sqrt(new Num("2.0")), "\r\n"); //1.4142135623 */
+    /**  CODE: Num.print(Num.sqrt(new Num("2.0")), "\n"); //1.4142135623 */
     public static Num sqrt(Num n) { return Num.sqrt(n, 10); }
 
      /** sqrt, SQUARE ROOT METHOD BY String -DEFAULT TEN DECIMALs */
-    /**  CODE: Num.print(Num.sqrt("2.0"), "\r\n"); //1.4142135623 */
+    /**  CODE: Num.print(Num.sqrt("2.0"), "\n"); //1.4142135623 */
     public static Num sqrt(String n) { return Num.sqrt(new Num(n), 10); }
 
      /** sqrt, SQUARE ROOT METHOD BY String, int */
-    /**  CODE: Num.print(Num.sqrt("3.14", 50), "\r\n"); //1.77200451466693504019911250975363152507360851616294 */
+    /**  CODE: Num.print(Num.sqrt("3.14", 50), "\n"); //1.77200451466693504019911250975363152507360851616294 */
     public static Num sqrt(String n, int d) { return Num.sqrt(new Num(n), d); }
 
      /** sqrt, SQUARE ROOT METHOD BY Num, int */
-    /**  CODE: Num.print(Num.sqrt(new Num("3.141592654"), 10), "\r\n"); //1.7724538510 */ 
+    /**  CODE: Num.print(Num.sqrt(new Num("3.141592654"), 10), "\n"); //1.7724538510 */ 
     public static Num sqrt(Num n, int d) {
       d = d < 0 ? -d : d; //ABSOLUTE VALUE
       BigInteger TEN = new BigInteger("10");
@@ -2676,7 +2676,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } //END sqrt METHOD
 
    /** CALCULATOR MODE: ITH ROOT METHOD BY Num, int, int*/
-  /**  CODE: Num a = new Num("27.3"); int root = -3; Num.print(a + "\t"); Num.print(root + "\r\n"); Num.print(Num.root_i(a, root).Round(32), "\r\n"); //27.3 -3 0.33210783207389089491177684293055 */
+  /**  CODE: Num a = new Num("27.3"); int root = -3; Num.print(a + "\t"); Num.print(root + "\n"); Num.print(Num.root_i(a, root).Round(32), "\n"); //27.3 -3 0.33210783207389089491177684293055 */
   public static Num root_i(Num n, int I, int d) { 
     if (I == 0) return new Num("1.0");
     Num i = new Num(I);
@@ -2715,15 +2715,15 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** CALCULATOR MODE: ITH ROOT METHOD BY Num, int -DEFAULT TEN DECIMALs */ 
-  /**  CODE: Num a = new Num("3126.0"); Num.print(Num.root_i(a, 5), "\r\n"); //5.0003199590 */
+  /**  CODE: Num a = new Num("3126.0"); Num.print(Num.root_i(a, 5), "\n"); //5.0003199590 */
   public static Num root_i(Num n, int I) { return Num.root_i(n, I, 10); }
   
    /** CALCULATOR MODE: CUBE ROOT METHOD BY Num -DEFAULT TEN DECIMALs */ 
-  /**  CODE: Num a = new Num("27.006"); Num.print(Num.cube_root(a), "\r\n"); //3.0002222057 */
+  /**  CODE: Num a = new Num("27.006"); Num.print(Num.cube_root(a), "\n"); //3.0002222057 */
   public static Num cube_root(Num n) { return Num.root_i(n, 3, 10); }
 
      /** is_perfectSquare, PERFECT SQUARE METHOD BY Num -DEFAULT PRECISION TEN */
-    /**  CODE: Num.print(Num.is_perfectSquare(new Num(9)), "\r\n"); //true */
+    /**  CODE: Num.print(Num.is_perfectSquare(new Num(9)), "\n"); //true */
     public static boolean is_perfectSquare(Num N) {
       Num SR = Num.sqrt(N, 10); //PRECISION
       Num SQ = SR.Mul(SR);
@@ -2731,7 +2731,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** is_perfectSquare, PERFECT SQUARE METHOD BY String -DEFAULT PRECISION TEN */
-    /**  CODE: Num.print(Num.is_perfectSquare("347466104389379309947251979729.0"), "\r\n"); //true (589462555544777) */
+    /**  CODE: Num.print(Num.is_perfectSquare("347466104389379309947251979729.0"), "\n"); //true (589462555544777) */
     public static boolean is_perfectSquare(String n) {
       Num N = new Num(n);
       Num SR = Num.sqrt(N, 10); //PRECISION
@@ -2740,7 +2740,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** is_perfectSquare BY Num, int, PERFECT SQUARE METHOD */
-    /**  CODE: Num.print(Num.is_perfectSquare(new Num("1.99996164"), 4), "\r\n"); //true (1.4142) */
+    /**  CODE: Num.print(Num.is_perfectSquare(new Num("1.99996164"), 4), "\n"); //true (1.4142) */
     public static boolean is_perfectSquare(Num N, int d) {
       Num SR = Num.sqrt(N, d); //PRECISION
       Num SQ = SR.Mul(SR);
@@ -2748,7 +2748,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** is_perfectSquare, PERFECT SQUARE METHOD BY String, int */
-    /**  CODE: Num.print(Num.is_perfectSquare("1.99996164", 4), "\r\n"); //true (1.4142) */
+    /**  CODE: Num.print(Num.is_perfectSquare("1.99996164", 4), "\n"); //true (1.4142) */
     public static boolean is_perfectSquare(String n, int d) {
       Num N = new Num(n);
       Num SR = Num.sqrt(N, d); //PRECISION
@@ -2757,11 +2757,11 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
     
      /** sqrt_check, CHECK SQUARE ROOT OPERATION */
-    /**  CODE: Num.print(Num.sqrt_check("1.73", "3.0"), "\r\n"); //true */
+    /**  CODE: Num.print(Num.sqrt_check("1.73", "3.0"), "\n"); //true */
     public static boolean sqrt_check(String R, String N) { return new Num(N).Sqrt_check(R); }
 
      /** sqrt_check, CHECK SQUARE ROOT OPERATION */
-    /**  CODE: Num.print(Num.sqrt_check(new Num("3.0"), new Num("9.0")), "\r\n"); //true */
+    /**  CODE: Num.print(Num.sqrt_check(new Num("3.0"), new Num("9.0")), "\n"); //true */
     public static boolean sqrt_check(Num r, Num n) { return n.Sqrt_check(r); }
 
      /** sqrt_checkTable, CHECK SQUARE ROOT OPERATION BY TABLE */
@@ -2786,7 +2786,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 
       for (Map.Entry<String, String> entry : table.entrySet()) {
           if(Num.sqrt(entry.getKey()).NE(entry.getValue())) {
-            Num.print(entry.getKey(), "\r\n");
+            Num.print(entry.getKey(), "\n");
             Num.print(Num.sqrt(entry.getKey()));
             Num.print( " => ", entry.getValue());
             return true; //ERROR
@@ -2912,189 +2912,189 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
         SUM = Num.add(L[i], L[j]);
         if (Num.add_check(new Num(L[i]), new Num(L[j]), SUM)) {
           Num.print(L[i], " + "); Num.print(L[j], " = ");
-          SUM.Print("\r\n");
-          Num.print("\r\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (add)!\r\n");
+          SUM.Print("\n");
+          Num.print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (add)!\n");
           System.exit(1);
         }
-        else Num.print("addition passed.\r\n");
-        Num.print("------------------------------\r\n");
+        else Num.print("addition passed.\n");
+        Num.print("------------------------------\n");
       
         DIF = Num.sub(L[i], L[j]);
         if (Num.sub_check(L[i], L[j], DIF.toString())) {
           Num.print(L[i], " - "); Num.print(L[j], " = ");
-          DIF.Print("\r\n");
-          Num.print("\r\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (sub)!\r\n");
+          DIF.Print("\n");
+          Num.print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (sub)!\n");
           System.exit(1);
         }
-        else Num.print("subtraction passed.\r\n");
-        Num.print("------------------------------\r\n");
+        else Num.print("subtraction passed.\n");
+        Num.print("------------------------------\n");
       
         PRO = Num.mul(L[i], L[j]);
         if (Num.mul_check(L[i], L[j], PRO.toString())) {
           Num.print(L[i], " * "); Num.print(L[j], " = ");
-          PRO.Print("\r\n");
-          Num.print("\r\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (mul)!\r\n");
+          PRO.Print("\n");
+          Num.print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (mul)!\n");
           System.exit(1);
         }
-        else Num.print("multiplication passed.\r\n");
-        Num.print("------------------------------\r\n");
+        else Num.print("multiplication passed.\n");
+        Num.print("------------------------------\n");
       
         QUO = Num.div(L[i], L[j]).Round_floor();
         REM = Num.sub(L[i], Num.mul(QUO.toString(), L[j]).toString());
         if (Num.div_check(L[i], L[j], REM.toString())) {
           Num.print(L[i], " % "); Num.print(L[j], " = ");
-          QUO.Print("\r\n");
-          Num.print("\r\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (div)!\r\n");
+          QUO.Print("\n");
+          Num.print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC (div)!\n");
           System.exit(1);
         }
-        else Num.print("division passed.\r\n");
-        Num.print("------------------------------\r\n");
+        else Num.print("division passed.\n");
+        Num.print("------------------------------\n");
         
         Num.print(L[i], " / "); Num.print(L[j], " = ");
-        Num.div(L[i], L[j]).Print("\r\n");
-        Num.print("------------------------------\r\n");
+        Num.div(L[i], L[j]).Print("\n");
+        Num.print("------------------------------\n");
 
         Num.print(L[j], " inv "); Num.print(" = ");
-        Num.inv(L[j], L[j].length()).Print("\r\n");
-        Num.print("------------------------------\r\n");
+        Num.inv(L[j], L[j].length()).Print("\n");
+        Num.print("------------------------------\n");
 
         Num.print(L[j], " x2 "); Num.print(" = ");
-        Num.x2(L[j]).Print("\r\n");
-        Num.print("------------------------------\r\n");
+        Num.x2(L[j]).Print("\n");
+        Num.print("------------------------------\n");
 
         Num.print(L[j], " x3 "); Num.print(" = ");
-        Num.x3(L[j]).Print("\r\n");
-        Num.print("------------------------------\r\n");
+        Num.x3(L[j]).Print("\n");
+        Num.print("------------------------------\n");
 
         Num.print(L[j], " ^ 8.0"); Num.print(" = ");
-        Num.xy(L[j], "8.0").Print("\r\n");
-        Num.print("------------------------------\r\n");
-        Num.print("------------------------------\r\n");
+        Num.xy(L[j], "8.0").Print("\n");
+        Num.print("------------------------------\n");
+        Num.print("------------------------------\n");
 
       }            
     }
-    Num.print("\r\nSUCCESS - THIS SYSTEM DOES SUPPORT ARBITRARY PRECISION ARITHMETIC (OK).\r\n");
+    Num.print("\nSUCCESS - THIS SYSTEM DOES SUPPORT ARBITRARY PRECISION ARITHMETIC (OK).\n");
   } //END METHOD
 
      /** andb, BITWISE OPERATOR BY Num */
-    /**  CODE: Num a = new Num("255.0"); Num b = new Num("1.0"); Num.print(Num.andb(a, b), "\r\n"); //1.0 */
+    /**  CODE: Num a = new Num("255.0"); Num b = new Num("1.0"); Num.print(Num.andb(a, b), "\n"); //1.0 */
     public static Num andb(Num a, Num b) { return a.Andb(b); } 
   
      /** andb, BITWISE OPERATOR BY String */
-    /**  CODE: String a = "255.0"; String b = "1.0"; Num.print(Num.andb(a, b), "\r\n"); //1.0 */
+    /**  CODE: String a = "255.0"; String b = "1.0"; Num.print(Num.andb(a, b), "\n"); //1.0 */
     public static Num andb(String a, String b) { return new Num(a).Andb(b); } 
     
      /** andb, BITWISE OPERATOR BY int */
-    /**  CODE: Num.print(Num.andb(255, 1), "\r\n"); //1.0 */
+    /**  CODE: Num.print(Num.andb(255, 1), "\n"); //1.0 */
     public static Num andb(int a, int b) { return new Num(a).Andb(b); } 
     
      /** andb, BITWISE OPERATOR BY long */
-    /**  CODE: Num.print(Num.andb(255L, 1L), "\r\n"); //1.0 */
+    /**  CODE: Num.print(Num.andb(255L, 1L), "\n"); //1.0 */
     public static Num andb(long a, long b) { return new Num(a).Andb(b); } 
     
      /** andb, BITWISE OPERATOR BY BigInteger */
-    /**  CODE: Num.print(Num.andb(new BigInteger("255"), new BigInteger("1")), "\r\n"); //1.0 */
+    /**  CODE: Num.print(Num.andb(new BigInteger("255"), new BigInteger("1")), "\n"); //1.0 */
     public static Num andb(BigInteger a, BigInteger b) { return new Num(a).Andb(b); } 
     
      /** orb, BITWISE OPERATOR BY Num, Num */
-    /**  CODE: Num a = new Num("0.0"); Num b = new Num("255.0"); Num.print(Num.orb(a, b), "\r\n"); //255.0 */
+    /**  CODE: Num a = new Num("0.0"); Num b = new Num("255.0"); Num.print(Num.orb(a, b), "\n"); //255.0 */
     public static Num orb(Num a, Num b) { return a.Orb(b); } 
 
      /** orb, BITWISE OPERATOR BY String, String */
-    /**  CODE: Num.print(Num.orb("0.0", "255.0"), "\r\n"); //255.0 */
+    /**  CODE: Num.print(Num.orb("0.0", "255.0"), "\n"); //255.0 */
     public static Num orb(String a, String b) { return new Num(a).Orb(b); } 
     
      /** orb, BITWISE OPERATOR BY int, int */
-    /**  CODE: Num.print(Num.orb(0, 255), "\r\n"); //255.0 */
+    /**  CODE: Num.print(Num.orb(0, 255), "\n"); //255.0 */
     public static Num orb(int a, int b) { return new Num(a).Orb(b); } 
     
      /** orb, BITWISE OPERATOR BY long, long */
-    /**  CODE: Num.print(Num.orb(0L, 255L), "\r\n"); //255.0 */
+    /**  CODE: Num.print(Num.orb(0L, 255L), "\n"); //255.0 */
     public static Num orb(long a, long b) { return new Num(a).Orb(b); } 
     
      /** orb, BITWISE OPERATOR BY BigInteger, BigInteger */
-    /**  CODE: Num.print(Num.orb(new BigInteger("0"), new BigInteger("255")), "\r\n"); //255.0 */
+    /**  CODE: Num.print(Num.orb(new BigInteger("0"), new BigInteger("255")), "\n"); //255.0 */
     public static Num orb(BigInteger a, BigInteger b) { return new Num(a).Orb(b); } 
     
      /** xorb BITWISE OPERATOR */
-    /**  CODE: Num a = new Num("255.0"); Num b = new Num("255.0"); Num.print(Num.xorb(a, b), "\r\n"); //0.0 */
+    /**  CODE: Num a = new Num("255.0"); Num b = new Num("255.0"); Num.print(Num.xorb(a, b), "\n"); //0.0 */
     public static Num xorb(Num a, Num b) { return a.Xorb(b); } 
 
      /** (~) notb, NOT UNARY BITWISE OPERATOR BY Num */
     /**  CODE: */
        /** Num op1 = new Num("10.0"); */
-      /** Num.print(String.format("%0" + 4 + "d", 0) + op1.toBigInt().toString(2), " => " + op1 + "\r\n"); //00001010 => 10.0 */
+      /** Num.print(String.format("%0" + 4 + "d", 0) + op1.toBigInt().toString(2), " => " + op1 + "\n"); //00001010 => 10.0 */
      /** Num op2 = Num.notb(op1); */
-    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBigInt().toString(2), " => " + op2 + "\r\n"); //00000101 => 5.0 */
+    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBigInt().toString(2), " => " + op2 + "\n"); //00000101 => 5.0 */
     public static Num notb(Num a) { return a.Notb(); } 
 
      /** (~) notb, NOT UNARY BITWISE OPERATOR BY String */
     /**  CODE: */
        /** String op1 = new String("10.0"); */
-      /**  Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\r\n"); //00001010 => 10 */ 
+      /**  Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\n"); //00001010 => 10 */ 
      /**   Num op2 = Num.notb(op1); */
-    /**    Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\r\n");        //00000101 => 5.0 */
+    /**    Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\n");        //00000101 => 5.0 */
     public static Num notb(String a) { return new Num(a).Notb(); } 
     
      /** (~) notb, NOT UNARY BITWISE OPERATOR BY int */
     /**  CODE: */
        /** int op1 = 10; */
-      /** Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\r\n"); //00001010 => 10 */
+      /** Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\n"); //00001010 => 10 */
      /** Num op2 = Num.notb(op1); */
-    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\r\n");          //00000101 => 5.0 */
+    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\n");          //00000101 => 5.0 */
     public static Num notb(int a) { return new Num(a).Notb(); } 
     
      /** (~) notb, NOT UNARY BITWISE OPERATOR BY long */
     /**  CODE: */
        /** long op1 = 10L; */
-      /** Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\r\n"); //00001010 => 10 */
+      /** Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\n"); //00001010 => 10 */
      /** Num op2 = Num.notb(op1); */
-    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\r\n");          //00000101 => 5.0 */
+    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\n");          //00000101 => 5.0 */
     public static Num notb(long a) { return new Num(a).Notb(); } 
     
      /** (~) notb, NOT UNARY BITWISE OPERATOR BY BigInteger */
     /**  CODE: */
        /** BigInteger op1 = new BigInteger("10"); */
-      /** Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\r\n"); //00001010 => 10 */
+      /** Num.print(String.format("%0" + 4 + "d", 0) + new Num(op1).toBin(), " => " + op1 + "\n"); //00001010 => 10 */
      /** Num op2 = Num.notb(op1); */
-    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\r\n");          //00000101 => 5.0 */
+    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBin(), " => " + op2 + "\n");          //00000101 => 5.0 */
     public static Num notb(BigInteger a) { return new Num(a).Notb(); } 
     
      /** gcd, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY Num */
-    /**  CODE: Num a = new Num(12); Num b = new Num(8); Num.gcd(a, b).Print("\r\n"); //4.0  */
+    /**  CODE: Num a = new Num(12); Num b = new Num(8); Num.gcd(a, b).Print("\n"); //4.0  */
     public static Num gcd(Num a, Num sob) { return a.GCD(sob); }
 
      /** gcd, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY String */
-    /**  CODE: Num.gcd("12.0", "8.0").Print("\r\n"); //4.0  */
+    /**  CODE: Num.gcd("12.0", "8.0").Print("\n"); //4.0  */
     public static Num gcd(String a, String sob) { return new Num(a).GCD(sob); }
     
      /** gcd, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY int */
-    /**  CODE: Num.gcd(12, 8).Print("\r\n"); //4.0  */
+    /**  CODE: Num.gcd(12, 8).Print("\n"); //4.0  */
     public static Num gcd(int a, int sob) { return new Num(a).GCD(sob); }
     
      /** gcd, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY long */
-    /**  CODE: Num.gcd(12L, 8L).Print("\r\n"); //4.0  */
+    /**  CODE: Num.gcd(12L, 8L).Print("\n"); //4.0  */
     public static Num gcd(long a, long sob) { return new Num(a).GCD(sob); }
     
      /** gcd, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY BigInteger */
-    /**  CODE: Num.gcd(new BigInteger("12"), new BigInteger("8")).Print("\r\n"); //4.0  */
+    /**  CODE: Num.gcd(new BigInteger("12"), new BigInteger("8")).Print("\n"); //4.0  */
     public static Num gcd(BigInteger a, BigInteger sob) { return new Num(a).GCD(sob); }
     
      /** is_probablePrime, CHECK FOR Num IS PROBABLY PRIME, OR IF IT'S DEFINITELY COMPOSITE. (DEFAULT CERTAINTY = 100: VERY SMALL CHANCE OF ERROR) */
-    /**  CODE: Num a = new Num(13); Num.print(Num.is_probablePrime(a), "\r\n"); //true */
+    /**  CODE: Num a = new Num(13); Num.print(Num.is_probablePrime(a), "\n"); //true */
     public static boolean is_probablePrime(Num a) { return a.Is_probablePrime(); }
 
       /** is_probablePrime, CHECK FOR Num IS PROBABLY PRIME, OR IF IT'S DEFINITELY COMPOSITE. ( 0 <= CERTAINTY <= 100) */
      /** CERTAINTY = 1: CHANCE OF ERROR = 1/2, CERTAINTY = 10: CHANCE OF ERROR = 1/1024, CERTAINTY = 100: VERY SMALL CHANCE OF ERROR */
-    /** CODE: Num a = new Num(13); Num.print(Num.is_probablePrime(a, 100), "\r\n"); //true */
+    /** CODE: Num a = new Num(13); Num.print(Num.is_probablePrime(a, 100), "\n"); //true */
     public static boolean is_probablePrime(Num a, int certainty) { return a.Is_probablePrime(certainty); }
 
      /** prime_gen, GENERATE PRIME NUMBER OF BITS SIZE */
-    /** CODE: int bit = 8; Num.print(Num.prime_gen(bit), "\r\n"); //... */
+    /** CODE: int bit = 8; Num.print(Num.prime_gen(bit), "\n"); //... */
     public static Num prime_gen(int bitSize) { return new Num(BigInteger.probablePrime(bitSize, new java.util.Random())); }
 
      /** PrimeNext, GENERATE NEXT PROBABLE PRIME NUMBER BY PRIME */
-    /**  CODE: int bit = 8; Num a = Num.prime_gen(bit); Num.print(a, "\r\n"); Num.print(Num.primeNext(a), "\r\n"); //...149.0 ...151.0 */
+    /**  CODE: int bit = 8; Num a = Num.prime_gen(bit); Num.print(a, "\n"); Num.print(Num.primeNext(a), "\n"); //...149.0 ...151.0 */
     public static Num primeNext(Num p) { return new Num(p.toBigInteger().nextProbablePrime()); }
    
      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3144,15 +3144,15 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     public String Class() { return Num.class.toString(); } //return "class num7.Num";
   
      /** Num2exp, CONVERT A NUM OBJECT TO SCIENTIFIC NOTATION STRING */
-    /**  CODE: Num a = new Num("123.006789"); String S = a.Num2exp(); Num.print(S + "\r\n"); //1.23006789e2 */
+    /**  CODE: Num a = new Num("123.006789"); String S = a.Num2exp(); Num.print(S + "\n"); //1.23006789e2 */
     public String Num2exp() { return Num.num2exp(this); }
     
      /** toEXP, CONVERT A NUM OBJECT TO SCIENTIFIC NOTATION STRING LIKE Num2exp() */
-    /**  CODE: Num a = new Num("123.006789"); String S = a.toEXP(); Num.print(S + "\r\n"); //1.23006789e2 */
+    /**  CODE: Num a = new Num("123.006789"); String S = a.toEXP(); Num.print(S + "\n"); //1.23006789e2 */
     public String toEXP() { return Num.num2exp(this); } 
 
      /** CopyFrom, MAKE COPY FROM OTHER Num */
-    /**  CODE: Num a = new Num(3); Num b = new Num("-5.14"); Num.print(a.CopyFrom(b), "\r\n"); b.Print("\r\n"); //-5.14 -5.14 */
+    /**  CODE: Num a = new Num(3); Num b = new Num("-5.14"); Num.print(a.CopyFrom(b), "\n"); b.Print("\n"); //-5.14 -5.14 */
     public Num CopyFrom(Num other) {
         this.n = other.n;
         this.n0 = other.n0;
@@ -3165,7 +3165,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** CopyTo, MAKE COPY TO OTHER Num */
-    /**  CODE: Num a = new Num(3); Num b = new Num("-5.14"); Num.print(a.CopyTo(b), "\r\n"); b.Print("\r\n"); //3.0 3.0 */
+    /**  CODE: Num a = new Num(3); Num b = new Num("-5.14"); Num.print(a.CopyTo(b), "\n"); b.Print("\n"); //3.0 3.0 */
     public Num CopyTo(Num other) {
         other.n = this.n;
         other.n0 = this.n0;
@@ -3178,7 +3178,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
     
      /** CopySignFrom, COPY SIGN FROM OTHER Num */
-    /**  CODE: Num a = new Num(+3); Num b = new Num("-5.14"); Num.print(a.CopySignFrom(b), "\r\n"); b.Print("\r\n"); //-3.0 -5.14 */
+    /**  CODE: Num a = new Num(+3); Num b = new Num("-5.14"); Num.print(a.CopySignFrom(b), "\n"); b.Print("\n"); //-3.0 -5.14 */
     public Num CopySignFrom(Num other) {
         if (this.n2.equals(other.n2)) return this;
         this.n2 = other.n2; //SIGN
@@ -3187,7 +3187,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** CopySignTo, COPY SIGN TO OTHER Num */
-    /**  CODE: Num a = new Num(+3); Num b = new Num("-5.14"); Num.print(a.CopySignTo(b), "\r\n"); a.Print("\r\n"); //5.14 3.0 */
+    /**  CODE: Num a = new Num(+3); Num b = new Num("-5.14"); Num.print(a.CopySignTo(b), "\n"); a.Print("\n"); //5.14 3.0 */
     public Num CopySignTo(Num other) {
         if (this.n2.equals(other.n2)) return other;
         other.n2 = this.n2; //SIGN
@@ -3200,7 +3200,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     public void Print() { System.out.print(this.toString()); }
 
      /** Print, PRINT (Num VIDEO OUTPUT BY String) */
-    /**  CODE:  Num a = new Num("-5005.77"); a.Print("\r\n"); //-5005.77 (RETURN) */
+    /**  CODE:  Num a = new Num("-5005.77"); a.Print("\n"); //-5005.77 (RETURN) */
     public void Print(String str) { System.out.print(this.toString() + str); }
 
      /** Show, PRINT OBJECT PROPERTIES (Num VIDEO OUTPUT) */
@@ -3233,7 +3233,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     public int length() { return this.n.length(); }
     
    /** Len, RETURN AN ARRAY WITH NUM LENGTHS BEFORE AND AFTER FLOATING POINT DOT */
-  /**  CODE: Num a = new Num("3.1415"); a.Print("\r\n") ; Num.print(a.Len()[0] + " " + a.Len()[1] + "\r\n"); //3.1415 1 4 */
+  /**  CODE: Num a = new Num("3.1415"); a.Print("\n") ; Num.print(a.Len()[0] + " " + a.Len()[1] + "\n"); //3.1415 1 4 */
   public int[] Len() { 
     int[] numbers = new int[2]; //TWO ELEMENTs
     numbers[0] = this.n0.length();
@@ -3242,11 +3242,11 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   } 
 
      /** toPrecision, PRECISION SET Num d PROPERTY (DIVISION OPERATION) */
-    /**  CODE: Num a = new Num("3.14"); Num b = new Num(3); int digits = 6; a.toPrecision(digits); b.toPrecision(digits); Num.print(a.Div(b, digits).toString(), "\r\n"); //1.046666 */
+    /**  CODE: Num a = new Num("3.14"); Num b = new Num(3); int digits = 6; a.toPrecision(digits); b.toPrecision(digits); Num.print(a.Div(b, digits).toString(), "\n"); //1.046666 */
     public Num toPrecision(int d) { this.d = d; return this; }
 
      /** Invsign, INVERTED SIGN OF this Num */
-    /**  CODE: Num a = new Num("+3.14"); a.Print("\r\n"); a.Invsign().Print("\r\n"); //3.14 -3.14 */
+    /**  CODE: Num a = new Num("+3.14"); a.Print("\n"); a.Invsign().Print("\n"); //3.14 -3.14 */
     public Num Invsign() {
         this.n2 = (this.n2.equals("") ? "-" : "");
         this.n = this.n2 + this.n0 + "." + this.n1;
@@ -3254,11 +3254,11 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** Minus_unary, INVERTED SIGN OF this Num */
-    /**  CODE: Num a = new Num("+3.14"); a.Print("\r\n"); a.Minus_unary().Print("\r\n"); //3.14 -3.14 */
+    /**  CODE: Num a = new Num("+3.14"); a.Print("\n"); a.Minus_unary().Print("\n"); //3.14 -3.14 */
     public Num Minus_unary() { this.Invsign(); return this; }
 
      /** Plus, PLUS SIGN OF this Num */
-    /**  CODE: Num a = new Num("-3.14"); a.Print("\r\n"); a.Plus().Print("\r\n"); //-3.14 3.14 */
+    /**  CODE: Num a = new Num("-3.14"); a.Print("\n"); a.Plus().Print("\n"); //-3.14 3.14 */
     public Num Plus() {
         if (this.n2.equals(""))
             return this;
@@ -3268,7 +3268,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** Minus, MINUS SIGN OF Num */
-    /**  CODE: Num a = new Num("+3.14"); a.Print("\r\n"); a.Minus().Print("\r\n"); //3.14 -3.14 */
+    /**  CODE: Num a = new Num("+3.14"); a.Print("\n"); a.Minus().Print("\n"); //3.14 -3.14 */
     public Num Minus() {
         if((this.n0 + this.n1).equals("00")) throw new ArithmeticException("Num.Minus => zero can not be signed: " + this.n); //SIGNED ZERO ERROR
         if(this.n2.equals("-")) return this;
@@ -3278,7 +3278,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** toBigInt, NTEGER Num TO BigInt */
-    /**  CODE: Num a = new Num("1000000000000000000000.0"); Num.print(a.toBigInt().subtract(new BigInteger("1")), "\r\n"); //999999999999999999999 */
+    /**  CODE: Num a = new Num("1000000000000000000000.0"); Num.print(a.toBigInt().subtract(new BigInteger("1")), "\n"); //999999999999999999999 */
     public BigInteger toBigInt() { //this.n1 != '0'
         if (!this.n1.equals("0"))
             throw new ArithmeticException("Num.toBigInt => TypeError, number must be integer: " + this.n);
@@ -3286,7 +3286,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
     
      /** toBigInteger, INTEGER Num TO BigInteger LIKE toBigInt */
-    /**  CODE: Num a = new Num("1000000000000000000000.0"); Num.print(a.toBigInteger().subtract(new BigInteger("1")), "\r\n"); //999999999999999999999 */
+    /**  CODE: Num a = new Num("1000000000000000000000.0"); Num.print(a.toBigInteger().subtract(new BigInteger("1")), "\n"); //999999999999999999999 */
     public BigInteger toBigInteger() { //this.n1 != '0'
         if (!this.n1.equals("0"))
             throw new ArithmeticException("Num.toBigInteger => TypeError, number must be integer: " + this.n);
@@ -3294,7 +3294,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
     
      /** toBin, INTEGER Num TO BINARY */
-    /**  CODE:   Num a = new Num("3141592.0"); Num.print(a.toBin(), "\r\n"); //1011111110111111011000 */
+    /**  CODE:   Num a = new Num("3141592.0"); Num.print(a.toBin(), "\n"); //1011111110111111011000 */
     public String toBin() {
         if (!this.n1.equals("0"))
             throw new ArithmeticException("Num.toBin => TypeError, number must be integer: " + this.n);
@@ -3302,7 +3302,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** toHex, INTEGER Num TO HEXADECIMAL */
-    /**  CODE:   Num a = new Num("3141592.0"); Num.print(a.toHex().toUpperCase(), "\r\n"); //2FEFD8 */
+    /**  CODE:   Num a = new Num("3141592.0"); Num.print(a.toHex().toUpperCase(), "\n"); //2FEFD8 */
     public String toHex() {
         if (!this.n1.equals("0"))
             throw new ArithmeticException("Num.toHex => TypeError, number must be integer: " + this.n);
@@ -3310,7 +3310,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** toInt, INTEGER Num TO int */
-    /**  CODE: Num a = new Num("3141592.0"); Num.print(a.toInt() - 1, "\r\n"); //3141591 */
+    /**  CODE: Num a = new Num("3141592.0"); Num.print(a.toInt() - 1, "\n"); //3141591 */
     public int toInt() {
         if (!this.n1.equals("0"))
             throw new ArithmeticException("Num.toInt => TypeError, number must be integer: " + this.n);
@@ -3318,7 +3318,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** toLong, INTEGER Num TO long */
-    /**  CODE: Num a = new Num("31415923141592.0"); Num.print(a.toLong() - 1, "\r\n"); //31415923141591 */
+    /**  CODE: Num a = new Num("31415923141592.0"); Num.print(a.toLong() - 1, "\n"); //31415923141591 */
     public long toLong() {
         if (!this.n1.equals("0"))
             throw new ArithmeticException("Num.toLong => TypeError number must be long integer: " + this.n);
@@ -3326,35 +3326,35 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** toFloat, Num TO float */
-    /**  Num a = new Num("-3.1234567890123456789999"); Num.print(a.toFloat(), "\r\n"); Num.print(a.toFloat() - 2.0e-15, "\r\n"); //-3.1234567890123457 -3.123456789012348 */
+    /**  Num a = new Num("-3.1234567890123456789999"); Num.print(a.toFloat(), "\n"); Num.print(a.toFloat() - 2.0e-15, "\n"); //-3.1234567890123457 -3.123456789012348 */
     public double toFloat() { return Double.parseDouble(this.n); }
 
      /** toDouble, Num TO double LIKE toFloat */
-    /**  Num a = new Num("-3.1234567890123456789999"); Num.print(a.toDouble(), "\r\n"); Num.print(a.toDouble() - 2.0e-15, "\r\n"); //-3.1234567890123457 -3.123456789012348 */
+    /**  Num a = new Num("-3.1234567890123456789999"); Num.print(a.toDouble(), "\n"); Num.print(a.toDouble() - 2.0e-15, "\n"); //-3.1234567890123457 -3.123456789012348 */
     public double toDouble() { return Double.parseDouble(this.n); }
 
      /** ieee754, FLOAT TO IEEE754 CONVERSION LIKE toFloat() METHOD */
-    /**  CODE: Num a = new Num("-3.1234567890123456789999"); Num.print(a.ieee754(), "\r\n"); Num.print(a.ieee754() - 2.0e-15, "\r\n"); //-3.1234567890123457 -3.123456789012348 */
+    /**  CODE: Num a = new Num("-3.1234567890123456789999"); Num.print(a.ieee754(), "\n"); Num.print(a.ieee754() - 2.0e-15, "\n"); //-3.1234567890123457 -3.123456789012348 */
     public double ieee754() { return Double.parseDouble(this.n); }
 
      /** Shift, SHIFT Num BY int (MULTIPLY AND DIVIDE BY TEN) */
-    /**  CODE: Num a = new Num(1); a = a.Shift(3);  a.Print("\r\n"); //1000.0 */
+    /**  CODE: Num a = new Num(1); a = a.Shift(3);  a.Print("\n"); //1000.0 */
     public Num Shift(int zeros) { return Num.shift(this, zeros); } 
 
      /** Shift, SHIFT Num BY long (MULTIPLY AND DIVIDE BY TEN) */
-    /**  CODE: Num a = new Num(1); a = a.Shift(-3L); a.Print("\r\n"); //0.001 */
+    /**  CODE: Num a = new Num(1); a = a.Shift(-3L); a.Print("\n"); //0.001 */
     public Num Shift(long zeros) { return Num.shift(this, (int) zeros); } 
 
      /** Shift, SHIFT Num BY BigInteger (MULTIPLY AND DIVIDE BY TEN) */
-    /**  CODE: Num a = new Num(1); a = a.Shift(new BigInteger("-3")); a.Print("\r\n"); //0.001 */
+    /**  CODE: Num a = new Num(1); a = a.Shift(new BigInteger("-3")); a.Print("\n"); //0.001 */
     public Num Shift(BigInteger zeros) { return Num.shift(this, zeros.intValueExact()); } 
 
      /** Shift, SHIFT Num BY Num (MULTIPLY AND DIVIDE BY TEN) */
-    /**  CODE: Num a = new Num(1); a = a.Shift(new Num("-3.0")); a.Print("\r\n"); //0.001 */
+    /**  CODE: Num a = new Num(1); a = a.Shift(new Num("-3.0")); a.Print("\n"); //0.001 */
     public Num Shift(Num zeros) { return Num.shift(this, zeros.toInt()); } 
 
      /** Shift, SHIFT Num BY String (MULTIPLY AND DIVIDE BY TEN) */
-    /**  CODE: Num a = new Num(1); a = a.Shift("-3.0"); a.Print("\r\n"); //0.001 */
+    /**  CODE: Num a = new Num(1); a = a.Shift("-3.0"); a.Print("\n"); //0.001 */
     public Num Shift(String zeros) { return Num.shift(this, new Num(zeros).toInt()); } 
 
      /** (==) EQ, EQUAL LOGIC BINARY OPERATOR BY int */
@@ -3398,23 +3398,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     public boolean NE(Num sob) { return !this.n.equals(sob.n); }
 
      /** (>) GT, GREATER LOGIC BINARY OPERATOR BY int */
-    /**  CODE: Num a = new Num(333); Num.print(a.GT(33), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GT(33), "\n"); //true */
     public boolean GT(int sob) { return GT(new Num(sob)); }
 
      /** (>) GT, GREATER LOGIC BINARY OPERATOR BY long */
-    /**  CODE: Num a = new Num(333); Num.print(a.GT(33L), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GT(33L), "\n"); //true */
     public boolean GT(long sob) { return GT(new Num(sob)); }
     
      /** (>) GT, GREATER LOGIC BINARY OPERATOR BY BigInteger */
-    /**  CODE: Num a = new Num(333); Num.print(a.GT(new BigInteger("33")), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GT(new BigInteger("33")), "\n"); //true */
     public boolean GT(BigInteger sob) { return GT(new Num(sob)); }
 
      /** (>) GT, GREATER LOGIC BINARY OPERATOR BY String */
-    /**  CODE: Num a = new Num(333); Num.print(a.GT("33.0"), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GT("33.0"), "\n"); //true */
     public boolean GT(String sob) { return GT(new Num(sob)); }
 
      /** (>) GT, GREATER LOGIC BINARY OPERATOR BY Num */
-    /**  CODE: Num a = new Num(333); Num.print(a.GT(new Num("33.0")), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GT(new Num("33.0")), "\n"); //true */
     public boolean GT(Num sob) {
         if (new BigInteger(this.n2 + this.n0).compareTo(new BigInteger(sob.n2 + sob.n0)) > 0)
             return true;
@@ -3437,23 +3437,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** (>=) GE, GREATER OR EQUAL LOGIC BINARY OPERATOR BY int */
-    /**  CODE: Num a = new Num(333); Num.print(a.GE(333), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GE(333), "\n"); //true */
     public boolean GE(int sob) { return GE(new Num(sob)); }
 
      /** (>=) GE, GREATER OR EQUAL LOGIC BINARY OPERATOR BY long */
-    /**  CODE: Num a = new Num(333); Num.print(a.GE(333L), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GE(333L), "\n"); //true */
     public boolean GE(long sob) { return GE(new Num(sob)); }
     
      /** (>=) GE, GREATER OR EQUAL LOGIC BINARY OPERATOR BY BigInteger */
-    /**  CODE: Num a = new Num(333); Num.print(a.GE(new BigInteger("333")), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GE(new BigInteger("333")), "\n"); //true */
     public boolean GE(BigInteger sob) { return GE(new Num(sob)); }
 
      /** (>=) GE, GREATER OR EQUAL LOGIC BINARY OPERATOR BY String */
-    /**  CODE: Num a = new Num(333); Num.print(a.GE("333.0"), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GE("333.0"), "\n"); //true */
     public boolean GE(String sob) { return GE(new Num(sob)); }
     
      /** (>=) GE, GREATER OR EQUAL LOGIC BINARY OPERATOR BY Num */
-    /**  CODE: Num a = new Num(333); Num.print(a.GE(new Num("333.0")), "\r\n"); //true */
+    /**  CODE: Num a = new Num(333); Num.print(a.GE(new Num("333.0")), "\n"); //true */
     public boolean GE(Num n) { Num sob = new Num(n); return this.GT(sob) || this.EQ(sob); }
 
      /** (<) LT, LESS LOGIC BINARY OPERATOR BY int */
@@ -3505,11 +3505,11 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     public boolean Is_false() { return this.n.equals("0.0"); }
 
      /**  And, AND LOGIC BINARY OPERATOR BY Num */
-    /**   CODE: Num a = new Num("0.001"); Num b = new Num("0.02"); if(a.And(b) == true) Num.print(a.toString() + " And " + b.toString(), " => true\r\n"); else Num.print(a.toString() + " And " + b.toString(), " => false\r\n"); //0.001 And 0.02 => true */
+    /**   CODE: Num a = new Num("0.001"); Num b = new Num("0.02"); if(a.And(b) == true) Num.print(a.toString() + " And " + b.toString(), " => true\n"); else Num.print(a.toString() + " And " + b.toString(), " => false\n"); //0.001 And 0.02 => true */
     public boolean And(Num b) { return this.Is_true() && b.Is_true(); }
 
      /**  Or, OR LOGIC BINARY OPERATOR BY Num */
-    /**   CODE: Num a = new Num("0.0"); Num b = new Num("0.02"); if(a.Or(b) == true) Num.print(a.toString() + " Or " + b.toString(), " => true\r\n"); else Num.print(a.toString() + " Or " + b.toString(), " => false\r\n"); //0.0 Or 0.02 => true */
+    /**   CODE: Num a = new Num("0.0"); Num b = new Num("0.02"); if(a.Or(b) == true) Num.print(a.toString() + " Or " + b.toString(), " => true\n"); else Num.print(a.toString() + " Or " + b.toString(), " => false\n"); //0.0 Or 0.02 => true */
     public boolean Or(Num b) { return this.Is_true() || b.Is_true(); }
 
      /** Not, NOT LOGIC UNARY OPERATOR BY Num */
@@ -3541,22 +3541,22 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     public boolean Is_numfloat() { return !this.n1.equals("0"); }
 
      /** Clear, CLEAR VARIABLE SETTING ZERO */
-    /**  CODE: Num a = new Num("2.72"); a.Print("\r\n"); a.Clear(); a.Print("\r\n"); //2.72 0.0 */
+    /**  CODE: Num a = new Num("2.72"); a.Print("\n"); a.Clear(); a.Print("\n"); //2.72 0.0 */
     public void Clear() { this.n = "0.0"; this.n0 = "0"; this.n1 = "0"; this.n2 = ""; this.L_n0 = 1; this.L_n1 = 1; }
 
      /** Is_numeven, CHECK Num EVEN (INTEGER ENDING 0 2 4 6 8) */
-    /**  CODE: Num a = new Num("8.00"); Num.print(a.Is_numeven(), "\r\n"); //true */
+    /**  CODE: Num a = new Num("8.00"); Num.print(a.Is_numeven(), "\n"); //true */
     public boolean Is_numeven() {
         if (this.Is_numint()) { return this.Mod(2).Is_false(); }
         throw new IllegalArgumentException("Num.Is_numeven => Num, must be integer value: " + this.toString());
     }
     
    /** Is_numodd, CHECK Num ODD (INTEGER ENDING 1 3 5 7 9) */
-  /**  CODE: Num a = new Num("3.00"); Num.print(a.Is_numodd(), "\r\n"); //true */
+  /**  CODE: Num a = new Num("3.00"); Num.print(a.Is_numodd(), "\n"); //true */
   public boolean Is_numodd() { return !this.Is_numeven(); }
   
    /** Inc, INCREMENT ADDING VARIABLE BY DEFAULT ONE -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc().Print("\r\n"); //2.72 3.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc().Print("\n"); //2.72 3.72 */
   public Num Inc() { 
     Num telf = this.Add(1);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2; 
@@ -3565,7 +3565,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Inc, INCREMENT ADDING VARIABLE BY int -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(2).Print("\r\n"); //2.72 4.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(2).Print("\n"); //2.72 4.72 */
   public Num Inc(int sob) {
     Num telf = this.Add(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3574,7 +3574,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Inc, INCREMENT ADDING VARIABLE BY long -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(2000L).Print("\r\n"); //2.72 2002.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(2000L).Print("\n"); //2.72 2002.72 */
   public Num Inc(long sob) {
     Num telf = this.Add(sob); 
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3583,7 +3583,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Inc, INCREMENT ADDING VARIABLE BY BigInteger -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(new BigInteger("2000000000000")).Print("\r\n"); //2.72 2000000000002.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(new BigInteger("2000000000000")).Print("\n"); //2.72 2000000000002.72 */
   public Num Inc(BigInteger sob) {
     Num telf = this.Add(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3592,7 +3592,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Inc, INCREMENT ADDING VARIABLE BY String -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc("2000.0").Print("\r\n"); //2.72 2002.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc("2000.0").Print("\n"); //2.72 2002.72 */
   public Num Inc(String sob) {
     Num telf = this.Add(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3601,7 +3601,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Inc, INCREMENT ADDING VARIABLE BY Num -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(new Num("2000000000000.03")).Print("\r\n"); //2.72 2000000000002.75 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Inc(new Num("2000000000000.03")).Print("\n"); //2.72 2000000000002.75 */
   public Num Inc(Num sob) {
       Num telf = this.Add(sob);
       this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3610,7 +3610,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** IncMul, INCREMENT MULTIPLYING VARIABLE BY DEFAULT TEN -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul().Print("\r\n"); //2.72 27.2 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul().Print("\n"); //2.72 27.2 */
   public Num IncMul() { 
     Num telf = this.Mul(10);
     this.d    = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3619,7 +3619,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** IncMul, INCREMENT MULTIPLYING VARIABLE BY int -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(100).Print("\r\n"); //2.72 272.0 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(100).Print("\n"); //2.72 272.0 */
   public Num IncMul(int sob) {
     Num telf = this.Mul(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3628,7 +3628,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** IncMul, INCREMENT MULTIPLYING VARIABLE BY long -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(1000L).Print("\r\n"); //2.72 2720.0 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(1000L).Print("\n"); //2.72 2720.0 */
   public Num IncMul(long sob) {
     Num telf = this.Mul(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3637,7 +3637,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** IncMul, INCREMENT MULTIPLYING VARIABLE BY BigInteger -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(new BigInteger("1000000000000")).Print("\r\n"); //2.72 2720000000000.0 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(new BigInteger("1000000000000")).Print("\n"); //2.72 2720000000000.0 */
   public Num IncMul(BigInteger sob) {
     Num telf = this.Mul(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2; 
@@ -3646,7 +3646,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** IncMul, INCREMENT MULTIPLYING VARIABLE BY String -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul("1000.0").Print("\r\n"); //2.72 2720.0 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul("1000.0").Print("\n"); //2.72 2720.0 */
   public Num IncMul(String sob) {
     Num telf = this.Mul(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2; 
@@ -3655,7 +3655,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** IncMul, INCREMENT MULTIPLYING VARIABLE BY Num -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(new Num("1000.123")).Print("\r\n"); //2.72 2720.33456 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.IncMul(new Num("1000.123")).Print("\n"); //2.72 2720.33456 */
   public Num IncMul(Num sob) {
       Num telf = this.Mul(sob);
       this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3664,7 +3664,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** Dec, DECREMENT SUBTRACTING VARIABLE BY DEFAULT ONE -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Dec().Print("\r\n"); //2.72 1.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Dec().Print("\n"); //2.72 1.72 */
   public Num Dec() { 
     Num telf = this.Sub(1);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3673,7 +3673,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
     
    /** Dec, DECREMENT SUBTRACTING VARIABLE BY int -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Dec(2).Print("\r\n"); //2.72 0.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Dec(2).Print("\n"); //2.72 0.72 */
   public Num Dec(int sob) {
     Num telf = this.Sub(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3682,7 +3682,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
     
    /** Dec, DECREMENT SUBTRACTING VARIABLE BY long -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Dec(2L).Print("\r\n"); //2.72 0.72 */
+  /**  CODE: Num a = new Num("2.72"); a.Print(" "); a.Dec(2L).Print("\n"); //2.72 0.72 */
   public Num Dec(long sob) {
     Num telf = this.Sub(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3691,7 +3691,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
     
    /** Dec, DECREMENT SUBTRACTING VARIABLE BY BigInteger -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2000.72"); a.Print(" "); a.Dec(new BigInteger("1000")).Print("\r\n"); //2000.72 1000.72 */
+  /**  CODE: Num a = new Num("2000.72"); a.Print(" "); a.Dec(new BigInteger("1000")).Print("\n"); //2000.72 1000.72 */
   public Num Dec(BigInteger sob) {
     Num telf = this.Sub(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3700,7 +3700,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
     
    /** Dec, DECREMENT SUBTRACTING VARIABLE BY String -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2000.72"); a.Print(" "); a.Dec("1000.0").Print("\r\n"); //2000.72 1000.72 */
+  /**  CODE: Num a = new Num("2000.72"); a.Print(" "); a.Dec("1000.0").Print("\n"); //2000.72 1000.72 */
   public Num Dec(String sob) {
     Num telf = this.Sub(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3709,7 +3709,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
     
    /** Dec, DECREMENT SUBTRACTING VARIABLE BY Num -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("2000.72"); a.Print(" "); a.Dec(new Num("1000.0")).Print("\r\n"); //2000.72 1000.72 */
+  /**  CODE: Num a = new Num("2000.72"); a.Print(" "); a.Dec(new Num("1000.0")).Print("\n"); //2000.72 1000.72 */
   public Num Dec(Num sob) {
       Num telf = this.Sub(sob);
       this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3718,7 +3718,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** DecDiv, DECREMENT VARIABLE DIVIDING BY DEFAULT TEN -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv().Print("\r\n"); //272.0 27.2 */
+  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv().Print("\n"); //272.0 27.2 */
   public Num DecDiv() { 
     Num telf = this.Div(10);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3727,7 +3727,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** DecDiv, DECREMENT VARIABLE DIVIDING BY int -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(100).Print("\r\n"); //272.0 2.72 */
+  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(100).Print("\n"); //272.0 2.72 */
   public Num DecDiv(int sob) {
     Num telf = this.Div(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3736,7 +3736,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** DecDiv, DECREMENT VARIABLE DIVIDING BY long -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(100L).Print("\r\n"); //272.0 2.72 */
+  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(100L).Print("\n"); //272.0 2.72 */
   public Num DecDiv(long sob) {
     Num telf = this.Div(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3745,7 +3745,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** DecDiv, DECREMENT VARIABLE DIVIDING BY BigInteger -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(new BigInteger("100")).Print("\r\n"); //272.0 2.72 */
+  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(new BigInteger("100")).Print("\n"); //272.0 2.72 */
   public Num DecDiv(BigInteger sob) {
     Num telf = this.Div(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3754,7 +3754,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** DecDiv, DECREMENT VARIABLE DIVIDING BY String -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv("100.0").Print("\r\n"); //272.0 2.72 */
+  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv("100.0").Print("\n"); //272.0 2.72 */
   public Num DecDiv(String sob) {
     Num telf = this.Div(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2;
@@ -3763,7 +3763,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** DecDiv, DECREMENT VARIABLE DIVIDING BY Num -OBJECT MODIFIED BY this REFERENCE */
-  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(new Num("100.0")).Print("\r\n"); //272.0 2.72 */
+  /**  CODE: Num a = new Num("272.0"); a.Print(" "); a.DecDiv(new Num("100.0")).Print("\n"); //272.0 2.72 */
   public Num DecDiv(Num sob) {
     Num telf = this.Div(sob);
     this.d = telf.d; this.n = telf.n; this.n0 = telf.n0; this.n1 = telf.n1; this.n2 = telf.n2; 
@@ -4005,35 +4005,35 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   public Num Div(String sob, int d) { return this.Div(new Num(sob, d), d); }  //d => PRECISION DIGITS
 
    /** Div, (/) OBJECT DIVISION BY int, int */
-  /**  CODE: Num a = new Num("9.8", 6); Num Q = a.Div(3, 7); Q.Print("\r\n"); //3.2666666 */
+  /**  CODE: Num a = new Num("9.8", 6); Num Q = a.Div(3, 7); Q.Print("\n"); //3.2666666 */
   public Num Div(int sob, int d) { return this.Div(new Num(sob, d), d); }    //d => PRECISION DIGITS
 
    /** Div, (/) OBJECT DIVISION BY long, int */
-  /**  CODE: Num a = new Num("9.8", 6); Num Q = a.Div(3L, 7); Q.Print("\r\n"); //3.2666666 */
+  /**  CODE: Num a = new Num("9.8", 6); Num Q = a.Div(3L, 7); Q.Print("\n"); //3.2666666 */
   public Num Div(long sob, int d) { return this.Div(new Num(sob, d), d); }    //d => PRECISION DIGITS
 
    /** Div, (/) OBJECT DIVISION BY BigInteger, int */
-  /**  CODE: Num a = new Num("9.8", 6); Num Q = a.Div(new BigInteger("3"), 7); Q.Print("\r\n"); //3.2666666 */
+  /**  CODE: Num a = new Num("9.8", 6); Num Q = a.Div(new BigInteger("3"), 7); Q.Print("\n"); //3.2666666 */
   public Num Div(BigInteger sob, int d) { return this.Div(new Num(sob, d), d); }               //d => PRECISION DIGITS
 
    /** Mod, (%) MODULE OPERATOR BY int (Num FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(6), "\r\n"); //3.2 */
+  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(6), "\n"); //3.2 */
   public Num Mod(int sob) { return this.Mod(new Num(sob)); }
 
    /** Mod, (%) MODULE OPERATOR BY long (Num FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(6L), "\r\n"); //3.2 */
+  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(6L), "\n"); //3.2 */
   public Num Mod(long sob) { return this.Mod(new Num(sob)); }
   
    /** Mod, (%) MODULE OPERATOR BY BigInteger (Num FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(new BigInteger("6")), "\r\n"); //3.2 */
+  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(new BigInteger("6")), "\n"); //3.2 */
   public Num Mod(BigInteger sob) { return this.Mod(new Num(sob)); }
 
    /** Mod, (%) MODULE OPERATOR BY String (Num FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod("6.0"), "\r\n"); //3.2 */
+  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod("6.0"), "\n"); //3.2 */
   public Num Mod(String sob) { return this.Mod(new Num(sob)); }
 
    /** Mod, (%) MODULE OPERATOR BY Num (Num FLOATING POINT DIVISION REMAINDER) */
-  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(new Num("6.0")), "\r\n"); //3.2 */
+  /**  CODE: Num a = new Num("15.2"); Num.print(a.Mod(new Num("6.0")), "\n"); //3.2 */
   public Num Mod(Num sob) {
       if (sob.n.equals("0.0"))
           throw new ArithmeticException("Num.Mod => DIVISION BY ZERO: " + sob.toString());
@@ -4060,23 +4060,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** FloorDiv, (//) INTEGER DIVISION OPERATOR BY int */
-  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(6), "\r\n"); //2.0 */
+  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(6), "\n"); //2.0 */
   public Num FloorDiv(int sob) { return this.FloorDiv(new Num(sob)); }
 
    /** FloorDiv, (//) INTEGER DIVISION OPERATOR BY long */
-  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(6L), "\r\n"); //2.0 */
+  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(6L), "\n"); //2.0 */
   public Num FloorDiv(long sob) { return this.FloorDiv(new Num(sob)); }
   
    /** FloorDiv, (//) INTEGER DIVISION OPERATOR BY BigInteger */
-  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(new BigInteger("6")), "\r\n"); //2.0 */
+  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(new BigInteger("6")), "\n"); //2.0 */
   public Num FloorDiv(BigInteger sob) { return this.FloorDiv(new Num(sob)); }
 
    /** FloorDiv, (//) INTEGER DIVISION OPERATOR BY String */
-  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv("6.0"), "\r\n"); //2.0 */
+  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv("6.0"), "\n"); //2.0 */
   public Num FloorDiv(String sob) { return this.FloorDiv(new Num(sob)); }
   
    /** FloorDiv, (//) INTEGER DIVISION OPERATOR BY Num */
-  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(new Num(6)), "\r\n"); //2.0 */
+  /**  CODE: Num a = new Num(15); Num.print(a.FloorDiv(new Num(6)), "\n"); //2.0 */
   public Num FloorDiv(Num sob) {
       if (sob.n.equals("0.0"))
           throw new ArithmeticException("Num.FloorDiv => DIVISION BY ZERO: " + sob.toString());
@@ -4103,23 +4103,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
     
    /** DivMod, (// %) CALCULATOR DIVMOD BY int, RETURN ARRAY (this // sob, this % sob) */
-  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(4); Num.print(qr[0], "\r\n"); Num.print(qr[1]); //2.0 3.0 */
+  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(4); Num.print(qr[0], "\n"); Num.print(qr[1]); //2.0 3.0 */
   public Num[] DivMod(int sob) { return this.DivMod(new Num(sob)); }
 
    /** DivMod, (// %) CALCULATOR DIVMOD BY long, RETURN ARRAY (this // sob, this % sob) */
-  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(4L); Num.print(qr[0], "\r\n"); Num.print(qr[1]); //2.0 3.0 */
+  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(4L); Num.print(qr[0], "\n"); Num.print(qr[1]); //2.0 3.0 */
   public Num[] DivMod(long sob) { return this.DivMod(new Num(sob)); }
 
    /** DivMod, (// %) CALCULATOR DIVMOD BY BigInteger, RETURN ARRAY (this // sob, this % sob) */
-  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(new BigInteger("4")); Num.print(qr[0], "\r\n"); Num.print(qr[1]); //2.0 3.0 */
+  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(new BigInteger("4")); Num.print(qr[0], "\n"); Num.print(qr[1]); //2.0 3.0 */
   public Num[] DivMod(BigInteger sob) { return this.DivMod(new Num(sob)); }
   
    /** DivMod, (// %) CALCULATOR DIVMOD BY String, RETURN ARRAY (this // sob, this % sob) */
-  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod("4.0"); Num.print(qr[0], "\r\n"); Num.print(qr[1]); //2.0 3.0 */
+  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod("4.0"); Num.print(qr[0], "\n"); Num.print(qr[1]); //2.0 3.0 */
   public Num[] DivMod(String sob) { return this.DivMod(new Num(sob)); }
 
    /** DivMod, (// %) CALCULATOR DIVMOD BY Num, RETURN ARRAY (this // sob, this % sob) */
-  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(new Num(4)); Num.print(qr[0], "\r\n"); Num.print(qr[1]); //2.0 3.0 */
+  /**  CODE: Num a = new Num(11); Num[] qr = a.DivMod(new Num(4)); Num.print(qr[0], "\n"); Num.print(qr[1]); //2.0 3.0 */
   public Num[] DivMod(Num sob) {
     Num[] QR = new Num[2]; //CREATE TWO ELEMENT ARRAY
     QR[0] = new Num(this).FloorDiv(new Num(sob));
@@ -4128,27 +4128,27 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Inv, (1/this) CALCULATOR NUMBER INVERSE METHOD -DEFAULT PRECISION BY 80 */ 
-  /**  CODE: Num a = new Num(3); Num i = a.Inv();  i.Print("\r\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333 */
+  /**  CODE: Num a = new Num(3); Num i = a.Inv();  i.Print("\n"); //0.33333333333333333333333333333333333333333333333333333333333333333333333333333333 */
   public Num Inv() { return Num.inv(this, 80); }
 
    /** Inv, (1/this) CALCULATOR NUMBER INVERSE METHOD BY int */
-  /**  CODE: Num a = new Num(3, 6); Num i = a.Inv(6); i.Print("\r\n"); //0.333333 */
+  /**  CODE: Num a = new Num(3, 6); Num i = a.Inv(6); i.Print("\n"); //0.333333 */
   public Num Inv(int precision) { return Num.inv(this, precision); }
 
    /** Inv, (1/this) CALCULATOR NUMBER INVERSE METHOD BY long */
-  /**  CODE: Num a = new Num(3, 6); a.Inv(6L).Print("\r\n"); //0.333333 */
+  /**  CODE: Num a = new Num(3, 6); a.Inv(6L).Print("\n"); //0.333333 */
   public Num Inv(long precision) { return Num.inv(this, (int) precision); }
 
    /** Inv, (1/this) CALCULATOR NUMBER INVERSE METHOD BY BigInteger */
-  /**  CODE: Num a = new Num(3, 6); a.Inv(new BigInteger("6")).Print("\r\n"); //0.333333 */
+  /**  CODE: Num a = new Num(3, 6); a.Inv(new BigInteger("6")).Print("\n"); //0.333333 */
   public Num Inv(BigInteger precision) { return Num.inv(this, precision.intValue()); }
 
    /** Inv, (1/this) CALCULATOR NUMBER INVERSE METHOD BY String */
-  /**  CODE: Num a = new Num(3, 6); a.Inv("6.0").Print("\r\n"); //0.333333 */
+  /**  CODE: Num a = new Num(3, 6); a.Inv("6.0").Print("\n"); //0.333333 */
   public Num Inv(String precision) { return Num.inv(this, new Num(precision).toInt()); }
 
    /** Inv, (1/this) CALCULATOR NUMBER INVERSE METHOD BY Num */
-  /**  CODE: Num a = new Num(3, 6); a.Inv(new Num("6.0")).Print("\r\n"); //0.333333 */
+  /**  CODE: Num a = new Num(3, 6); a.Inv(new Num("6.0")).Print("\n"); //0.333333 */
   public Num Inv(Num precision) { return Num.inv(this, precision.toInt()); }
 
    /** Pow, (**) (EXPONENTIATION) POWER OPERATOR BY int */
@@ -4227,27 +4227,27 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** Trunc, Num FLOATING POINT TRUNCATION -DEFAULT PRECISION VALUE BY ZERO */
-  /**  CODE:  Num a = new Num("3.14159"); a.Trunc().Print("\r\n"); //3.0 */
+  /**  CODE:  Num a = new Num("3.14159"); a.Trunc().Print("\n"); //3.0 */
   public Num Trunc() { return new Num(new BigInteger(this.n2 + this.n0)); }
 
    /** Trunc, Num FLOATING POINT TRUNCATION BY long */
-  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(2L).Print("\r\n"); //3.14 */
+  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(2L).Print("\n"); //3.14 */
   public Num Trunc(long d) { return this.Trunc((int) d); }
 
    /** Trunc, Num FLOATING POINT TRUNCATION BY BigInteger */
-  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(new BigInteger("2")).Print("\r\n"); //3.14 */
+  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(new BigInteger("2")).Print("\n"); //3.14 */
   public Num Trunc(BigInteger d) { return this.Trunc(d.intValue()); }
 
    /** Trunc, Num FLOATING POINT TRUNCATION BY String */
-  /**  CODE:  Num a = new Num("3.14159"); a.Trunc("2.0").Print("\r\n"); //3.14 */
+  /**  CODE:  Num a = new Num("3.14159"); a.Trunc("2.0").Print("\n"); //3.14 */
   public Num Trunc(String d) { return this.Trunc(new Num(d).toInt()); }
 
    /** Trunc, Num FLOATING POINT TRUNCATION BY Num */
-  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(new Num("2.0")).Print("\r\n"); //3.14 */
+  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(new Num("2.0")).Print("\n"); //3.14 */
   public Num Trunc(Num d) { return this.Trunc(d.toInt()); }
 
    /** Trunc, Num FLOATING POINT TRUNCATION BY int */
-  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(4).Print("\r\n"); //3.1415 */
+  /**  CODE:  Num a = new Num("3.14159"); a.Trunc(4).Print("\n"); //3.1415 */
   public Num Trunc(int d) {
     Num m = new Num(10).Pow(d);
     Num t = this.Mul(m);
@@ -4255,27 +4255,27 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Round_floor, Num FLOOR ROUNDING RELATIVE DOWN -DEFAULT PRECISION VALUE BY ZERO */
-  /**  CODE: Num a = new Num("-3.14159"); a.Round_floor().Print("\r\n"); //-4.0 */
+  /**  CODE: Num a = new Num("-3.14159"); a.Round_floor().Print("\n"); //-4.0 */
   public Num Round_floor() { return this.Round_floor(0); } 
 
    /** Round_floor, Num FLOOR ROUNDING RELATIVE DOWN BY long */
-  /**  CODE: Num a = new Num("-3.14159"); a.Round_floor(4L).Print("\r\n"); //-3.1416 */
+  /**  CODE: Num a = new Num("-3.14159"); a.Round_floor(4L).Print("\n"); //-3.1416 */
   public Num Round_floor(long d) { return this.Round_floor((int) d); } 
 
    /** Round_floor, Num FLOOR ROUNDING RELATIVE DOWN BY BigInteger */
-  /**  CODE: Num a = new Num("-3.14159"); a.Round_floor(new BigInteger("4")).Print("\r\n"); //-3.1416 */
+  /**  CODE: Num a = new Num("-3.14159"); a.Round_floor(new BigInteger("4")).Print("\n"); //-3.1416 */
   public Num Round_floor(BigInteger d) { return this.Round_floor(d.intValue()); } 
 
    /** Round_floor, Num FLOOR ROUNDING RELATIVE DOWN BY String */
-  /**  CODE: Num a = new Num("-3.155"); a.Round_floor("2.0").Print("\r\n"); //-3.16 */
+  /**  CODE: Num a = new Num("-3.155"); a.Round_floor("2.0").Print("\n"); //-3.16 */
   public Num Round_floor(String d) { return this.Round_floor(new Num(d).toInt()); } 
 
    /** Round_floor, Num FLOOR ROUNDING RELATIVE DOWN BY Num */
-  /**  CODE: Num a = new Num("3.14159"); a.Round_floor(new Num("2.0")).Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.14159"); a.Round_floor(new Num("2.0")).Print("\n"); //3.14 */
   public Num Round_floor(Num d) { return this.Round_floor(d.toInt()); } 
 
    /** Round_floor, Num FLOOR ROUNDING RELATIVE DOWN BY int (d=1: 0.12 => 0.1 -0.12 => -0.2) */
-  /**  CODE: Num a = new Num("-3.14151"); Num T = a.Round_floor(4); T.Print("\r\n"); //-3.1416 */
+  /**  CODE: Num a = new Num("-3.14151"); Num T = a.Round_floor(4); T.Print("\n"); //-3.1416 */
   public Num Round_floor(int d) { //-> RELATIVE VALUE (REAL NUMBER R) 
       if (this.GE("0.0")) return this.Trunc(d); //POSITIVES AND ZERO  
       Num e = new Num("1.0", d).Div(new Num("10.0").Pow(d)); //NEGATIVES
@@ -4293,54 +4293,54 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** Round, Num HALF UP ROUNDING COMMON STANDARD -RELATIVE ROUND_HALF_CEIL DEFAULT PRECISION BY 2 */
-  /**  CODE: Num a = new Num("3.145"); a.Round().Print("\r\n"); //3.15 */
+  /**  CODE: Num a = new Num("3.145"); a.Round().Print("\n"); //3.15 */
   public Num Round() { return Round(2); }
   
    /** Round, Num HALF UP ROUNDING COMMON STANDARD BY long -RELATIVE ROUND_HALF_CEIL */
-  /**  CODE: Num a = new Num("3.141592654"); a.Round(4L).Print("\r\n"); //3.1416 */
+  /**  CODE: Num a = new Num("3.141592654"); a.Round(4L).Print("\n"); //3.1416 */
   public Num Round(long d) { return Round((int) d); }
   
    /** Round, Num HALF UP ROUNDING COMMON STANDARD BY BigInteger -RELATIVE ROUND_HALF_CEIL */
-  /**  CODE: Num a = new Num("3.141592654"); a.Round(new BigInteger("4")).Print("\r\n"); //3.1416 */
+  /**  CODE: Num a = new Num("3.141592654"); a.Round(new BigInteger("4")).Print("\n"); //3.1416 */
   public Num Round(BigInteger d) { return Round(d.intValue()); }
   
    /** Round, Num HALF UP ROUNDING COMMON STANDARD BY String -RELATIVE ROUND_HALF_CEIL */
-  /**  CODE: Num a = new Num("3.141592654"); a.Round("4.0").Print("\r\n"); //3.1416 */
+  /**  CODE: Num a = new Num("3.141592654"); a.Round("4.0").Print("\n"); //3.1416 */
   public Num Round(String d) { return Round(new Num(d).toInt()); }
   
    /** Round, Num HALF UP ROUNDING COMMON STANDARD BY Num -RELATIVE ROUND_HALF_CEIL */
-  /**  CODE: Num a = new Num("3.141592654"); a.Round(new Num("4.0")).Print("\r\n"); //3.1416 */
+  /**  CODE: Num a = new Num("3.141592654"); a.Round(new Num("4.0")).Print("\n"); //3.1416 */
   public Num Round(Num d) { return Round(d.toInt()); }
   
    /** Round, Num HALF UP ROUNDING COMMON STANDARD BY int -RELATIVE ROUND_HALF_CEIL d=1: 0.15 => 0.2 -0.15 => -0.1 */ 
-  /**  CODE: Num a = new Num("-0.15"); Num T = a.Round(1); T.Print("\r\n"); //-0.1 */
+  /**  CODE: Num a = new Num("-0.15"); Num T = a.Round(1); T.Print("\n"); //-0.1 */
   public Num Round(int d) { 
     Num t = new Num("0.5").Mul(new Num(10).Pow(-d)).Add(this);
     return t.Round_floor(d);
   } 
 
    /** Round_ceil, Num CEIL ROUNDING RELATIVE UP -DEFAULT PRECISION BY 0 */ 
-  /**  CODE: Num a = new Num("31.4159"); Num T = a.Round_ceil(); T.Print("\r\n"); //32.0 */
+  /**  CODE: Num a = new Num("31.4159"); Num T = a.Round_ceil(); T.Print("\n"); //32.0 */
   public Num Round_ceil() { return Round_ceil(0); }
   
    /** Round_ceil, Num CEIL ROUNDING RELATIVE UP BY long */ 
-  /**  CODE: Num a = new Num("-31.4159"); Num T = a.Round_ceil(3L); T.Print("\r\n"); //-31.415 */
+  /**  CODE: Num a = new Num("-31.4159"); Num T = a.Round_ceil(3L); T.Print("\n"); //-31.415 */
   public Num Round_ceil(long d) { return Round_ceil((int) d); }
   
    /** Round_ceil, Num CEIL ROUNDING RELATIVE UP BY BigInteger */ 
-  /**  CODE: Num a = new Num("+31.4152"); a.Round_ceil(new BigInteger("3")).Print("\r\n"); //31.416 */
+  /**  CODE: Num a = new Num("+31.4152"); a.Round_ceil(new BigInteger("3")).Print("\n"); //31.416 */
   public Num Round_ceil(BigInteger d) { return Round_ceil(d.intValue()); }
   
    /** Round_ceil, Num CEIL ROUNDING RELATIVE UP BY String */ 
-  /**  CODE: Num a = new Num("-31.4158"); a.Round_ceil("3.0").Print("\r\n"); //-31.415 */
+  /**  CODE: Num a = new Num("-31.4158"); a.Round_ceil("3.0").Print("\n"); //-31.415 */
   public Num Round_ceil(String d) { return Round_ceil(new Num(d).toInt()); }
   
    /** Round_ceil, Num CEIL ROUNDING RELATIVE UP BY Num */ 
-  /**  CODE: Num a = new Num("-31.4152"); a.Round_ceil(new Num("3.0")).Print("\r\n"); //-31.415 */
+  /**  CODE: Num a = new Num("-31.4152"); a.Round_ceil(new Num("3.0")).Print("\n"); //-31.415 */
   public Num Round_ceil(Num d) { return Round_ceil(d.toInt()); }
   
    /** Round_ceil, Num CEIL ROUNDING RELATIVE UP BY int (d=1: 0.12 => 0.2 -0.12 => -0.1) */
-  /**  CODE: Num a = new Num("3.14159"); Num T = a.Round_ceil(2); T.Print("\r\n"); //3.15 */
+  /**  CODE: Num a = new Num("3.14159"); Num T = a.Round_ceil(2); T.Print("\n"); //3.15 */
   public Num Round_ceil(int d) {
       if (this.LE(0)) return this.Trunc(d); //NEGATIVES AND ZERO 
       Num e = new Num("1.0", d).Div(new Num("10.0").Pow(d)); //POSITIVES
@@ -4358,27 +4358,27 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
 
    /** Round_Bank, Num HALF EVEN ROUNDING -DEFAULT PRECISION BY 2 (CLASSIC ALGORITHM) */
-  /**  CODE: Num a = new Num("3.145"); Num T = a.Round_Bank(); T.Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.145"); Num T = a.Round_Bank(); T.Print("\n"); //3.14 */
   public Num Round_Bank() { return Round_Bank(2); }
   
    /** Round_Bank, Num HALF EVEN ROUNDING BY long (CLASSIC ALGORITHM) */
-  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank(3L); T.Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank(3L); T.Print("\n"); //3.14 */
   public Num Round_Bank(long d) { return Round_Bank((int) d); }
   
    /** Round_Bank, Num HALF EVEN ROUNDING BY BigInteger (CLASSIC ALGORITHM) */
-  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank(new BigInteger("3")); T.Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank(new BigInteger("3")); T.Print("\n"); //3.14 */
   public Num Round_Bank(BigInteger d) { return Round_Bank(d.intValue()); }
   
    /** Round_Bank, Num HALF EVEN ROUNDING BY String (CLASSIC ALGORITHM) */
-  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank("3.0"); T.Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank("3.0"); T.Print("\n"); //3.14 */
   public Num Round_Bank(String d) { return Round_Bank(new Num(d).toInt()); }
   
    /** Round_Bank, Num HALF EVEN ROUNDING BY Num (CLASSIC ALGORITHM) */
-  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank(new Num("3.0")); T.Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.1405"); Num T = a.Round_Bank(new Num("3.0")); T.Print("\n"); //3.14 */
   public Num Round_Bank(Num d) { return Round_Bank(d.toInt()); }
   
    /** Round_Bank, Num HALF EVEN ROUNDING BY int (CLASSIC ALGORITHM) */
-  /**  CODE: Num a = new Num("3.14159265"); Num T = a.Round_Bank(7); T.Print("\r\n"); //3.1415926 */
+  /**  CODE: Num a = new Num("3.14159265"); Num T = a.Round_Bank(7); T.Print("\n"); //3.1415926 */
   public Num Round_Bank(int d) { 
     Num result;
     Num M = new Num(10).Pow(d);
@@ -4397,27 +4397,27 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   }
   
    /** Round_bank, Num HALF EVEN ROUNDING -DEFAULT PRECISION BY 2 */
-  /**  CODE: Num a = new Num("3.145"); Num T = a.Round_bank(); T.Print("\r\n"); //3.14 */
+  /**  CODE: Num a = new Num("3.145"); Num T = a.Round_bank(); T.Print("\n"); //3.14 */
   public Num Round_bank() { return this.Round_bank(2); }
 
    /** Round_bank, Num HALF EVEN ROUNDING BY long */
-  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank(4L); T.Print("\r\n"); //-3.0014 */
+  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank(4L); T.Print("\n"); //-3.0014 */
   public Num Round_bank(long d) { return this.Round_bank((int) d); }
 
    /** Round_bank, Num HALF EVEN ROUNDING BY BigInteger */
-  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank(new BigInteger("4")); T.Print("\r\n"); //-3.0014 */
+  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank(new BigInteger("4")); T.Print("\n"); //-3.0014 */
   public Num Round_bank(BigInteger d) { return this.Round_bank(d.intValue()); }
 
    /** Round_bank, Num HALF EVEN ROUNDING BY String */
-  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank("4.0"); T.Print("\r\n"); //-3.0014 */
+  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank("4.0"); T.Print("\n"); //-3.0014 */
   public Num Round_bank(String d) { return this.Round_bank(new Num(d).toInt()); }
 
    /** Round_bank, Num HALF EVEN ROUNDING BY Num */
-  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank(new Num("4.0")); T.Print("\r\n"); //-3.0014 */
+  /**  CODE: Num a = new Num("-3.00145"); Num T = a.Round_bank(new Num("4.0")); T.Print("\n"); //-3.0014 */
   public Num Round_bank(Num d) { return this.Round_bank(d.toInt()); }
 
    /** Round_bank, Num HALF EVEN ROUNDING BY int */
-  /**  CODE: Num a = new Num("3.14159265"); Num T = a.Round_bank(7); T.Print("\r\n"); //3.1415926 */
+  /**  CODE: Num a = new Num("3.14159265"); Num T = a.Round_bank(7); T.Print("\n"); //3.1415926 */
   public Num Round_bank(int d) { //d = 2
       if (d < 0) {
           d = -d;
@@ -4531,51 +4531,51 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   public Num _1000div() { return this.Shift(-3); }
 
    /** _2x, CALCULATOR MODE: DOUBLED VALUE */
-  /**  CODE: Num a = new Num ("123.0"); a._2x().Print("\r\n"); //246.0 */
+  /**  CODE: Num a = new Num ("123.0"); a._2x().Print("\n"); //246.0 */
   public Num _2x() { return this.Add(this); }
 
    /** _3x, CALCULATOR MODE: TRIPLED VALUE */
-  /** CODE: Num a = new Num ("123.0"); a._3x().Print("\r\n"); //369.0 */
+  /** CODE: Num a = new Num ("123.0"); a._3x().Print("\n"); //369.0 */
   public Num _3x() { return this.Add(this).Add(this); }
 
    /** Xe10, CALCULATOR MODE (LIKE Shift method): RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY int */
-  /**  CODE: Num a = new Num("0.001"); a.Xe10(6 ).Print("\r\n"); //1000.0 */
+  /**  CODE: Num a = new Num("0.001"); a.Xe10(6 ).Print("\n"); //1000.0 */
   public Num Xe10(int p) { return this.Shift(p); }
 
    /** Xe10, CALCULATOR MODE (LIKE Shift method): RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY long */
-  /**  CODE: Num a = new Num("1000.0"); a.Xe10(-6L).Print("\r\n");//0.001 */
+  /**  CODE: Num a = new Num("1000.0"); a.Xe10(-6L).Print("\n");//0.001 */
   public Num Xe10(long p) { return this.Shift(p); }
 
    /** Xe10, CALCULATOR MODE (LIKE Shift method): RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY BigInteger */
-  /**  CODE: Num a = new Num("1000.0"); a.Xe10(new BigInteger("-6")).Print("\r\n");//0.001 */
+  /**  CODE: Num a = new Num("1000.0"); a.Xe10(new BigInteger("-6")).Print("\n");//0.001 */
   public Num Xe10(BigInteger p) { return this.Shift(p); }
 
    /** Xe10, CALCULATOR MODE (LIKE Shift method): RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY String */
-  /**  CODE: Num a = new Num("1000.0"); a.Xe10("-6.0").Print("\r\n");//0.001 */
+  /**  CODE: Num a = new Num("1000.0"); a.Xe10("-6.0").Print("\n");//0.001 */
   public Num Xe10(String p) { return this.Shift(p); }
 
    /** Xe10, CALCULATOR MODE (LIKE Shift method): RETURN OBJECT MULTIPLIED OR DIVIDED FOR 10 POWER BY Num */
-  /**  CODE: Num a = new Num("1000.0"); a.Xe10(new Num("-6.0")).Print("\r\n");//0.001 */
+  /**  CODE: Num a = new Num("1000.0"); a.Xe10(new Num("-6.0")).Print("\n");//0.001 */
   public Num Xe10(Num p) { return this.Shift(p); }
 
    /** Xy, CALCULATOR MODE: EXPONENTIATION (POWER) BY int */
-  /**  CODE: Num a = new Num("4.0");  a.Xy(30).Print("\r\n");  //1152921504606846976.0 */
+  /**  CODE: Num a = new Num("4.0");  a.Xy(30).Print("\n");  //1152921504606846976.0 */
   public Num Xy(int y) { return this.Pow(y); }
 
    /** Xy, CALCULATOR MODE: EXPONENTIATION (POWER) BY long */
-  /**  CODE: Num a = new Num("-4.0"); a.Xy(-3L).Print("\r\n"); //-0.015625 */
+  /**  CODE: Num a = new Num("-4.0"); a.Xy(-3L).Print("\n"); //-0.015625 */
   public Num Xy(long y) { return this.Pow(y); }
 
    /** Xy, CALCULATOR MODE: EXPONENTIATION (POWER) BY BigInteger */
-  /**  CODE: Num a = new Num("-4.0"); a.Xy(new BigInteger("-3")).Print("\r\n"); //-0.015625 */
+  /**  CODE: Num a = new Num("-4.0"); a.Xy(new BigInteger("-3")).Print("\n"); //-0.015625 */
   public Num Xy(BigInteger y) { return this.Pow(y); }
 
    /** Xy, CALCULATOR MODE: EXPONENTIATION (POWER) BY Num */
-  /**  CODE: Num a = new Num("-4.0"); a.Xy(new Num("-3.0")).Print("\r\n"); //-0.015625 */
+  /**  CODE: Num a = new Num("-4.0"); a.Xy(new Num("-3.0")).Print("\n"); //-0.015625 */
   public Num Xy(Num y) { return this.Pow(y); }
 
    /** Xy, CALCULATOR MODE: EXPONENTIATION (POWER) BY String */
-  /**  CODE: Num a = new Num("-4.0"); a.Xy("-3.0").Print("\r\n"); //-0.015625 */
+  /**  CODE: Num a = new Num("-4.0"); a.Xy("-3.0").Print("\n"); //-0.015625 */
   public Num Xy(String y) { return this.Pow(y); }
 
    /** Fact, CALCULATOR MODE: FACTORIAL COMPUTATION */
@@ -4663,23 +4663,23 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   public Num All_pct(BigInteger PCT) { return Num.all(this, new Num(PCT)); }
   
    /** All_rate, CALCULATOR MODE: BY Num RATE RETURN THE ALL OF this PCT */ 
-  /**  CODE: Num pct = new Num(new Num("362.78")); pct.All_rate(new Num("22.00025")).Round().Print(" => ALL\r\n"); //1648.98 => ALL */
+  /**  CODE: Num pct = new Num(new Num("362.78")); pct.All_rate(new Num("22.00025")).Round().Print(" => ALL\n"); //1648.98 => ALL */
   public Num All_rate(Num rate) { return this.Shift(2).Div(rate); }
 
    /** All_rate, CALCULATOR MODE: BY String RATE RETURN THE ALL OF this PCT */ 
-  /**  CODE: Num pct = new Num("362.78"); pct.All_rate("22.00025").Round().Print(" => ALL\r\n"); //1648.98 => ALL */
+  /**  CODE: Num pct = new Num("362.78"); pct.All_rate("22.00025").Round().Print(" => ALL\n"); //1648.98 => ALL */
   public Num All_rate(String rate) { return this.Shift(2).Div(new Num(rate)); }
 
    /** All_rate, CALCULATOR MODE: BY int RATE RETURN THE ALL OF this PCT */ 
-  /**  CODE: Num pct = new Num("362.78"); pct.All_rate(22).Print(" => ALL\r\n"); //1649.0 => ALL */
+  /**  CODE: Num pct = new Num("362.78"); pct.All_rate(22).Print(" => ALL\n"); //1649.0 => ALL */
   public Num All_rate(int rate) { return this.Shift(2).Div(new Num(rate)); }
   
    /** All_rate, CALCULATOR MODE: BY long RATE RETURN THE ALL OF this PCT */ 
-  /**  CODE: Num pct = new Num("362.78"); pct.All_rate(22L).Print(" => ALL\r\n"); //1649.0 => ALL */
+  /**  CODE: Num pct = new Num("362.78"); pct.All_rate(22L).Print(" => ALL\n"); //1649.0 => ALL */
   public Num All_rate(long rate) { return this.Shift(2).Div(new Num(rate)); }
   
    /** All_rate, CALCULATOR MODE: BY BigInteger RATE RETURN THE ALL OF this PCT */ 
-  /**  CODE: Num pct = new Num("362.78"); pct.All_rate(new BigInteger("22")).Print(" => ALL\r\n"); //1649.0 => ALL */
+  /**  CODE: Num pct = new Num("362.78"); pct.All_rate(new BigInteger("22")).Print(" => ALL\n"); //1649.0 => ALL */
   public Num All_rate(BigInteger rate) { return this.Shift(2).Div(new Num(rate)); }
   
    /** Pth, CALCULATOR MODE: BY Num RATE-TH RETURN THE PERTHOUSAND OF this ALL */
@@ -4723,133 +4723,133 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
   public Num RateTH_all(BigInteger all) { return Num.rate_th(this, new Num(all)); } 
   
    /** RateTH_pth, CALCULATOR MODE: BY Num PERTHOUSAND, RETURN THE RATE-TH OF this ALL */
-  /**  CODE: Num all = new Num(10000); all.RateTH_pth(new Num(20)).Round().Print(" => rate_th\r\n"); //2.0 => rate_th */
+  /**  CODE: Num all = new Num(10000); all.RateTH_pth(new Num(20)).Round().Print(" => rate_th\n"); //2.0 => rate_th */
   public Num RateTH_pth(Num PTH) { return PTH.Shift(3).Div(this); }
 
    /** RateTH_pth, CALCULATOR MODE: BY String PERTHOUSAND, RETURN THE RATE-TH OF this ALL */
-  /**  CODE: Num all = new Num(10000); all.RateTH_pth("20.0").Round().Print(" => rate_th\r\n"); //2.0 => rate_th */
+  /**  CODE: Num all = new Num(10000); all.RateTH_pth("20.0").Round().Print(" => rate_th\n"); //2.0 => rate_th */
   public Num RateTH_pth(String PTH) { return new Num(PTH).Shift(3).Div(this); }
 
    /** RateTH_pth, CALCULATOR MODE: BY int PERTHOUSAND, RETURN THE RATE-TH OF this ALL */
-  /**  CODE: Num all = new Num(10000); all.RateTH_pth(20).Round().Print(" => rate_th\r\n"); //2.0 => rate_th */
+  /**  CODE: Num all = new Num(10000); all.RateTH_pth(20).Round().Print(" => rate_th\n"); //2.0 => rate_th */
   public Num RateTH_pth(int PTH) { return new Num(PTH).Shift(3).Div(this); }
   
    /** RateTH_pth, CALCULATOR MODE: BY long PERTHOUSAND, RETURN THE RATE-TH OF this ALL */
-  /**  CODE: Num all = new Num(10000); all.RateTH_pth(20L).Round().Print(" => rate_th\r\n"); //2.0 => rate_th */
+  /**  CODE: Num all = new Num(10000); all.RateTH_pth(20L).Round().Print(" => rate_th\n"); //2.0 => rate_th */
   public Num RateTH_pth(long PTH) { return new Num(PTH).Shift(3).Div(this); }
   
    /** RateTH_pth, CALCULATOR MODE: BY BigInteger PERTHOUSAND, RETURN THE RATE-TH OF this ALL */
-  /**  CODE: Num all = new Num(10000); all.RateTH_pth(new BigInteger("20")).Round().Print(" => rate_th\r\n"); //2.0 => rate_th */
+  /**  CODE: Num all = new Num(10000); all.RateTH_pth(new BigInteger("20")).Round().Print(" => rate_th\n"); //2.0 => rate_th */
   public Num RateTH_pth(BigInteger PTH) { return new Num(PTH).Shift(3).Div(this); }
   
    /** All_pth, CALCULATOR MODE: BY Num PERTHOUSAND RETURN THE ALL OF this RATE-TH */ 
-  /**  CODE: Num rate = new Num(2); rate.All_pth(new Num("20.0")).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */
+  /**  CODE: Num rate = new Num(2); rate.All_pth(new Num("20.0")).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */
   public Num All_pth(Num PTH) { return Num.all_th(this, PTH); }
 
    /** All_pth, CALCULATOR MODE: BY String PERTHOUSAND RETURN THE ALL OF this RATE-TH */ 
-  /**  CODE: Num rate = new Num(2); rate.All_pth("20.0").Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */
+  /**  CODE: Num rate = new Num(2); rate.All_pth("20.0").Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */
   public Num All_pth(String PTH) { return Num.all_th(this, new Num(PTH)); }
 
    /** All_pth, CALCULATOR MODE: BY int PERTHOUSAND RETURN THE ALL OF this RATE-TH */ 
-  /**  CODE: Num rate = new Num(2); rate.All_pth(20).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */
+  /**  CODE: Num rate = new Num(2); rate.All_pth(20).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */
   public Num All_pth(int PTH) { return Num.all_th(this, new Num(PTH)); }
   
    /** All_pth, CALCULATOR MODE: BY long PERTHOUSAND RETURN THE ALL OF this RATE-TH */ 
-  /**  CODE: Num rate = new Num(2); rate.All_pth(20L).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */
+  /**  CODE: Num rate = new Num(2); rate.All_pth(20L).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */
   public Num All_pth(long PTH) { return Num.all_th(this, new Num(PTH)); }
   
    /** All_pth, CALCULATOR MODE: BY BigInteger PERTHOUSAND RETURN THE ALL OF this RATE-TH */ 
-  /**  CODE: Num rate = new Num(2); rate.All_pth(new BigInteger("20")).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */
+  /**  CODE: Num rate = new Num(2); rate.All_pth(new BigInteger("20")).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */
   public Num All_pth(BigInteger PTH) { return Num.all_th(this, new Num(PTH)); }
   
    /** All_rateTH, CALCULATOR MODE: BY Num RATE-TH RETURN THE ALL OF this PERTHOUSAND */ 
-  /**  CODE: Num pth = new Num(20); pth.All_rateTH(new Num(2)).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */ 
+  /**  CODE: Num pth = new Num(20); pth.All_rateTH(new Num(2)).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */ 
   public Num All_rateTH(Num rate_th) { return this.Shift(3).Div(rate_th); }
 
    /** All_rateTH, CALCULATOR MODE: BY String RATE-TH RETURN THE ALL OF this PERTHOUSAND */ 
-  /**  CODE: Num pth = new Num(20); pth.All_rateTH("2.0").Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */ 
+  /**  CODE: Num pth = new Num(20); pth.All_rateTH("2.0").Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */ 
   public Num All_rateTH(String rate_th) { return this.Shift(3).Div(rate_th); }
 
    /** All_rateTH, CALCULATOR MODE: BY int RATE-TH RETURN THE ALL OF this PERTHOUSAND */ 
-  /**  CODE: Num pth = new Num(20); pth.All_rateTH(2).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */ 
+  /**  CODE: Num pth = new Num(20); pth.All_rateTH(2).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */ 
   public Num All_rateTH(int rate_th) { return this.Shift(3).Div(rate_th); }
   
    /** All_rateTH, CALCULATOR MODE: BY long RATE-TH RETURN THE ALL OF this PERTHOUSAND */ 
-  /**  CODE: Num pth = new Num(20); pth.All_rateTH(2L).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */ 
+  /**  CODE: Num pth = new Num(20); pth.All_rateTH(2L).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */ 
   public Num All_rateTH(long rate_th) { return this.Shift(3).Div(rate_th); }
   
    /** All_rateTH, CALCULATOR MODE: BY BigInteger RATE-TH RETURN THE ALL OF this PERTHOUSAND */ 
-  /**  CODE: Num pth = new Num(20); pth.All_rateTH(new BigInteger("2")).Round().Print(" => ALL_th\r\n"); //10000.0 => ALL_th */ 
+  /**  CODE: Num pth = new Num(20); pth.All_rateTH(new BigInteger("2")).Round().Print(" => ALL_th\n"); //10000.0 => ALL_th */ 
   public Num All_rateTH(BigInteger rate_th) { return this.Shift(3).Div(rate_th); }
   
     /** F_price_over, ADD OR SUB Num PERCENTAGE VALUE TO this PRICE */
-   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(new Num(22));  overPrice.Print("\r\n"); //1220.0 */
-  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(new Num(-22)); subPrice.Print("\r\n"); //780.0 */
+   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(new Num(22));  overPrice.Print("\n"); //1220.0 */
+  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(new Num(-22)); subPrice.Print("\n"); //780.0 */
   public Num F_price_over(Num t) { Num THIS = new Num(this.Mul(t).Shift(-2).Add(this)); return THIS; }
 
     /** F_price_over, ADD OR SUB String PERCENTAGE VALUE TO this PRICE */
-   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over("22.5");   overPrice.Print("\r\n"); //1225.0 */
-  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over("-21.75"); subPrice.Print("\r\n"); //782.5 */
+   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over("22.5");   overPrice.Print("\n"); //1225.0 */
+  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over("-21.75"); subPrice.Print("\n"); //782.5 */
   public Num F_price_over(String t) { Num THIS = new Num(this.Mul(t).Shift(-2).Add(this)); return THIS; }
 
     /** F_price_over, ADD OR SUB int PERCENTAGE VALUE TO this PRICE */
-   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(22);  overPrice.Print("\r\n");  //1220.0 */
-  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(-21); subPrice.Print("\r\n");  //790.0 */
+   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(22);  overPrice.Print("\n");  //1220.0 */
+  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(-21); subPrice.Print("\n");  //790.0 */
   public Num F_price_over(int t) { Num THIS = new Num(this.Mul(t).Shift(-2).Add(this)); return THIS; }
   
     /** F_price_over, ADD OR SUB long PERCENTAGE VALUE TO this PRICE */
-   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(22L);  overPrice.Print("\r\n");  //1220.0 */
-  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(-21L); subPrice.Print("\r\n");  //790.0 */
+   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(22L);  overPrice.Print("\n");  //1220.0 */
+  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(-21L); subPrice.Print("\n");  //790.0 */
   public Num F_price_over(long t) { Num THIS = new Num(this.Mul(t).Shift(-2).Add(this)); return THIS; }
   
     /** F_price_over, ADD OR SUB BigInteger PERCENTAGE VALUE TO this PRICE */
-   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(new BigInteger("22"));  overPrice.Print("\r\n");  //1220.0 */
-  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(new BigInteger("-21")); subPrice.Print("\r\n");  //790.0 */
+   /**  CODE: Num price = new Num(1000); Num overPrice = price.F_price_over(new BigInteger("22"));  overPrice.Print("\n");  //1220.0 */
+  /**   CODE: Num price = new Num(1000); Num subPrice  = price.F_price_over(new BigInteger("-21")); subPrice.Print("\n");  //790.0 */
   public Num F_price_over(BigInteger t) { Num THIS = new Num(this.Mul(t).Shift(-2).Add(this)); return THIS; }
   
    /** F_price_spinoff, SPIN-OFF Num PERCENTAGE TAX VALUE FROM this PRICE */  
-  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(new Num(22)).Round(2); priceRaw.Print("\r\n"); //81.97 */ 
+  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(new Num(22)).Round(2); priceRaw.Print("\n"); //81.97 */ 
   public Num F_price_spinoff(Num t) { Num THIS = new Num(this.Div((t.Add(100).Shift(-2)))); return THIS; }
 
    /** F_price_spinoff, SPIN-OFF String PERCENTAGE TAX VALUE FROM this PRICE */  
-  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff("22.0").Round(2); priceRaw.Print("\r\n"); //81.97 */ 
+  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff("22.0").Round(2); priceRaw.Print("\n"); //81.97 */ 
   public Num F_price_spinoff(String t) { Num THIS = new Num(this.Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
 
    /** F_price_spinoff, SPIN-OFF int PERCENTAGE TAX VALUE FROM this PRICE */  
-  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(22).Round(2); priceRaw.Print("\r\n"); //81.97 */ 
+  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(22).Round(2); priceRaw.Print("\n"); //81.97 */ 
   public Num F_price_spinoff(int t) { Num THIS = new Num(this.Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
   
    /** F_price_spinoff, SPIN-OFF long PERCENTAGE TAX VALUE FROM this PRICE */  
-  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(22L).Round(2); priceRaw.Print("\r\n"); //81.97 */ 
+  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(22L).Round(2); priceRaw.Print("\n"); //81.97 */ 
   public Num F_price_spinoff(long t) { Num THIS = new Num(this.Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
   
    /** F_price_spinoff, SPIN-OFF BigInteger PERCENTAGE TAX VALUE FROM this PRICE */  
-  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(new BigInteger("22")).Round(2); priceRaw.Print("\r\n"); //81.97 */ 
+  /**  CODE: Num priceRaw = new Num(100).F_price_spinoff(new BigInteger("22")).Round(2); priceRaw.Print("\n"); //81.97 */ 
   public Num F_price_spinoff(BigInteger t) { Num THIS = new Num(this.Div((new Num(t).Add(100).Shift(-2)))); return THIS; }
   
    /** F_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY Num */
-  /**  CODE: Num a = new Num(50); Num b = new Num(75); a.F_perf(b).Print("\r\n"); //50.0 */
+  /**  CODE: Num a = new Num(50); Num b = new Num(75); a.F_perf(b).Print("\n"); //50.0 */
   public Num F_perf(Num sob) { return (sob.Sub(this)).Div(this).Shift(2); }
 
    /** F_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY String */
-  /**  CODE: new Num(50).F_perf("75.0").Print("\r\n"); //50.0 */
+  /**  CODE: new Num(50).F_perf("75.0").Print("\n"); //50.0 */
   public Num F_perf(String sob) { return (new Num(sob).Sub(this)).Div(this).Shift(2); }
 
    /** F_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY int */
-  /**  CODE: new Num(50).F_perf(75).Print("\r\n"); //50.0 */
+  /**  CODE: new Num(50).F_perf(75).Print("\n"); //50.0 */
   public Num F_perf(int sob) { return (new Num(sob).Sub(this)).Div(this).Shift(2); }
   
    /** F_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY long */
-  /**  CODE: new Num(50).F_perf(75L).Print("\r\n"); //50.0 */
+  /**  CODE: new Num(50).F_perf(75L).Print("\n"); //50.0 */
   public Num F_perf(long sob) { return (new Num(sob).Sub(this)).Div(this).Shift(2); }
   
    /** F_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY BigInteger */
-  /**  CODE: new Num(50).F_perf(new BigInteger("75")).Print("\r\n"); //50.0 */
+  /**  CODE: new Num(50).F_perf(new BigInteger("75")).Print("\n"); //50.0 */
   public Num F_perf(BigInteger sob) { return (new Num(sob).Sub(this)).Div(this).Shift(2); }
   
     /** F_perf_time PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY Num */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = new Num(50).F_perf_time(new Num("37.5")); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //33.33 0.33 */
+  /**   CODE: Num A[] = new Num(50).F_perf_time(new Num("37.5")); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //33.33 0.33 */
   public Num[] F_perf_time(Num sob) {
     Num[] A = new Num[2];
     Num THIS= new Num(this);
@@ -4860,162 +4860,162 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 
     /** F_perf_time PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY String */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = new Num(50).F_perf_time("37.5"); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //33.33 0.33 */
+  /**   CODE: Num A[] = new Num(50).F_perf_time("37.5"); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //33.33 0.33 */
   public Num[] F_perf_time(String sob) { Num SOB = new Num(sob); return this.F_perf_time(SOB); }
   
     /** F_perf_time PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY int */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = new Num(50).F_perf_time(38); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //31.58 0.32 */
+  /**   CODE: Num A[] = new Num(50).F_perf_time(38); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //31.58 0.32 */
   public Num[] F_perf_time(int sob) { Num SOB = new Num(sob); return this.F_perf_time(SOB); }
   
     /** F_perf_time PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY long */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = new Num(50).F_perf_time(38L); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //31.58 0.32 */
+  /**   CODE: Num A[] = new Num(50).F_perf_time(38L); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //31.58 0.32 */
   public Num[] F_perf_time(long sob) { Num SOB = new Num(sob); return this.F_perf_time(SOB); }
   
     /** F_perf_time PERCENTAGE AND RELATIVE MAGNITUDE ORDER TIME PERFORMANCE VALUE (INVERSE RATIO) BY BigInteger */
    /**  RETURN ARRAY BY TWO ELEMENTS */
-  /**   CODE: Num A[] = new Num(50).F_perf_time(new BigInteger("38")); A[0].Round().Print("\r\n"); A[1].Round(2).Print("\r\n"); //31.58 0.32 */
+  /**   CODE: Num A[] = new Num(50).F_perf_time(new BigInteger("38")); A[0].Round().Print("\n"); A[1].Round(2).Print("\n"); //31.58 0.32 */
   public Num[] F_perf_time(BigInteger sob) { Num SOB = new Num(sob); return this.F_perf_time(SOB); }
   
    /** sqrt, SQUARE ROOT METHOD BY Num */
-  /**  CODE: Num.print(new Num("3.14").Sqrt(new Num(50)), "\r\n"); //1.77200451466693504019911250975363152507360851616294 */
+  /**  CODE: Num.print(new Num("3.14").Sqrt(new Num(50)), "\n"); //1.77200451466693504019911250975363152507360851616294 */
   public Num Sqrt(Num d) { return Num.sqrt(this, d.toInt()); }
 
    /** sqrt, SQUARE ROOT METHOD BY String */
-  /**  CODE: Num.print(new Num("3.14").Sqrt("50"), "\r\n"); //1.77200451466693504019911250975363152507360851616294 */
+  /**  CODE: Num.print(new Num("3.14").Sqrt("50"), "\n"); //1.77200451466693504019911250975363152507360851616294 */
   public Num Sqrt(String d) { return Num.sqrt(this, Integer.parseInt(d)); }
   
    /** sqrt, SQUARE ROOT METHOD BY int */
-  /**  CODE: Num.print(new Num("3.14").Sqrt(50), "\r\n"); //1.77200451466693504019911250975363152507360851616294 */
+  /**  CODE: Num.print(new Num("3.14").Sqrt(50), "\n"); //1.77200451466693504019911250975363152507360851616294 */
   public Num Sqrt(int d) { return Num.sqrt(this, d); }
   
    /** sqrt, SQUARE ROOT METHOD BY long */
-  /**  CODE: Num.print(new Num("3.14").Sqrt(50L), "\r\n"); //1.77200451466693504019911250975363152507360851616294 */
+  /**  CODE: Num.print(new Num("3.14").Sqrt(50L), "\n"); //1.77200451466693504019911250975363152507360851616294 */
   public Num Sqrt(long d) { return Num.sqrt(this, (int) d); }
   
    /** sqrt, SQUARE ROOT METHOD BY BigInteger */
-  /**  CODE: Num.print(new Num("3.14").Sqrt(new BigInteger("50")), "\r\n"); //1.77200451466693504019911250975363152507360851616294 */
+  /**  CODE: Num.print(new Num("3.14").Sqrt(new BigInteger("50")), "\n"); //1.77200451466693504019911250975363152507360851616294 */
   public Num Sqrt(BigInteger d) { return Num.sqrt(this, (int) d.intValue()); }
   
    /** sqrt, SQUARE ROOT METHOD -DEFAULT PRECISION TEN */
-  /**  CODE: Num.print(new Num("3.14").Sqrt(), "\r\n"); //1.7720045146 */
+  /**  CODE: Num.print(new Num("3.14").Sqrt(), "\n"); //1.7720045146 */
   public Num Sqrt() { return Num.sqrt(this, 10); }
 
    /** Is_perfectSquare, PERFECT SQUARE METHOD -DEFAULT PRECISION TEN */
-  /**  CODE: Num.print(new Num(9).Is_perfectSquare(), "\r\n"); //true */
+  /**  CODE: Num.print(new Num(9).Is_perfectSquare(), "\n"); //true */
   public boolean Is_perfectSquare() { return Num.is_perfectSquare(this); }
   
    /** is_perfectSquare, PERFECT SQUARE METHOD BY int */
-  /**  CODE: Num.print(new Num("1.999999999999731161391129").Is_perfectSquare(12), "\r\n"); //true */
+  /**  CODE: Num.print(new Num("1.999999999999731161391129").Is_perfectSquare(12), "\n"); //true */
   public boolean Is_perfectSquare(int d) { return Num.is_perfectSquare(this, d); }
 
      /** Hypot, PYTHAGOREAN THEOREM BY Num -DEFAULT PRECISION TEN */
-  	/**  CODE: Num a = new Num(3); Num.print(a.Hypot(new Num(4)), "\r\n"); //5.0 */
+  	/**  CODE: Num a = new Num(3); Num.print(a.Hypot(new Num(4)), "\n"); //5.0 */
     public Num Hypot(Num b) { return Num.hypot(this, b); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY String -DEFAULT PRECISION TEN */
-    /**  CODE: Num a = new Num(3); Num.print(a.Hypot("4.0"), "\r\n"); //5.0 */
+    /**  CODE: Num a = new Num(3); Num.print(a.Hypot("4.0"), "\n"); //5.0 */
     public Num Hypot(String b) { return Num.hypot(this, new Num(b)); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY int -DEFAULT PRECISION TEN */
-    /**  CODE: Num a = new Num(3); Num.print(a.Hypot(4), "\r\n"); //5.0 */
+    /**  CODE: Num a = new Num(3); Num.print(a.Hypot(4), "\n"); //5.0 */
     public Num Hypot(int b) { return Num.hypot(this, new Num(b)); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY long -DEFAULT PRECISION TEN */
-    /**  CODE: Num a = new Num(3); Num.print(a.Hypot(4L), "\r\n"); //5.0 */
+    /**  CODE: Num a = new Num(3); Num.print(a.Hypot(4L), "\n"); //5.0 */
     public Num Hypot(long b) { return Num.hypot(this, new Num(b)); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY long -DEFAULT PRECISION TEN */
-    /**  CODE: Num a = new Num(3); Num.print(a.Hypot(new BigInteger("4")), "\r\n"); //5.0 */
+    /**  CODE: Num a = new Num(3); Num.print(a.Hypot(new BigInteger("4")), "\n"); //5.0 */
     public Num Hypot(BigInteger b) { return Num.hypot(this, new Num(b)); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY Num, int */
-    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(new Num(5), 6), "\r\n"); //6.403124 */
+    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(new Num(5), 6), "\n"); //6.403124 */
     public Num Hypot(Num b, int d) { return Num.hypot(this, b, d); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY String, int */
-    /**  CODE: Num a = new Num(4); Num.print(a.Hypot("5.0", 6), "\r\n"); //6.403124 */
+    /**  CODE: Num a = new Num(4); Num.print(a.Hypot("5.0", 6), "\n"); //6.403124 */
     public Num Hypot(String b, int d) { return Num.hypot(this, new Num(b), d); }
 
      /** Hypot, PYTHAGOREAN THEOREM BY int, int */
-    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(5, 6), "\r\n"); //6.403124 */
+    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(5, 6), "\n"); //6.403124 */
     public Num Hypot(int b, int d) { return Num.hypot(this, new Num(b), d); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY long, int */
-    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(5L, 6), "\r\n"); //6.403124 */
+    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(5L, 6), "\n"); //6.403124 */
     public Num Hypot(long b, int d) { return Num.hypot(this, new Num(b), d); }
     
      /** Hypot, PYTHAGOREAN THEOREM BY BigInteger, int */
-    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(new BigInteger("5"), 6), "\r\n"); //6.403124 */
+    /**  CODE: Num a = new Num(4); Num.print(a.Hypot(new BigInteger("5"), 6), "\n"); //6.403124 */
     public Num Hypot(BigInteger b, int d) { return Num.hypot(this, new Num(b), d); }
     
      /** sqrt_check, CHECK SQUARE ROOT OPERATION BY Num */
-    /**  CODE: Num a = new Num("6540003265.5950400032"); Num.print(a, " = a\r\n"); Num r = a.Sqrt(a.get_L_n1() * 2); Num.print(r, " = r\r\n"); Num.print(a.Sqrt_check(r), "\r\n"); //6540003265.5950400032 = a  80870.28666695228182063467 = r  true */ 
+    /**  CODE: Num a = new Num("6540003265.5950400032"); Num.print(a, " = a\n"); Num r = a.Sqrt(a.get_L_n1() * 2); Num.print(r, " = r\n"); Num.print(a.Sqrt_check(r), "\n"); //6540003265.5950400032 = a  80870.28666695228182063467 = r  true */ 
     public boolean Sqrt_check(Num r) { return this.Sqrt_check(r.toString()); }
     
      /** sqrt_check, CHECK SQUARE ROOT OPERATION BY String */
-    /**  CODE:  Num a = new Num("3.0"); Num.print(a.Sqrt_check("1.73"), "\r\n"); //true */
+    /**  CODE:  Num a = new Num("3.0"); Num.print(a.Sqrt_check("1.73"), "\n"); //true */
     public boolean Sqrt_check(String r) { Num R = new Num(r); Num R2 = R.Mul(R).Round_ceil(this.L_n1); return R2.EQ(this); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY Num */ 
-    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(new Num(5)), "\r\n"); //5.0 */ 
+    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(new Num(5)), "\n"); //5.0 */ 
     public Num Root_i(Num I) { return Num.root_i(this, I.toInt(), 10); }
   
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY String */ 
-    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i("5.0"), "\r\n"); //5.0 */ 
+    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i("5.0"), "\n"); //5.0 */ 
     public Num Root_i(String I) { return Num.root_i(this, new Num(I).toInt(), 10); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY int */ 
-    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(5), "\r\n"); //5.0 */ 
+    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(5), "\n"); //5.0 */ 
     public Num Root_i(int I) { return Num.root_i(this, I, 10); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY long */ 
-    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(5L), "\r\n"); //5.0 */ 
+    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(5L), "\n"); //5.0 */ 
     public Num Root_i(long I) { return Num.root_i(this, (int) I, 10); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY BigInteger */ 
-    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(new BigInteger("5")), "\r\n"); //5.0 */ 
+    /**  CODE: Num a = new Num("3125.0"); Num.print(a.Root_i(new BigInteger("5")), "\n"); //5.0 */ 
     public Num Root_i(BigInteger I) { return Num.root_i(this, I.intValue(), 10); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY Num, int */ 
-    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(new Num(5), 30), "\r\n"); //5.000000001599999998976000000983 */
+    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(new Num(5), 30), "\n"); //5.000000001599999998976000000983 */
     public Num Root_i(Num I, int d) { return Num.root_i(this, new Num(I).toInt(), d); }
   
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY String, int */ 
-    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i("5.0", 30), "\r\n"); //5.000000001599999998976000000983 */
+    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i("5.0", 30), "\n"); //5.000000001599999998976000000983 */
     public Num Root_i(String I, int d) { return Num.root_i(this, new Num(I).toInt(), d); }
     
     /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY int, int */ 
-    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(5, 30), "\r\n"); //5.000000001599999998976000000983 */
+    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(5, 30), "\n"); //5.000000001599999998976000000983 */
     public Num Root_i(int I, int d) { return Num.root_i(this, I, d); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY long, int */ 
-    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(5L, 30), "\r\n"); //5.000000001599999998976000000983 */
+    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(5L, 30), "\n"); //5.000000001599999998976000000983 */
     public Num Root_i(long I, int d) { return Num.root_i(this, (int) I, d); }
     
      /** Root_i, CALCULATOR MODE: ITH ROOT METHOD BY BigInteger, int */ 
-    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(new BigInteger("5"), 30), "\r\n"); //5.000000001599999998976000000983 */
+    /**  CODE: Num a = new Num("3125.000005"); Num.print(a.Root_i(new BigInteger("5"), 30), "\n"); //5.000000001599999998976000000983 */
     public Num Root_i(BigInteger I, int d) { return Num.root_i(this, I.intValue(), d); }
     
      /** Cube_root, CALCULATOR MODE: CUBE ROOT METHOD */ 
-    /**  CODE: Num a = new Num("27.0"); Num.print(a.Cube_root(), "\r\n"); //3.0 */ 
+    /**  CODE: Num a = new Num("27.0"); Num.print(a.Cube_root(), "\n"); //3.0 */ 
     public Num Cube_root() { return Num.root_i(this, 3, 10); }
 
      /** Cube_root, CALCULATOR MODE: CUBE ROOT METHOD BY int */ 
-    /** CODE: Num a = new Num("27.00000003"); Num.print(a.Cube_root(32), "\r\n"); //3.00000000111111111069958847762028 */
+    /** CODE: Num a = new Num("27.00000003"); Num.print(a.Cube_root(32), "\n"); //3.00000000111111111069958847762028 */
     public Num Cube_root(int d) { return Num.root_i(this, 3, d); }
 
      /** Cube_root, CALCULATOR MODE: CUBE ROOT METHOD BY long */ 
-    /** CODE: Num a = new Num("27.00000003"); Num.print(a.Cube_root(32L), "\r\n"); //3.00000000111111111069958847762028 */
+    /** CODE: Num a = new Num("27.00000003"); Num.print(a.Cube_root(32L), "\n"); //3.00000000111111111069958847762028 */
     public Num Cube_root(long d) { return Num.root_i(this, 3, (int) d); }
     
      /** Cube_root, CALCULATOR MODE: CUBE ROOT METHOD BY BigInteger */ 
-    /** CODE: Num a = new Num("27.00000003"); Num.print(a.Cube_root(new BigInteger("32")), "\r\n"); //3.00000000111111111069958847762028 */
+    /** CODE: Num a = new Num("27.00000003"); Num.print(a.Cube_root(new BigInteger("32")), "\n"); //3.00000000111111111069958847762028 */
     public Num Cube_root(BigInteger d) { return Num.root_i(this, 3, d.intValue()); }
     
      /** Andb, BITWISE OPERATOR BY Num */
-    /**  CODE: Num a = new Num("255.0"); Num b = new Num("1.0"); Num.print(a.Andb(b), "\r\n"); //1.0 */
+    /**  CODE: Num a = new Num("255.0"); Num b = new Num("1.0"); Num.print(a.Andb(b), "\n"); //1.0 */
     public Num Andb(Num sob) { 
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Andb => TypeError only positive integer allowed: " + this.n);
       if(!sob.Is_numint()  || sob.n2.equals("-"))  throw new IllegalArgumentException("Num.Andb => TypeError only positive integer allowed: " + sob.n);
@@ -5023,7 +5023,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
   
      /** Andb, BITWISE OPERATOR BY String */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb("1.0"), "\r\n"); //1.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb("1.0"), "\n"); //1.0 */
     public Num Andb(String n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Andb => TypeError only positive integer allowed: " + this.n);
@@ -5032,7 +5032,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
   
      /** Andb, BITWISE OPERATOR BY int */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb(1), "\r\n"); //1.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb(1), "\n"); //1.0 */
     public Num Andb(int n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Andb => TypeError only positive integer allowed: " + this.n);
@@ -5041,7 +5041,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
   
      /** Andb, BITWISE OPERATOR BY long */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb(1L), "\r\n"); //1.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb(1L), "\n"); //1.0 */
     public Num Andb(long n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Andb => TypeError only positive integer allowed: " + this.n);
@@ -5050,7 +5050,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
   
      /** Andb, BITWISE OPERATOR BY BigInteger */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb(new BigInteger("1")), "\r\n"); //1.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Andb(new BigInteger("1")), "\n"); //1.0 */
     public Num Andb(BigInteger n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Andb => TypeError only positive integer allowed: " + this.n);
@@ -5059,7 +5059,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
   
      /** Orb, BITWISE OPERATOR BY Num */
-    /**  CODE: Num a = new Num("0.0"); Num b = new Num("255.0"); Num.print(a.Orb(b), "\r\n"); //255.0 */
+    /**  CODE: Num a = new Num("0.0"); Num b = new Num("255.0"); Num.print(a.Orb(b), "\n"); //255.0 */
     public Num Orb(Num sob) { 
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Orb => TypeError only positive integer allowed: " + this.n);
       if(!sob.Is_numint()  ||  sob.n2.equals("-")) throw new IllegalArgumentException("Num.Orb => TypeError only positive integer allowed: " + sob.n);
@@ -5067,7 +5067,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Orb, BITWISE OPERATOR BY String */
-    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb("255.0"), "\r\n"); //255.0 */
+    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb("255.0"), "\n"); //255.0 */
     public Num Orb(String n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Orb => TypeError only positive integer allowed: " + this.n);
@@ -5076,7 +5076,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Orb, BITWISE OPERATOR BY int */
-    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb(255), "\r\n"); //255.0 */
+    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb(255), "\n"); //255.0 */
     public Num Orb(int n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Orb => TypeError only positive integer allowed: " + this.n);
@@ -5085,7 +5085,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Orb, BITWISE OPERATOR BY long */
-    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb(255L), "\r\n"); //255.0 */
+    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb(255L), "\n"); //255.0 */
     public Num Orb(long n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Orb => TypeError only positive integer allowed: " + this.n);
@@ -5094,7 +5094,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Orb, BITWISE OPERATOR BY BigInteger */
-    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb(new BigInteger("255")), "\r\n"); //255.0 */
+    /**  CODE: Num a = new Num("0.0"); Num.print(a.Orb(new BigInteger("255")), "\n"); //255.0 */
     public Num Orb(BigInteger n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Orb => TypeError only positive integer allowed: " + this.n);
@@ -5103,7 +5103,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Xorb, BITWISE OPERATOR BY Num */
-    /**  CODE: Num a = new Num("255.0"); Num b = new Num("255.0"); Num.print(a.Xorb(b), "\r\n"); //0.0 */
+    /**  CODE: Num a = new Num("255.0"); Num b = new Num("255.0"); Num.print(a.Xorb(b), "\n"); //0.0 */
     public Num Xorb(Num sob) { 
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Xorb => TypeError only positive integer allowed: " + this.n);
       if(!sob.Is_numint()  || sob.n2.equals("-"))  throw new IllegalArgumentException("Num.Xorb => TypeError only positive integer allowed: " + sob.n);
@@ -5111,7 +5111,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Xorb, BITWISE OPERATOR BY String */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb("255.0"), "\r\n"); //0.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb("255.0"), "\n"); //0.0 */
     public Num Xorb(String n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Xorb => TypeError only positive integer allowed: " + this.n);
@@ -5120,7 +5120,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Xorb, BITWISE OPERATOR BY int */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb(255), "\r\n"); //0.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb(255), "\n"); //0.0 */
     public Num Xorb(int n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Xorb => TypeError only positive integer allowed: " + this.n);
@@ -5129,7 +5129,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Xorb, BITWISE OPERATOR BY long */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb(255L), "\r\n"); //0.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb(255L), "\n"); //0.0 */
     public Num Xorb(long n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Xorb => TypeError only positive integer allowed: " + this.n);
@@ -5138,7 +5138,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     } 
 
      /** Xorb, BITWISE OPERATOR BY BigInteger */
-    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb(new BigInteger("255")), "\r\n"); //0.0 */
+    /**  CODE: Num a = new Num("255.0"); Num.print(a.Xorb(new BigInteger("255")), "\n"); //0.0 */
     public Num Xorb(BigInteger n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Xorb => TypeError only positive integer allowed: " + this.n);
@@ -5149,9 +5149,9 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
          /** (~) Notb, NOT UNARY BITWISE OPERATOR FOR Num */
         /** CODE: */ 
        /** Num op1 = new Num("10.0"); */
-      /** Num.print(String.format("%0" + 4 + "d", 0) + op1.toBigInt().toString(2), " => " + op1 + "\r\n"); //00001010 => 10.0 */
+      /** Num.print(String.format("%0" + 4 + "d", 0) + op1.toBigInt().toString(2), " => " + op1 + "\n"); //00001010 => 10.0 */
      /** Num op2 = op1.Notb(); */
-    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBigInt().toString(2), " => " + op2 + "\r\n"); //00000101 => 5.0 */
+    /** Num.print(String.format("%0" + 5 + "d", 0) + op2.toBigInt().toString(2), " => " + op2 + "\n"); //00000101 => 5.0 */
     public Num Notb() {
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Notb => TypeError only positive integer allowed: " + this.n);
       String t = "";
@@ -5161,7 +5161,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** GCD, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY Num */
-    /**  CODE: Num a = new Num(12); Num b = new Num(8); a.GCD(b).Print("\r\n"); //4.0 */
+    /**  CODE: Num a = new Num(12); Num b = new Num(8); a.GCD(b).Print("\n"); //4.0 */
     public Num GCD(Num sob) { 
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.GCD => TypeError only positive integer allowed: " + this.n);
       if(!sob.Is_numint()  ||  sob.n2.equals("-")) throw new IllegalArgumentException("Num.GCD => TypeError only positive integer allowed: " + sob.n);
@@ -5169,7 +5169,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** GCD, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY String */
-    /**  CODE: Num a = new Num(12); a.GCD("8.0").Print("\r\n"); //4.0 */
+    /**  CODE: Num a = new Num(12); a.GCD("8.0").Print("\n"); //4.0 */
     public Num GCD(String n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.GCD => TypeError only positive integer allowed: " + this.n);
@@ -5178,7 +5178,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** GCD, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY int */
-    /**  CODE: Num a = new Num(12); a.GCD(8).Print("\r\n"); //4.0 */
+    /**  CODE: Num a = new Num(12); a.GCD(8).Print("\n"); //4.0 */
     public Num GCD(int n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.GCD => TypeError only positive integer allowed: " + this.n);
@@ -5187,7 +5187,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** GCD, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY long */
-    /**  CODE: Num a = new Num(12L); a.GCD(8L).Print("\r\n"); //4.0 */
+    /**  CODE: Num a = new Num(12L); a.GCD(8L).Print("\n"); //4.0 */
     public Num GCD(long n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.GCD => TypeError only positive integer allowed: " + this.n);
@@ -5196,7 +5196,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
     }
 
      /** GCD, GREATEST COMMON DIVISOR BETWEEN TWO INTEGERs BY BigInteger */
-    /**  CODE: Num a = new Num(12); a.GCD(new BigInteger("8")).Print("\r\n"); //4.0 */
+    /**  CODE: Num a = new Num(12); a.GCD(new BigInteger("8")).Print("\n"); //4.0 */
     public Num GCD(BigInteger n) { 
       Num sob = new Num(n);
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.GCD => TypeError only positive integer allowed: " + this.n);
@@ -5206,7 +5206,7 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 
       /** Is_probablePrime, CHECK FOR Num IS PROBABLY PRIME, OR IF IT'S DEFINITELY COMPOSITE. ( 0 <= CERTAINTY <= 100) */
      /** CERTAINTY = 1: CHANCE OF ERROR = 1/2, CERTAINTY = 10: CHANCE OF ERROR = 1/1024, CERTAINTY = 100: VERY SMALL CHANCE OF ERROR */
-    /** CODE: Num a = new Num(13); Num.print(a.Is_probablePrime(), "\r\n"); //true */
+    /** CODE: Num a = new Num(13); Num.print(a.Is_probablePrime(), "\n"); //true */
     public boolean Is_probablePrime() { 
       int certainty = 100;
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Is_probablePrime => TypeError only positive integer allowed: " + this.n);
@@ -5215,14 +5215,14 @@ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String pay
 
       /** Is_probablePrime, CHECK FOR Num IS PROBABLY PRIME, OR IF IT'S DEFINITELY COMPOSITE. ( 0 <= CERTAINTY <= 100) */
      /** CERTAINTY = 1: CHANCE OF ERROR = 1/2, CERTAINTY = 10: CHANCE OF ERROR = 1/1024, CERTAINTY = 100: VERY SMALL CHANCE OF ERROR */
-    /** CODE: Num a = new Num(13); Num.print(a.Is_probablePrime(100), "\r\n"); //true */
+    /** CODE: Num a = new Num(13); Num.print(a.Is_probablePrime(100), "\n"); //true */
     public boolean Is_probablePrime(int certainty) { 
       if(!this.Is_numint() || this.n2.equals("-")) throw new IllegalArgumentException("Num.Is_probablePrime => TypeError only positive integer allowed: " + this.n);
       return this.toBigInteger().isProbablePrime(certainty); 
     }
 
      /** PrimeNext, GENERATE NEXT PROBABLE PRIME NUMBER BY PRIME */
-    /**  CODE: int bit = 8; Num a = Num.prime_gen(bit); Num.print(a, "\r\n"); Num.print(a.PrimeNext(), "\r\n"); //...173.0 ...179.0 */
+    /**  CODE: int bit = 8; Num a = Num.prime_gen(bit); Num.print(a, "\n"); Num.print(a.PrimeNext(), "\n"); //...173.0 ...179.0 */
     public Num PrimeNext() { return new Num(this.toBigInteger().nextProbablePrime()); }
 
 
