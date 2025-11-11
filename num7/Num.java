@@ -2182,6 +2182,237 @@ public class Num implements Comparable<Num> {
 	  return N.Div(D);
   } 
   
+  /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY 3 ARGs */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240), "\r\n"); //[1579.52] */
+ public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N) { return Num.f_fund_fr_full(ASSET, ii, N, "0", 0, true); }  
+  
+  /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY 4 ARGs */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "1579.55"), "\r\n"); //[1579.55, 1579.5, 1579.51, 1579.52] */
+ public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N, String payGoal) { return Num.f_fund_fr_full(ASSET, ii, N, payGoal, 0, true); }  
+	 	 
+  /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY 5 ARGs */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "1579.55", 1), "\r\n"); //[1579.55] */
+ public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N, String payGoal, int S) { return Num.f_fund_fr_full(ASSET, ii, N, payGoal, S, true); }  
+  	 
+  /** f_fund_fr_full, FRENCH FINANCING MONTH MORTGAGE BY ALL ARGs */
+ /**  CODE: Num.print(Num.f_fund_fr_full("240_000.00", "4.967", 240, "0", 0, false), "\r\n"); //[1579.52] */
+ public static ArrayList<Num> f_fund_fr_full(String ASSET, String ii, int N, String payGoal, int S, boolean VIDEO) {
+	  Num rate = new Num(ii);
+	  Num asset     = new Num(ASSET);
+	  Num principal = new Num(ASSET);
+	  Num pay_n = new Num(N);
+	  Num pay = new Num(0);
+	  ArrayList<Num> pays = new ArrayList<>();
+	  int pays_size = 0;
+	  Num pay_return = new Num(0);
+	  Num TOTAL_pays = new Num(0);
+	  if(S == 0) S = 100;
+	  if(payGoal.equals("0")) pay = Num.f_fund_fr(principal, rate, N).Round(2);
+	  else pay = new Num(payGoal);
+	  
+	  Num interest_share = new Num(0);
+	  Num principal_share = new Num(0);
+	  Num principal_CHECK = new Num(0);
+	  Num pay_rest = new Num(0);
+	  Num pay_MIN = new Num(0);
+	  Num pay_MAX = new Num(0);
+	  Num DELTA = new Num(10); //MUST BE > 1
+	  Num D = new Num("0.10");
+	  Num principal_OFFSET = new Num(0);
+	  int k = 0;
+	  String space = 15 + "";
+	  String TAB  = "%,#15.2f\t";
+	  String TABS = "%-" + space + "s\t";
+	  while(true) {
+		  k++;
+		  principal_CHECK = new Num(0);
+		  if(VIDEO) {
+			  Num.print("\r\n{"); Num.print(k, "} Simulation-START => "); System.out.printf(TAB, principal.toFloat());
+			  Num.print("\r\n------------------------------------------------------------------------------\r\n");
+			  System.out.printf(TABS, "qta");
+			  System.out.printf(TABS, "CAP");
+			  System.out.printf(TABS, "Qcap");
+			  System.out.printf(TABS, "Qint");
+			  System.out.printf(TABS, "PAY"); Num.print("\r\n");
+		  }
+		  int j = 0; //PAYMENTS QUANTITY
+		  for( ; j < pay_n.toInt(); j++) {
+			  interest_share = principal.Pct(rate).Div(12).Round(2);
+			  principal_share = pay.Sub(interest_share);
+			  principal_CHECK.Inc(principal_share);
+			  if(VIDEO) {
+				  System.out.printf("[%d]\t", j+1);
+				  System.out.printf(TAB, principal.toFloat());
+				  System.out.printf(TAB, principal_share.toFloat());
+				  System.out.printf(TAB, interest_share.toFloat());
+				  System.out.printf(TAB + "\r\n", principal_share.Add(interest_share).toFloat());
+			  }
+			  TOTAL_pays = TOTAL_pays.Add(pay);
+			  	
+			  principal = principal.Sub(principal_share);
+			  if(principal.LE(0)) { j++; break; }
+		  }		  
+		  pay_rest = new Num(principal).Div(pay_n).Round(2); //POSITIVE OR NEGATIVE
+		  if(VIDEO) {
+			  Num.print("******************************************************************************\r\n");
+			  Num.print("{"); Num.print(k, "} Simulation-END\r\n");
+			  System.out.printf("[%,#5.2f" + "]  ", asset.toFloat()); System.out.printf("(%,#5.2f" + ")  ", principal_CHECK.toFloat());
+			  System.out.printf("%,#5.2f" + "=TOTAL_pays  ", TOTAL_pays.toFloat()); 
+			  System.out.printf("%,#5.2f" + "=TOTAL_ints\r\n", (TOTAL_pays.Sub(asset)).toFloat());
+		  }
+		  TOTAL_pays.Clear();
+		  principal_OFFSET = asset.Sub(principal_CHECK);
+		  if(VIDEO) {
+			  System.out.printf("%,#3.2f=principal-OFFSET  ", principal_OFFSET.toFloat());
+			  System.out.printf("[%,#3.2f] => interest-OFFSET\r\n", principal_OFFSET.Pct(rate).Round().toFloat());
+			  System.out.printf("%,#3.2f=pay_rest\r\n", pay_rest.toFloat());
+			  System.out.printf("%,#4.2f=PAYMENT ", pay.toFloat());
+			  Num.print(j, "=QTA "); System.out.printf("%,#5.3f=RATE\r\n", rate.toFloat());
+			  Num.print("******************************************************************************\r\n");
+		  }
+		  pay_MAX.CopyFrom(pay); //MAX
+		  pay_return.CopyFrom(pay);
+		  pays.add(pay);
+		  pays_size = pays.size();
+		  
+		  if(DELTA.LT(D) && pay_rest.Is_negative()) pay = pay.Add("-0.01");
+		  else if(DELTA.LT(D) && pay_rest.Is_positive()) pay = pay.Add("0.01");
+		  else pay = pay.Add(pay_rest);
+			  
+		  if(pay.LT(pay_MAX)) pay_MIN.CopyFrom(pay);  //MIN
+		  else if(pay.GT(pay_MAX)) { pay_MIN.CopyFrom(pay_MAX); pay_MAX.CopyFrom(pay); } //MAX
+		  
+		  if(pay_MIN.EQ(pay_MAX)) break;
+		  else if(pay_MIN.GT(pay_MAX)) break;
+		  DELTA = pay_MAX.Sub(pay_MIN);
+		  if(k == S) break;
+		  if(pay_rest.EQ(0) && j == N) break;
+		  if(pays.contains(pay)) break; //CHECK PREVIOUS PAYMENT
+		  
+		  principal = new Num(asset);
+	  } 
+	  return pays;
+ }  
+ 
+ /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY 3 ARGs -RETURN String */
+/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240), "\r\n"); //{1} Simulation-START =>      240.000,00	... [1579.52] */
+public static String f_fund_fr_full_s(String ASSET, String ii, int N) { return Num.f_fund_fr_full_s(ASSET, ii, N, "0", 0, true); }  
+ 
+ /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY 4 ARGs -RETURN String */
+/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "1579.55"), "\r\n"); //{1} Simulation-START =>      240.000,00 ... [1579.55, 1579.5, 1579.51, 1579.52] */
+public static String f_fund_fr_full_s(String ASSET, String ii, int N, String payGoal) { return Num.f_fund_fr_full_s(ASSET, ii, N, payGoal, 0, true); }  
+	 	 
+ /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY 5 ARGs -RETURN String */
+/**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "1579.55", 1), "\r\n"); //{1} Simulation-START =>      240.000,00 ... [1579.55] */
+public static String f_fund_fr_full_s(String ASSET, String ii, int N, String payGoal, int S) { return Num.f_fund_fr_full_s(ASSET, ii, N, payGoal, S, true); }  
+
+  /** f_fund_fr_full_s, FRENCH FINANCING MONTH MORTGAGE BY ALL ARGs -RETURN String */
+ /**  CODE: Num.print(Num.f_fund_fr_full_s("240_000.00", "4.967", 240, "0", 0, false), "\r\n"); //[1579.52] */
+ public static String f_fund_fr_full_s(String ASSET, String ii, int N, String payGoal, int S, boolean VIDEO) {
+	 Num rate = new Num(ii);
+	 Num asset     = new Num(ASSET);
+	 Num principal = new Num(ASSET);
+	 Num pay_n = new Num(N);
+	 Num pay = new Num(0);
+	 ArrayList<Num> pays = new ArrayList<>();
+	 String PAYLOAD = "";
+	 
+	 int pays_size = 0;
+	 Num pay_return = new Num(0);
+	 Num TOTAL_pays = new Num(0);
+	 if(S == 0) S = 100;
+	 if(payGoal.equals("0")) pay = Num.f_fund_fr(principal, rate, N).Round(2);
+	 else pay = new Num(payGoal);
+	 
+	 Num interest_share = new Num(0);
+	 Num principal_share = new Num(0);
+	 Num principal_CHECK = new Num(0);
+	 Num pay_rest = new Num(0);
+	 Num pay_MIN = new Num(0);
+	 Num pay_MAX = new Num(0);
+	 Num DELTA = new Num(10); //MUST BE > 1
+	 Num D = new Num("0.10");
+	 Num principal_OFFSET = new Num(0);
+	 int k = 0;
+	 String space = 15 + "";
+	 String TAB  = "%,#15.2f\t";
+	 String TABS = "%-" + space + "s\t";
+	 while(true) {
+		 k++;
+		 principal_CHECK = new Num(0);
+		 if(VIDEO) {
+			 PAYLOAD = PAYLOAD + "\r\n{" + k + "} Simulation-START => ";
+			 PAYLOAD = PAYLOAD + String.format(TAB, principal.toFloat());
+			 PAYLOAD = PAYLOAD + "\r\n------------------------------------------------------------------------------\r\n";
+			 PAYLOAD = PAYLOAD + String.format(TABS, "qta");
+			 PAYLOAD = PAYLOAD + String.format(TABS, "CAP");
+			 PAYLOAD = PAYLOAD + String.format(TABS, "Qcap");
+			 PAYLOAD = PAYLOAD + String.format(TABS, "Qint");
+			 PAYLOAD = PAYLOAD + String.format(TABS, "PAY");
+			 PAYLOAD = PAYLOAD  + "\r\n"; 
+		 }
+		 int j = 0; //PAYMENTS QUANTITY
+		 for( ; j < pay_n.toInt(); j++) {
+			 interest_share = principal.Pct(rate).Div(12).Round(2);
+			 principal_share = pay.Sub(interest_share);
+			 principal_CHECK.Inc(principal_share);
+			 if(VIDEO) {
+				 PAYLOAD = PAYLOAD + String.format("[%d]\t", j+1);
+				 PAYLOAD = PAYLOAD + String.format(TAB, principal.toFloat());
+				 PAYLOAD = PAYLOAD + String.format(TAB, principal_share.toFloat());
+				 PAYLOAD = PAYLOAD + String.format(TAB, interest_share.toFloat());
+				 PAYLOAD = PAYLOAD + String.format(TAB + "\r\n", principal_share.Add(interest_share).toFloat());
+			 }
+			 TOTAL_pays = TOTAL_pays.Add(pay);
+			 
+			 principal = principal.Sub(principal_share);
+			 if(principal.LE(0)) { j++; break; }
+		 }		  
+		 pay_rest = new Num(principal).Div(pay_n).Round(2); //POSITIVE OR NEGATIVE
+		 if(VIDEO) {
+			 PAYLOAD = PAYLOAD + "******************************************************************************\r\n";
+			 PAYLOAD = PAYLOAD + "{" + k + "} Simulation-END\r\n";
+			 PAYLOAD = PAYLOAD + String.format("[%,#5.2f" + "]  ", asset.toFloat());
+			 PAYLOAD = PAYLOAD + String.format("(%,#5.2f" + ")  ", principal_CHECK.toFloat());
+			 PAYLOAD = PAYLOAD + String.format("%,#5.2f" + "=TOTAL_pays  ", TOTAL_pays.toFloat());
+			 PAYLOAD = PAYLOAD + String.format("%,#5.2f" + "=TOTAL_ints\r\n", (TOTAL_pays.Sub(asset)).toFloat());
+		 }
+		 TOTAL_pays.Clear();
+		 principal_OFFSET = asset.Sub(principal_CHECK);
+		 if(VIDEO) {
+			 PAYLOAD = PAYLOAD + String.format("%,#3.2f=principal-OFFSET  ", principal_OFFSET.toFloat());
+			 PAYLOAD = PAYLOAD + String.format("[%,#3.2f] => interest-OFFSET\r\n", principal_OFFSET.Pct(rate).Round().toFloat());
+			 PAYLOAD = PAYLOAD + String.format("%,#3.2f=pay_rest\r\n", pay_rest.toFloat());
+			 PAYLOAD = PAYLOAD + String.format("%,#4.2f=PAYMENT ", pay.toFloat());
+			 PAYLOAD = PAYLOAD + j + "=QTA ";
+			 PAYLOAD = PAYLOAD + String.format("%,#5.3f=RATE\r\n", rate.toFloat());
+			 PAYLOAD = PAYLOAD + "******************************************************************************\r\n";
+		 }
+		 pay_MAX.CopyFrom(pay); //MAX
+		 pay_return.CopyFrom(pay);
+		 pays.add(pay);
+		 pays_size = pays.size();
+		 
+		 if(DELTA.LT(D) && pay_rest.Is_negative()) pay = pay.Add("-0.01");
+		 else if(DELTA.LT(D) && pay_rest.Is_positive()) pay = pay.Add("0.01");
+		 else pay = pay.Add(pay_rest);
+		 
+		 if(pay.LT(pay_MAX)) pay_MIN.CopyFrom(pay);  //MIN
+		 else if(pay.GT(pay_MAX)) { pay_MIN.CopyFrom(pay_MAX); pay_MAX.CopyFrom(pay); } //MAX
+		 
+		 if(pay_MIN.EQ(pay_MAX)) break;
+		 else if(pay_MIN.GT(pay_MAX)) break;
+		 DELTA = pay_MAX.Sub(pay_MIN);
+		 if(k == S) break;
+		 if(pay_rest.EQ(0) && j == N) break;
+		 if(pays.contains(pay)) break; //CHECK PREVIOUS PAYMENT
+		 
+		 principal = new Num(asset);
+	 } 
+	 PAYLOAD = PAYLOAD + pays;
+	 return PAYLOAD;
+ }  
+
    /** f_perf, PERCENTAGE PERFORMANCE VALUE (DIRECT RATIO) BY Num */
   /**  CODE: Num.f_perf(new Num(50), new Num(75)).Print("\r\n"); //50.0 */
   public static Num f_perf(Num a, Num sob) { return (sob.Sub(a)).Div(a).Shift(2); }
