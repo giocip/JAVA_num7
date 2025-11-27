@@ -150,6 +150,7 @@ public class Num implements Comparable<Num> {
           throw new IllegalArgumentException("Num.exp2num => scientific notation not valid: " + S);
       String be0 = be[0];
       String be1 = be[1];
+	  if (be1.equals("0")) { return be[0]; }
       Boolean POSE;
       switch (be1.charAt(0)) { //CHECK EXPONENT SIGN => be1
           case '+':
