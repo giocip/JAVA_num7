@@ -1658,7 +1658,10 @@ public class Num implements Comparable<Num> {
   
    /** IN, BOOLEAN IN CHECKS CHARACTER IN A STRING */
   /**  CODE:  Num.print(Num.IN("123#4", "."), "\n"); //false */
-  public static boolean IN(String s, String ch) { return Pattern.compile(Pattern.quote(ch)).matcher(s).find(); }
+  public static boolean IN(String s, String ch) { 
+    if ("\\.".equals(ch)) ch = "."; // If the user passes "\\.", convert it to "."
+    return s.contains(ch);
+  }
 
    /** shift, SHIFT Num LEFT AND RIGHT BY int TIMES (MULTIPLY AND DIVIDE BY TEN) */
   /**  CODE: Num a = new Num("123.456789"); Num.print(Num.shift(a, 3), "\n"); //123456.789 */
