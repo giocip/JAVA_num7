@@ -807,23 +807,23 @@ public class Num implements Comparable<Num> {
   /**  CODE: Num a = new Num(3); Num.decdiv(a).Print("\n"); //1.5 */
   public static Num decdiv(Num m) { return m.DecDiv(2); }
 
-   /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
+   /** DECREMENT VARIABLE DIVIDING METHOD -OBJECT MODIFIED BY this REFERENCE */
   /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, new Num("2.1")).Print("\n"); //3.7 */
   public static Num decdiv(Num m, Num i) { return m.DecDiv(i); }
 
-   /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
+   /** DECREMENT VARIABLE DIVIDING METHOD -OBJECT MODIFIED BY this REFERENCE */
   /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, "2.1").Print("\n"); //3.7 */
   public static Num decdiv(Num m, String i) { return m.DecDiv(i); }
 
-   /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
+   /** DECREMENT VARIABLE DIVIDING METHOD -OBJECT MODIFIED BY this REFERENCE */
   /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, 2).Print("\n"); //3.885 */
   public static Num decdiv(Num m, int i) { return m.DecDiv(i); }
 
-   /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
+   /** DECREMENT VARIABLE DIVIDING METHOD -OBJECT MODIFIED BY this REFERENCE */
   /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, 2L).Print("\n"); //3.885 */
   public static Num decdiv(Num m, long i) { return m.DecDiv(i); }
 
-   /** DECREMENT VARIABLE SUBTRACTING METHOD -OBJECT MODIFIED BY this REFERENCE */
+   /** DECREMENT VARIABLE DIVIDING METHOD -OBJECT MODIFIED BY this REFERENCE */
   /**  CODE: Num a = new Num("7.77"); Num.decdiv(a, new BigInteger("2")).Print("\n"); //3.885 */
   public static Num decdiv(Num m, BigInteger i) { return m.DecDiv(i); }
 
